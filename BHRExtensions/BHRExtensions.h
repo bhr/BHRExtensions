@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BHRExtensions : NSObject
+#ifndef BHRExtensions_BHRExtensions_h
+#define BHRExtensions_BHRExtensions_h
 
-@end
+#import "NSURL+BHRExtensions.h"
+#import "UIColor+BHRExtensions.h"
+#import "UITableView+BHRExtensions.h"
+#import "UIView+BHRTableViewExtensions.h"
+
+
+#endif
