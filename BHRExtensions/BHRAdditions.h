@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LGAdditions : NSObject
+@interface BHRAdditions : NSObject
 
 @end
 

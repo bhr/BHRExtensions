@@ -8,7 +8,7 @@
 
 #import "BHRAdditions.h"
 
-@implementation LGAdditions
+@implementation BHRAdditions
 
 @end
 
