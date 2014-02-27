@@ -10,6 +10,12 @@
 
 @interface UIView (BHRExtensions)
 
+- (UIImage *)blurredSnapshot;
+- (UIImage *)snapshot;
+
+- (void)addConstraintBasedSubview:(UIView *)view;
+
+
 - (BOOL)findAndResignFirstResponder;
 
 @end

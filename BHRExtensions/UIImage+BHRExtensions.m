@@ -10,6 +10,36 @@
 
 @implementation UIImage (BHRExtensions)
 
+
+#pragma mark - Saving Images
+
+
+- (void)saveToDocumentsDirectoryWithName:(NSString *)name
+{
+	NSData *pngData = UIImagePNGRepresentation(self);
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [paths objectAtIndex:0];
+	NSString *filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
+	[pngData writeToFile:filePath atomically:YES];
+}
+
+#pragma mark - Cropping/Scaling 
+
+- (UIImage *)imageCroppedToRect:(CGRect)rect
+{
+	UIGraphicsBeginImageContextWithOptions(rect.size, false, [self scale]);
+	
+    [self drawAtPoint:CGPointMake(-rect.origin.x, -rect.origin.y)];
+	
+	UIImage *croppedImage = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	return croppedImage;
+}
+
+
 //Makes pics blurry?!
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize {
 	
@@ -71,6 +101,8 @@
 	
 	return newImage ;
 }
+
+#pragma mark - Getting
 
 + (UIImage *)imageRetinaWithContentsOfFile:(NSString *)file
 {

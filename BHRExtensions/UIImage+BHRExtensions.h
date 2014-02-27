@@ -10,7 +10,11 @@
 
 @interface UIImage (BHRExtensions)
 
+- (void)saveToDocumentsDirectoryWithName:(NSString *)name;
+
+- (UIImage *)imageCroppedToRect:(CGRect)rect;
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
+
 
 + (UIImage *)imageRetinaWithContentsOfFile:(NSString *)file;
 

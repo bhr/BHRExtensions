@@ -11,6 +11,9 @@
 #ifndef BHRExtensions_BHRExtensions_h
 #define BHRExtensions_BHRExtensions_h
 
+#import "BHRAdditions.h"
+
+
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"
 #import "UIView+BHRTableViewExtensions.h"
@@ -20,5 +23,6 @@
 #import "NSString+BHRExtensions.h"
 #import "UIImage+BHRExtensions.h"
 #import "UIView+BHRExtensions.h"
+#import "UIColor+BHRExtensions.h"
 
 #endif

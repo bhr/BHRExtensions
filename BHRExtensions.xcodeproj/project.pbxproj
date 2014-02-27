@@ -27,6 +27,9 @@
 		5FFBB66318BFC0F0004A41B1 /* NSString+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65C18BFC0F0004A41B1 /* NSString+BHRExtensions.m */; };
 		5FFBB66418BFC0F0004A41B1 /* NSString+BHRUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65E18BFC0F0004A41B1 /* NSString+BHRUID.m */; };
 		5FFBB66518BFC0F0004A41B1 /* UIImage+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB66018BFC0F0004A41B1 /* UIImage+BHRExtensions.m */; };
+		5FFBB67718BFC286004A41B1 /* BHRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB66A18BFC286004A41B1 /* BHRAdditions.m */; };
+		5FFBB67A18BFC286004A41B1 /* UIColor+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */; };
+		5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,12 @@
 		5FFBB65E18BFC0F0004A41B1 /* NSString+BHRUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BHRUID.m"; sourceTree = "<group>"; };
 		5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FFBB66018BFC0F0004A41B1 /* UIImage+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BHRExtensions.m"; sourceTree = "<group>"; };
+		5FFBB66918BFC286004A41B1 /* BHRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRAdditions.h; sourceTree = "<group>"; };
+		5FFBB66A18BFC286004A41B1 /* BHRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRAdditions.m; sourceTree = "<group>"; };
+		5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BHRExtensions.h"; sourceTree = "<group>"; };
+		5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BHRExtensions.m"; sourceTree = "<group>"; };
+		5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,24 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				5FBA1DEB18BF86000077328F /* BHRExtensions.h */,
-				5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */,
-				5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */,
-				5FFBB65918BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.h */,
-				5FFBB65A18BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m */,
-				5FFBB65B18BFC0F0004A41B1 /* NSString+BHRExtensions.h */,
-				5FFBB65C18BFC0F0004A41B1 /* NSString+BHRExtensions.m */,
-				5FFBB65D18BFC0F0004A41B1 /* NSString+BHRUID.h */,
-				5FFBB65E18BFC0F0004A41B1 /* NSString+BHRUID.m */,
-				5FBA1E0D18BF87290077328F /* NSURL+BHRExtensions.h */,
-				5FBA1E0E18BF87290077328F /* NSURL+BHRExtensions.m */,
-				5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */,
-				5FFBB66018BFC0F0004A41B1 /* UIImage+BHRExtensions.m */,
-				5FBA1E1118BF87290077328F /* UITableView+BHRExtensions.h */,
-				5FBA1E1218BF87290077328F /* UITableView+BHRExtensions.m */,
-				5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */,
-				5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */,
-				5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */,
-				5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */,
+				5FFBB67E18BFC28F004A41B1 /* Utilities */,
+				5FFBB66818BFC23E004A41B1 /* Categories */,
 				5FBA1DE918BF86000077328F /* Supporting Files */,
 			);
 			path = BHRExtensions;
@@ -189,6 +182,44 @@
 				5FBA1DFF18BF86000077328F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FFBB66818BFC23E004A41B1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */,
+				5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */,
+				5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */,
+				5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */,
+				5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */,
+				5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */,
+				5FFBB65918BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.h */,
+				5FFBB65A18BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m */,
+				5FFBB65B18BFC0F0004A41B1 /* NSString+BHRExtensions.h */,
+				5FFBB65C18BFC0F0004A41B1 /* NSString+BHRExtensions.m */,
+				5FFBB65D18BFC0F0004A41B1 /* NSString+BHRUID.h */,
+				5FFBB65E18BFC0F0004A41B1 /* NSString+BHRUID.m */,
+				5FBA1E0D18BF87290077328F /* NSURL+BHRExtensions.h */,
+				5FBA1E0E18BF87290077328F /* NSURL+BHRExtensions.m */,
+				5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */,
+				5FFBB66018BFC0F0004A41B1 /* UIImage+BHRExtensions.m */,
+				5FBA1E1118BF87290077328F /* UITableView+BHRExtensions.h */,
+				5FBA1E1218BF87290077328F /* UITableView+BHRExtensions.m */,
+				5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */,
+				5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */,
+				5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */,
+				5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		5FFBB67E18BFC28F004A41B1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5FFBB66918BFC286004A41B1 /* BHRAdditions.h */,
+				5FFBB66A18BFC286004A41B1 /* BHRAdditions.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,12 +305,15 @@
 			files = (
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,
+				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
 				5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */,
 				5FFBB66318BFC0F0004A41B1 /* NSString+BHRExtensions.m in Sources */,
 				5FBA1E1518BF87290077328F /* NSURL+BHRExtensions.m in Sources */,
 				5FFBB66418BFC0F0004A41B1 /* NSString+BHRUID.m in Sources */,
+				5FFBB67A18BFC286004A41B1 /* UIColor+BHRExtensions.m in Sources */,
 				5FFBB66218BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m in Sources */,
 				5FFBB66518BFC0F0004A41B1 /* UIImage+BHRExtensions.m in Sources */,
+				5FFBB67718BFC286004A41B1 /* BHRAdditions.m in Sources */,
 				5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
