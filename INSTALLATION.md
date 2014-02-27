@@ -1,5 +1,5 @@
 1. cd into the folder where the submodule should be
-2. git submodule add <url_to_library>
+2. git submodule add https://github.com/bhr/BHRExtensions
 3. Drag and Drop Xcodeproj into your workspace
 4. Project Settings -> Link Framework
 5. Project Build Settings -> Other Linker Flags -> Add '-ObjC'
