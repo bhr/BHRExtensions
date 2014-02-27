@@ -12,7 +12,6 @@
 #define BHRExtensions_BHRExtensions_h
 
 #import "NSURL+BHRExtensions.h"
-#import "UIColor+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"
 #import "UIView+BHRTableViewExtensions.h"
 
