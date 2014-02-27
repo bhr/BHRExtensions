@@ -14,6 +14,11 @@
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"
 #import "UIView+BHRTableViewExtensions.h"
-
+#import "NSArray+BHRExtensions.h"
+#import "NSObject+BHRClassesAggregation.h"
+#import "NSString+BHRExtensions.h"
+#import "NSString+BHRExtensions.h"
+#import "UIImage+BHRExtensions.h"
+#import "UIView+BHRExtensions.h"
 
 #endif
