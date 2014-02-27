@@ -4,5 +4,4 @@
 4. Project Settings -> Link Framework
 5. Project Build Settings -> Other Linker Flags -> Add '-ObjC'
 6. Move Framework header file to project (don't copy)
-
-
+7. Place '#import "BHRExtensions.h"' in the precompiled header of your project or where you need it!
