@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F55B08018BFCA86008F5E32 /* BHRAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66918BFC286004A41B1 /* BHRAdditions.h */; };
+		5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */; };
+		5F55B08218BFCA86008F5E32 /* UIImage+ImageEffects.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */; };
+		5F55B08318BFCA86008F5E32 /* NSArray+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */; };
+		5F55B08418BFCA86008F5E32 /* NSObject+BHRClassesAggregation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65918BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.h */; };
+		5F55B08518BFCA86008F5E32 /* NSString+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65B18BFC0F0004A41B1 /* NSString+BHRExtensions.h */; };
+		5F55B08618BFCA86008F5E32 /* NSString+BHRUID.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65D18BFC0F0004A41B1 /* NSString+BHRUID.h */; };
+		5F55B08718BFCA86008F5E32 /* UIImage+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */; };
+		5F55B08818BFCA86008F5E32 /* UIView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */; };
 		5FBA1DE718BF86000077328F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DE618BF86000077328F /* Foundation.framework */; };
 		5FBA1DF518BF86000077328F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DF418BF86000077328F /* XCTest.framework */; };
 		5FBA1DF618BF86000077328F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DE618BF86000077328F /* Foundation.framework */; };
@@ -49,6 +58,15 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				5F55B08018BFCA86008F5E32 /* BHRAdditions.h in CopyFiles */,
+				5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */,
+				5F55B08218BFCA86008F5E32 /* UIImage+ImageEffects.h in CopyFiles */,
+				5F55B08318BFCA86008F5E32 /* NSArray+BHRExtensions.h in CopyFiles */,
+				5F55B08418BFCA86008F5E32 /* NSObject+BHRClassesAggregation.h in CopyFiles */,
+				5F55B08518BFCA86008F5E32 /* NSString+BHRExtensions.h in CopyFiles */,
+				5F55B08618BFCA86008F5E32 /* NSString+BHRUID.h in CopyFiles */,
+				5F55B08718BFCA86008F5E32 /* UIImage+BHRExtensions.h in CopyFiles */,
+				5F55B08818BFCA86008F5E32 /* UIView+BHRExtensions.h in CopyFiles */,
 				5FBA1E2018BFB58D0077328F /* NSURL+BHRExtensions.h in CopyFiles */,
 				5FBA1E2218BFB58D0077328F /* UITableView+BHRExtensions.h in CopyFiles */,
 				5FBA1E2318BFB58D0077328F /* UIView+BHRTableViewExtensions.h in CopyFiles */,
