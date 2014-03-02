@@ -26,23 +26,30 @@
 		return;
 	}
 	
-    NSIndexPath *currentIndexPath = [self indexPathForCell:currentCell];
-	
-    NSIndexPath *nextIndexPath = [self nextIndexForPath:currentIndexPath];
-	
-	if (nextIndexPath == nil)
-	{
-		return;
-	}
-	
-    UITableViewCell *nextCell = [self cellForRowAtIndexPath:nextIndexPath];
-	
-    [self scrollToRowAtIndexPath:nextIndexPath
-				atScrollPosition:UITableViewScrollPositionMiddle
-						animated:YES];
-	
-	nextResponder = [self nextSubviewInTableViewCell:nextCell
-									  relativeToView:nil];
+	NSIndexPath *nextIndexPath = nil;
+	UITableViewCell *nextCell = currentCell;
+
+	do {
+		NSIndexPath *currentIndexPath = [self indexPathForCell:nextCell];
+		
+		
+		NSIndexPath *nextIndexPath = [self nextIndexForPath:currentIndexPath];
+		
+		if (nextIndexPath == nil)
+		{
+			return;
+		}
+		
+		nextCell = [self cellForRowAtIndexPath:nextIndexPath];
+		
+		[self scrollToRowAtIndexPath:nextIndexPath
+					atScrollPosition:UITableViewScrollPositionMiddle
+							animated:YES];
+		
+		nextResponder = [self nextSubviewInTableViewCell:nextCell
+										  relativeToView:nil];
+
+	} while (nextResponder == nil || nextIndexPath != nil);
 	
 	[nextResponder becomeFirstResponder];
 	
