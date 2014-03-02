@@ -12,6 +12,7 @@
 #define BHRExtensions_BHRExtensions_h
 
 #import "BHRAdditions.h"
+#import "BHRViewController.h"
 
 
 #import "NSURL+BHRExtensions.h"

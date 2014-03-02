@@ -30,6 +30,8 @@
 		5FBA1E2018BFB58D0077328F /* NSURL+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E0D18BF87290077328F /* NSURL+BHRExtensions.h */; };
 		5FBA1E2218BFB58D0077328F /* UITableView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E1118BF87290077328F /* UITableView+BHRExtensions.h */; };
 		5FBA1E2318BFB58D0077328F /* UIView+BHRTableViewExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */; };
+		5FBE848D18C3AF7A00D40FCE /* BHRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */; };
+		5FC5F4FF18C3AFB8006F603E /* BHRViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */; };
 		5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */; };
 		5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */; };
 		5FFBB66218BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65A18BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m */; };
@@ -58,6 +60,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				5FC5F4FF18C3AFB8006F603E /* BHRViewController.h in CopyFiles */,
 				5F55B08018BFCA86008F5E32 /* BHRAdditions.h in CopyFiles */,
 				5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */,
 				5F55B08218BFCA86008F5E32 /* UIImage+ImageEffects.h in CopyFiles */,
@@ -93,6 +96,8 @@
 		5FBA1E1218BF87290077328F /* UITableView+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHRTableViewExtensions.h"; sourceTree = "<group>"; };
 		5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHRTableViewExtensions.m"; sourceTree = "<group>"; };
+		5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRViewController.h; sourceTree = "<group>"; };
+		5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRViewController.m; sourceTree = "<group>"; };
 		5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BHRExtensions.h"; sourceTree = "<group>"; };
@@ -236,6 +241,8 @@
 			children = (
 				5FFBB66918BFC286004A41B1 /* BHRAdditions.h */,
 				5FFBB66A18BFC286004A41B1 /* BHRAdditions.m */,
+				5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */,
+				5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -322,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,
+				5FBE848D18C3AF7A00D40FCE /* BHRViewController.m in Sources */,
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,
 				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
 				5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */,
