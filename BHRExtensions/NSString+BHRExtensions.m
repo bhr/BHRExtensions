@@ -62,7 +62,7 @@
 		font = [UIFont systemFontOfSize:16.0f];
 	}
 	
-    sampleSize = [self sizeWithFont:font];
+    sampleSize = [self sizeWithAttributes:@{NSFontAttributeName: font}];
 	
     float scale = [self scaleToAspectFit:sampleSize
 									into:size
