@@ -18,4 +18,6 @@
 
 + (UIImage *)imageRetinaWithContentsOfFile:(NSString *)file;
 
+- (UIImage *)colorizedImageWithColor:(UIColor *)color;
+
 @end
