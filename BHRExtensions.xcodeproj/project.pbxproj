@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */; };
 		5F55B08018BFCA86008F5E32 /* BHRAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66918BFC286004A41B1 /* BHRAdditions.h */; };
 		5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */; };
 		5F55B08218BFCA86008F5E32 /* UIImage+ImageEffects.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */; };
@@ -80,6 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+BHRVersionInfo.h"; sourceTree = "<group>"; };
+		5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+BHRVersionInfo.m"; sourceTree = "<group>"; };
 		5FBA1DE318BF86000077328F /* libBHRExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBHRExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBA1DE618BF86000077328F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FBA1DEA18BF86000077328F /* BHRExtensions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BHRExtensions-Prefix.pch"; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */,
 				5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */,
 				5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */,
+				5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */,
+				5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */,
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,
 				5FBE848D18C3AF7A00D40FCE /* BHRViewController.m in Sources */,
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,

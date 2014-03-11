@@ -13,4 +13,6 @@
 - (UIColor *)colorByAddingBrightness:(CGFloat)brightnessOffset;
 - (UIColor *)colorByAddingAlpha:(CGFloat)alphaOffset;
 
++ (UIColor*)defaultSystemTintColor;
+
 @end

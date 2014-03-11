@@ -26,5 +26,6 @@
 #import "UIView+BHRExtensions.h"
 #import "UIColor+BHRExtensions.h"
 #import "UIImage+ImageEffects.h"
+#import "UIApplication+BHRVersionInfo.h"
 
 #endif
