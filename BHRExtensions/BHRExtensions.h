@@ -21,11 +21,13 @@
 #import "NSArray+BHRExtensions.h"
 #import "NSObject+BHRClassesAggregation.h"
 #import "NSString+BHRExtensions.h"
-#import "NSString+BHRExtensions.h"
+#import "NSString+BHRUID.h"
 #import "UIImage+BHRExtensions.h"
 #import "UIView+BHRExtensions.h"
 #import "UIColor+BHRExtensions.h"
 #import "UIImage+ImageEffects.h"
 #import "UIApplication+BHRVersionInfo.h"
+#import "NSDate+BHRExtensions.h"
+#import "NSObject+BHRExtensions.h"
 
 #endif

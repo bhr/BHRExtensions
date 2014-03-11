@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+BHRExtensions.h"
+#import "NSObject+BHRExtensions.h"
 
 @implementation UIImage (BHRExtensions)
 
@@ -18,8 +19,7 @@
 {
 	NSData *pngData = UIImagePNGRepresentation(self);
 	
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsPath = [paths objectAtIndex:0];
+	NSString *documentsPath = [NSObject documentsDirectory];
 	NSString *filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
 	[pngData writeToFile:filePath atomically:YES];
 }

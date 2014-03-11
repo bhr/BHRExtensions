@@ -32,6 +32,8 @@
 		5FBA1E2218BFB58D0077328F /* UITableView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E1118BF87290077328F /* UITableView+BHRExtensions.h */; };
 		5FBA1E2318BFB58D0077328F /* UIView+BHRTableViewExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */; };
 		5FBE848D18C3AF7A00D40FCE /* BHRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */; };
+		5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */; };
+		5FC0203B18C8871500ED7E5A /* NSObject+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */; };
 		5FC5F4FF18C3AFB8006F603E /* BHRViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */; };
 		5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */; };
 		5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */; };
@@ -101,6 +103,10 @@
 		5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHRTableViewExtensions.m"; sourceTree = "<group>"; };
 		5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRViewController.h; sourceTree = "<group>"; };
 		5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRViewController.m; sourceTree = "<group>"; };
+		5FC0203318C87F1D00ED7E5A /* NSDate+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BHRExtensions.h"; sourceTree = "<group>"; };
+		5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BHRExtensions.m"; sourceTree = "<group>"; };
+		5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BHRExtensions.h"; sourceTree = "<group>"; };
+		5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BHRExtensions.h"; sourceTree = "<group>"; };
@@ -213,6 +219,10 @@
 		5FFBB66818BFC23E004A41B1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */,
+				5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */,
+				5FC0203318C87F1D00ED7E5A /* NSDate+BHRExtensions.h */,
+				5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */,
 				5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */,
 				5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */,
 				5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */,
@@ -340,6 +350,7 @@
 				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
 				5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */,
 				5FFBB66318BFC0F0004A41B1 /* NSString+BHRExtensions.m in Sources */,
+				5FC0203B18C8871500ED7E5A /* NSObject+BHRExtensions.m in Sources */,
 				5FBA1E1518BF87290077328F /* NSURL+BHRExtensions.m in Sources */,
 				5FFBB66418BFC0F0004A41B1 /* NSString+BHRUID.m in Sources */,
 				5FFBB67A18BFC286004A41B1 /* UIColor+BHRExtensions.m in Sources */,
@@ -347,6 +358,7 @@
 				5FFBB66518BFC0F0004A41B1 /* UIImage+BHRExtensions.m in Sources */,
 				5FFBB67718BFC286004A41B1 /* BHRAdditions.m in Sources */,
 				5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */,
+				5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
