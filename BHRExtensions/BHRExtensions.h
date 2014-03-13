@@ -29,5 +29,7 @@
 #import "UIApplication+BHRVersionInfo.h"
 #import "NSDate+BHRExtensions.h"
 #import "NSObject+BHRExtensions.h"
+#import "NSFetchedResultsController+BHRExtensions.h"
+
 
 #endif

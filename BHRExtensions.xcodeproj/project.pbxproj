@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F10596118D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */; };
 		5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */; };
 		5F55B08018BFCA86008F5E32 /* BHRAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66918BFC286004A41B1 /* BHRAdditions.h */; };
 		5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */; };
@@ -83,6 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+BHRExtensions.h"; sourceTree = "<group>"; };
+		5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+BHRExtensions.m"; sourceTree = "<group>"; };
 		5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+BHRVersionInfo.h"; sourceTree = "<group>"; };
 		5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+BHRVersionInfo.m"; sourceTree = "<group>"; };
 		5FBA1DE318BF86000077328F /* libBHRExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBHRExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +250,8 @@
 				5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */,
 				5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */,
 				5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */,
+				5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */,
+				5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				5FFBB67718BFC286004A41B1 /* BHRAdditions.m in Sources */,
 				5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */,
 				5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */,
+				5F10596118D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

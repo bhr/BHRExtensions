@@ -105,4 +105,24 @@
 }
 
 
+- (NSArray *)allIndexPaths
+{
+	NSMutableArray *allIndexPaths = [@[] mutableCopy];
+	
+	NSInteger sections = [self numberOfSections];
+	
+	for (NSInteger section = 0; section < sections; section++)
+	{
+		NSInteger rows = [self numberOfRowsInSection:section];
+		
+		for (NSInteger row = 0; row < rows; row++)
+		{
+			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+			[allIndexPaths addObject:indexPath];
+		}
+	}
+	
+	return allIndexPaths;
+}
+
 @end

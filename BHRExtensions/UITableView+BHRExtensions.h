@@ -13,4 +13,6 @@
 - (void)selectNextResponderForView:(UIView *)view;
 - (NSIndexPath *)nextIndexForPath:(NSIndexPath *) indexPath;
 
+- (NSArray *)allIndexPaths;
+
 @end
