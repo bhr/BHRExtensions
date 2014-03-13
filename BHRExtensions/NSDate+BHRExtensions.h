@@ -12,4 +12,12 @@
 
 - (NSString *)shortDateAndTimeString;
 
++ (NSDate *)today;
++ (NSDate *)yesterday;
++ (NSDate *)thisWeek;
++ (NSDate *)lastWeek;
++ (NSDate *)last7Days;
++ (NSDate *)thisMonth;
++ (NSDate *)lastMonth;
+
 @end
