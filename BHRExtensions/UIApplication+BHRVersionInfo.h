@@ -10,6 +10,7 @@
 
 @interface UIApplication (BHRVersionInfo)
 
++ (NSString *)appName;
 + (NSString *) appVersion;
 + (NSString *) build;
 + (NSString *) versionBuild;

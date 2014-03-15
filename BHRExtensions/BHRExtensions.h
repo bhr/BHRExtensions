@@ -14,7 +14,6 @@
 #import "BHRAdditions.h"
 #import "BHRViewController.h"
 
-
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"
 #import "UIView+BHRTableViewExtensions.h"

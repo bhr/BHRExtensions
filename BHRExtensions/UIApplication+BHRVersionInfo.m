@@ -10,6 +10,11 @@
 
 @implementation UIApplication (BHRVersionInfo)
 
++ (NSString *)appName
+{
+	return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+}
+
 + (NSString *) appVersion
 {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];

@@ -35,6 +35,10 @@
 		5FBE848D18C3AF7A00D40FCE /* BHRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */; };
 		5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */; };
 		5FC0203B18C8871500ED7E5A /* NSObject+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */; };
+		5FC1EF6818D37ED300C33DA9 /* NSObject+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */; };
+		5FC1EF6918D37ED300C33DA9 /* NSDate+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FC0203318C87F1D00ED7E5A /* NSDate+BHRExtensions.h */; };
+		5FC1EF6A18D37ED300C33DA9 /* UIApplication+BHRVersionInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */; };
+		5FC1EF6B18D37ED300C33DA9 /* NSFetchedResultsController+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */; };
 		5FC5F4FF18C3AFB8006F603E /* BHRViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */; };
 		5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */; };
 		5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */; };
@@ -64,6 +68,10 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				5FC1EF6818D37ED300C33DA9 /* NSObject+BHRExtensions.h in CopyFiles */,
+				5FC1EF6918D37ED300C33DA9 /* NSDate+BHRExtensions.h in CopyFiles */,
+				5FC1EF6A18D37ED300C33DA9 /* UIApplication+BHRVersionInfo.h in CopyFiles */,
+				5FC1EF6B18D37ED300C33DA9 /* NSFetchedResultsController+BHRExtensions.h in CopyFiles */,
 				5FC5F4FF18C3AFB8006F603E /* BHRViewController.h in CopyFiles */,
 				5F55B08018BFCA86008F5E32 /* BHRAdditions.h in CopyFiles */,
 				5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */,
