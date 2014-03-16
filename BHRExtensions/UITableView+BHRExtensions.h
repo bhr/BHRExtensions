@@ -15,4 +15,10 @@
 
 - (NSArray *)allIndexPaths;
 
+
+/**
+ * Uses registerWithNib:forCellReuseIdentifier: --> The table view cell subclass name must be equal to the nib name
+ */
+- (void)registerNibWithClass:(Class)aClass forCellReuseIdentifier:(NSString *)identifier;
+
 @end

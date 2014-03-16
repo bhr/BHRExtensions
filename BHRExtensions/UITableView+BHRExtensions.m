@@ -125,4 +125,11 @@
 	return allIndexPaths;
 }
 
+- (void)registerNibWithClass:(Class)class forCellReuseIdentifier:(NSString *)identifier
+{
+	UINib *nib = [UINib nibWithNibName:NSStringFromClass(class)
+								bundle:nil];
+	[self registerNib:nib forCellReuseIdentifier:identifier];
+}
+
 @end
