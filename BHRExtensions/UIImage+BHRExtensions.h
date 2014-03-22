@@ -20,4 +20,13 @@
 
 - (UIImage *)colorizedImageWithColor:(UIColor *)color;
 
+
+#pragma mark - AppIcon
+
+/**
+ * Both work for iOS version >= 7
+ */
++ (UIImage *)iPhoneAppIcon;
++ (UIImage *)iPadAppIcon;
+
 @end

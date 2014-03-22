@@ -14,5 +14,7 @@
 + (NSString *) appVersion;
 + (NSString *) build;
 + (NSString *) versionBuild;
++ (NSString *)appIdentifier;
 
 @end
+

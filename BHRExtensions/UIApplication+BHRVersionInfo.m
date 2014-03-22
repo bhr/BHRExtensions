@@ -39,4 +39,9 @@
     return versionBuild;
 }
 
++ (NSString *)appIdentifier
+{
+	return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+}
+
 @end

@@ -13,6 +13,9 @@
 - (UIColor *)colorByAddingBrightness:(CGFloat)brightnessOffset;
 - (UIColor *)colorByAddingAlpha:(CGFloat)alphaOffset;
 
-+ (UIColor*)defaultSystemTintColor;
++ (UIColor *)defaultSystemTintColor;
++ (UIColor *)keyboardBackgroundColor;
+
+- (BOOL)isWhiteColor;
 
 @end

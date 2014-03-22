@@ -14,7 +14,7 @@
 - (UIImage *)snapshot;
 
 - (void)addConstraintBasedSubview:(UIView *)view;
-
+- (void)addConstraintBasedSubview:(UIView *)view withInsets:(UIEdgeInsets)insets;
 
 - (BOOL)findAndResignFirstResponder;
 

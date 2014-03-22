@@ -34,7 +34,6 @@
 										 toDate:[NSDate date]
 										options:0];
 
-	NSLog(@"today: %@", today);
 	return today;
 }
 
@@ -50,7 +49,6 @@
 	NSDate *yesterday = [cal dateByAddingComponents:components
 											 toDate:[self today]
 											options:0];
-	NSLog(@"yesterday: %@", yesterday);
 	return yesterday;
 }
 
@@ -64,7 +62,6 @@
 	[components setDay:([components day] - ([components weekday] - 1))];
 	NSDate *thisWeek  = [cal dateFromComponents:components];
 
-	NSLog(@"this week: %@", thisWeek);
 	return thisWeek;
 }
 
@@ -78,7 +75,6 @@
 	[components setDay:([components day] - 7)];
 	NSDate *lastWeek  = [cal dateFromComponents:components];
 
-	NSLog(@"last week: %@",lastWeek);
 	return lastWeek;
 }
 
@@ -91,7 +87,6 @@
 	[components setDay:([components day] - 7)];
 	NSDate *lastWeek  = [cal dateFromComponents:components];
 	
-	NSLog(@"last 7 days: %@",lastWeek);
 	return lastWeek;
 }
 
@@ -104,7 +99,6 @@
 	[components setDay:([components day] - ([components day] -1))];
 	NSDate *thisMonth  = [cal dateFromComponents:components];
 	
-	NSLog(@"this month: %@",thisMonth);
 	return thisMonth;
 }
 
@@ -117,7 +111,6 @@
 	[components setMonth:([components month] - 1)];
 	NSDate *lastMonth  = [cal dateFromComponents:components];
 	
-	NSLog(@"last month: %@",lastMonth);
 	return lastMonth;
 }
 

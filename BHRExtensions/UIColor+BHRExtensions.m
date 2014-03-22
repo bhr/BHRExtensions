@@ -81,4 +81,24 @@
 	return systemTintColor;
 }
 
++ (UIColor *)keyboardBackgroundColor
+{
+	return [UIColor colorWithHue:0.600 saturation:0.029 brightness:0.887 alpha:1.000];
+}
+
+- (BOOL)isWhiteColor
+{
+	CGFloat white = 0.f;
+	CGFloat alpha = 0.f;
+	BOOL success = [self getWhite:&white alpha:&alpha];
+	
+	if (success &&
+		white == 1.0f &&
+		alpha == 1.0f)
+	{
+		return YES;
+	}
+	return NO;
+}
+
 @end

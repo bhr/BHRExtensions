@@ -154,4 +154,16 @@
 	return colorizedImage;
 }
 
+#pragma mark - 
+
++ (UIImage *)iPhoneAppIcon;
+{
+	return [UIImage imageNamed:@"AppIcon60x60"];
+}
+
++ (UIImage *)iPadAppIcon;
+{
+	return [UIImage imageNamed:@"AppIcon76x76"];
+}
+
 @end
