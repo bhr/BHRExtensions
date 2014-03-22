@@ -13,6 +13,7 @@
 
 #import "BHRAdditions.h"
 #import "BHRViewController.h"
+#import "BHRKeyboardStateController.h"
 
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"

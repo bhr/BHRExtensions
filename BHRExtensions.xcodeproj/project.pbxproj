@@ -33,6 +33,7 @@
 		5FBA1E2218BFB58D0077328F /* UITableView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E1118BF87290077328F /* UITableView+BHRExtensions.h */; };
 		5FBA1E2318BFB58D0077328F /* UIView+BHRTableViewExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */; };
 		5FBE848D18C3AF7A00D40FCE /* BHRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */; };
+		5FBFEB4518DE063C0047EE5C /* BHRKeyboardStateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFEB4418DE063C0047EE5C /* BHRKeyboardStateController.m */; };
 		5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */; };
 		5FC0203B18C8871500ED7E5A /* NSObject+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */; };
 		5FC1EF6818D37ED300C33DA9 /* NSObject+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */; };
@@ -114,6 +115,8 @@
 		5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHRTableViewExtensions.m"; sourceTree = "<group>"; };
 		5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRViewController.h; sourceTree = "<group>"; };
 		5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRViewController.m; sourceTree = "<group>"; };
+		5FBFEB4318DE063C0047EE5C /* BHRKeyboardStateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRKeyboardStateController.h; sourceTree = "<group>"; };
+		5FBFEB4418DE063C0047EE5C /* BHRKeyboardStateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRKeyboardStateController.m; sourceTree = "<group>"; };
 		5FC0203318C87F1D00ED7E5A /* NSDate+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BHRExtensions.h"; sourceTree = "<group>"; };
@@ -230,36 +233,36 @@
 		5FFBB66818BFC23E004A41B1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */,
-				5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */,
-				5FC0203318C87F1D00ED7E5A /* NSDate+BHRExtensions.h */,
-				5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */,
-				5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */,
-				5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */,
-				5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */,
-				5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */,
 				5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */,
 				5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */,
+				5FC0203318C87F1D00ED7E5A /* NSDate+BHRExtensions.h */,
+				5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */,
+				5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */,
+				5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */,
 				5FFBB65918BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.h */,
 				5FFBB65A18BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m */,
+				5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */,
+				5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */,
 				5FFBB65B18BFC0F0004A41B1 /* NSString+BHRExtensions.h */,
 				5FFBB65C18BFC0F0004A41B1 /* NSString+BHRExtensions.m */,
 				5FFBB65D18BFC0F0004A41B1 /* NSString+BHRUID.h */,
 				5FFBB65E18BFC0F0004A41B1 /* NSString+BHRUID.m */,
 				5FBA1E0D18BF87290077328F /* NSURL+BHRExtensions.h */,
 				5FBA1E0E18BF87290077328F /* NSURL+BHRExtensions.m */,
+				5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */,
+				5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */,
+				5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */,
+				5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */,
 				5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */,
 				5FFBB66018BFC0F0004A41B1 /* UIImage+BHRExtensions.m */,
+				5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */,
+				5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */,
 				5FBA1E1118BF87290077328F /* UITableView+BHRExtensions.h */,
 				5FBA1E1218BF87290077328F /* UITableView+BHRExtensions.m */,
 				5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */,
 				5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */,
 				5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */,
 				5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */,
-				5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */,
-				5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */,
-				5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */,
-				5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -271,6 +274,8 @@
 				5FFBB66A18BFC286004A41B1 /* BHRAdditions.m */,
 				5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */,
 				5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */,
+				5FBFEB4318DE063C0047EE5C /* BHRKeyboardStateController.h */,
+				5FBFEB4418DE063C0047EE5C /* BHRKeyboardStateController.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				5FFBB66518BFC0F0004A41B1 /* UIImage+BHRExtensions.m in Sources */,
 				5FFBB67718BFC286004A41B1 /* BHRAdditions.m in Sources */,
 				5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */,
+				5FBFEB4518DE063C0047EE5C /* BHRKeyboardStateController.m in Sources */,
 				5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */,
 				5F10596118D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m in Sources */,
 			);

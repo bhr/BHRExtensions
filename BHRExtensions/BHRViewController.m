@@ -14,7 +14,7 @@
 
 @implementation BHRViewController
 
-- (id)init
+- (instancetype)init
 {
     self = [super initWithNibName:NSStringFromClass([self class])
 						   bundle:nil];
