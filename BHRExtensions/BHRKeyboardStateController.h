@@ -10,6 +10,11 @@
 
 @interface BHRKeyboardStateController : NSObject
 
+
+/**
+ * Typically you initialize this controller on viewWillAppear: and set it to nil on viewDidDisappear:
+ */
+
 /**
  * Constraint to be modified when keyboard shows/hides
  */
