@@ -30,6 +30,7 @@
 #import "NSDate+BHRExtensions.h"
 #import "NSObject+BHRExtensions.h"
 #import "NSFetchedResultsController+BHRExtensions.h"
+#import "NSMutableAttributedString+BHRExtensions.h"
 
 
 #endif

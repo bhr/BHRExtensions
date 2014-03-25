@@ -22,4 +22,10 @@
 - (CGFloat)fontSizeForSize:(CGSize)size
 					  font:(UIFont *)font;
 
+
+
+- (NSString *)stringByTrimmingLeadingCharactersInSet:(NSCharacterSet *)characterSet;
+- (NSString *)stringByTrimmingLeadingWhitespaceAndNewlineCharacters;
+- (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet;
+- (NSString *)stringByTrimmingTrailingWhitespaceAndNewlineCharacters;
 @end
