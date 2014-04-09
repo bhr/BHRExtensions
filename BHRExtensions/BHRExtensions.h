@@ -31,6 +31,6 @@
 #import "NSObject+BHRExtensions.h"
 #import "NSFetchedResultsController+BHRExtensions.h"
 #import "NSMutableAttributedString+BHRExtensions.h"
-
+#import "UIDevice+BHRExtensions.h"
 
 #endif
