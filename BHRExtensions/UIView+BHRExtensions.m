@@ -52,18 +52,35 @@
 	return snapshotImage;
 }
 
+- (void)insertConstraintBasedSubview:(UIView *)view belowSubView:(UIView *)otherView
+{
+	[self insertSubview:view belowSubview:otherView];
+	[self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
+}
+
+- (void)insertConstraintBasedSubview:(UIView *)view aboveSubView:(UIView *)otherView
+{
+	[self insertSubview:view aboveSubview:otherView];
+	[self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
+}
+
 - (void)addConstraintBasedSubview:(UIView *)view
 {
-	[self addConstraintBasedSubview:view withInsets:UIEdgeInsetsZero];
+	[self addSubview:view];
+	[self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
 }
 
 - (void)addConstraintBasedSubview:(UIView *)view withInsets:(UIEdgeInsets)insets
 {
-	view.frame = self.bounds;
 	[self addSubview:view];
-	
+	[self _addConstraintsForSubview:view withInsets:insets];
+}
+
+- (void)_addConstraintsForSubview:(UIView *)view withInsets:(UIEdgeInsets)insets
+{
+	view.frame = self.bounds;
 	[self setTranslatesAutoresizingMaskIntoConstraints:NO];
-	
+
 	NSDictionary *views = @{@"subview": view};
 	NSDictionary *metrics = @{
 							  @"left": @(insets.left),
@@ -71,21 +88,20 @@
 							  @"top": @(insets.top),
 							  @"bottom": @(insets.bottom),
 							  };
-	
+
 	NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[subview]-right-|"
 																   options:0
 																   metrics:metrics
 																	 views:views];
 	[self addConstraints:constraints];
-	
+
 	constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[subview]-bottom-|"
 														  options:0
 														  metrics:metrics
 															views:views];
-	
+
 	[self addConstraints:constraints];
 }
-
 
 #pragma mark -
 

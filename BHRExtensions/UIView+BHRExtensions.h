@@ -13,6 +13,8 @@
 - (UIImage *)blurredSnapshot;
 - (UIImage *)snapshot;
 
+- (void)insertConstraintBasedSubview:(UIView *)view belowSubView:(UIView *)otherView;
+- (void)insertConstraintBasedSubview:(UIView *)view aboveSubView:(UIView *)otherView;
 - (void)addConstraintBasedSubview:(UIView *)view;
 - (void)addConstraintBasedSubview:(UIView *)view withInsets:(UIEdgeInsets)insets;
 
