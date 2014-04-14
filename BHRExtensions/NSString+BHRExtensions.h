@@ -28,4 +28,7 @@
 - (NSString *)stringByTrimmingLeadingWhitespaceAndNewlineCharacters;
 - (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet;
 - (NSString *)stringByTrimmingTrailingWhitespaceAndNewlineCharacters;
+
+- (NSUInteger)integerValueFromHex;
+
 @end

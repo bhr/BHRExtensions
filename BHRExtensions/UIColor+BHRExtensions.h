@@ -10,12 +10,21 @@
 
 @interface UIColor (BHRExtensions)
 
++ (UIColor *)randomColor;
+
 - (UIColor *)colorByAddingBrightness:(CGFloat)brightnessOffset;
 - (UIColor *)colorByAddingAlpha:(CGFloat)alphaOffset;
+
+/**
+ * Works only on RGB color spaces
+ */
+- (UIColor *)colorByInterpolatingWithColor:(UIColor *)color;
+- (UIColor *)colorByInterpolatingWithColor:(UIColor *)color relativeOffset:(CGFloat)relativeOffset;
 
 + (UIColor *)defaultSystemTintColor;
 + (UIColor *)keyboardBackgroundColor;
 
++ (UIColor *)colorWithHexString:(NSString *)hexString;
 - (BOOL)isWhiteColor;
 
 @end

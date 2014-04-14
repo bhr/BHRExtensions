@@ -66,8 +66,7 @@
 
 - (void)addConstraintBasedSubview:(UIView *)view
 {
-	[self addSubview:view];
-	[self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
+	[self addConstraintBasedSubview:view withInsets:UIEdgeInsetsZero];
 }
 
 - (void)addConstraintBasedSubview:(UIView *)view withInsets:(UIEdgeInsets)insets
