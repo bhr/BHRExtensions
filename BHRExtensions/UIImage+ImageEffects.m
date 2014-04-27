@@ -101,6 +101,27 @@
 
 @implementation UIImage (ImageEffects)
 
+- (UIImage *)applyEffect:(UIImageBlurEffect)effect
+{
+	switch (effect) {
+		case UIImageBlurEffectLight:
+			return [self applyLightEffect];
+			break;
+		case UIImageBlurEffectExtraLight:
+			return [self applyExtraLightEffect];
+			break;
+		case UIImageBlurEffectDark:
+			return [self applyDarkEffect];
+			break;
+		case UIImageBlurEffectNeutral:
+			return [self applyNeutralEffect];
+			break;
+
+		default:
+			return nil;
+			break;
+	}
+}
 
 - (UIImage *)applyLightEffect
 {

@@ -95,7 +95,16 @@
 
 @import UIKit;
 
+typedef NS_ENUM(NSUInteger, UIImageBlurEffect) {
+    UIImageBlurEffectLight,
+    UIImageBlurEffectExtraLight,
+    UIImageBlurEffectDark,
+	UIImageBlurEffectNeutral
+};
+
 @interface UIImage (ImageEffects)
+
+- (UIImage *)applyEffect:(UIImageBlurEffect)effect;
 
 - (UIImage *)applyLightEffect;
 - (UIImage *)applyExtraLightEffect;

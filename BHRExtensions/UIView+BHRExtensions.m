@@ -7,33 +7,38 @@
 //
 
 #import "UIView+BHRExtensions.h"
-#import "UIImage+ImageEffects.h"
 
 @implementation UIView (BHRExtensions)
 
 
--(UIImage *)blurredSnapshot
+-(UIImage *)blurredSnapshotWithEffect:(UIImageBlurEffect)effect
 {
-    // Create the image context
+	// Create the image context
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, self.window.screen.scale);
-	
+
     // There he is! The new API method
 	[self drawViewHierarchyInRect:self.frame afterScreenUpdates:NO];
-	
+
     // Get the snapshot
     UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
-	
+
 	UIImage *blurredSnapshotImage;
-	
+
 	//	blurredSnapshotImage = [snapshotImage applyDarkEffect];
-	blurredSnapshotImage = [snapshotImage applyNeutralEffect];
+	blurredSnapshotImage = [snapshotImage applyEffect:effect];
 	//	blurredSnapshotImage = [snapshotImage applyLightEffect];
 	//	blurredSnapshotImage = [snapshotImage applyExtraLightEffect];
-	
+
     // Be nice and clean your mess up
     UIGraphicsEndImageContext();
-	
+
     return blurredSnapshotImage;
+}
+
+
+-(UIImage *)blurredSnapshot
+{
+	return [self blurredSnapshotWithEffect:UIImageBlurEffectNeutral];
 }
 
 - (UIImage *)snapshot

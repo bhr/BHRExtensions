@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImage+ImageEffects.h"
 
 @interface UIView (BHRExtensions)
 
+-(UIImage *)blurredSnapshotWithEffect:(UIImageBlurEffect)effect;
 - (UIImage *)blurredSnapshot;
 - (UIImage *)snapshot;
 
