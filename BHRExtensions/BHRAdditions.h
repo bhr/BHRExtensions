@@ -15,3 +15,5 @@
 CGFloat clampf(CGFloat x, CGFloat low, CGFloat high);
 CGMutablePathRef CGPathCreatePathRotatedAroundBoundingBoxCenter(CGPathRef path, CGFloat radians);
 CGRect CGRectWithScale(CGRect rect, CGFloat scale);
+
+NSString *NSStringFromBOOL(BOOL boolean);

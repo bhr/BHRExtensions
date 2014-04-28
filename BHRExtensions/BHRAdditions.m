@@ -43,3 +43,10 @@ CGRect CGRectWithScale(CGRect rect, CGFloat scale)
 					  scale * rect.size.height);
 }
 
+NSString *NSStringFromBOOL(BOOL boolean)
+{
+	if (boolean) {
+		return @"YES";
+	}
+	return @"NO";
+}
