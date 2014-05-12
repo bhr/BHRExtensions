@@ -50,3 +50,8 @@ NSString *NSStringFromBOOL(BOOL boolean)
 	}
 	return @"NO";
 }
+
+CGFloat degreeToRadians(CGFloat degreeValue)
+{
+	return (M_PI / 180) * degreeValue;
+}

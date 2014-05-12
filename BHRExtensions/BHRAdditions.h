@@ -17,3 +17,4 @@ CGMutablePathRef CGPathCreatePathRotatedAroundBoundingBoxCenter(CGPathRef path, 
 CGRect CGRectWithScale(CGRect rect, CGFloat scale);
 
 NSString *NSStringFromBOOL(BOOL boolean);
+CGFloat degreeToRadians(CGFloat degreeValue);
