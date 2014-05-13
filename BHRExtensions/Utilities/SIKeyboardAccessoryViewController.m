@@ -33,7 +33,9 @@ NSString * const SIShellButtonInfoID = @"identifier";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+
+	self.view.frame = CGRectMake(0.0f, 0.0f, 320.0f, 32.0f);
+
 	NSMutableArray *buttons = [@[] mutableCopy];
 	
 	
