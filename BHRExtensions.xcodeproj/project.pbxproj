@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F10596118D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */; };
 		5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */; };
-		5F55B08018BFCA86008F5E32 /* BHRAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66918BFC286004A41B1 /* BHRAdditions.h */; };
 		5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */; };
 		5F55B08218BFCA86008F5E32 /* UIImage+ImageEffects.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */; };
 		5F55B08318BFCA86008F5E32 /* NSArray+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */; };
@@ -19,8 +18,17 @@
 		5F55B08718BFCA86008F5E32 /* UIImage+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */; };
 		5F55B08818BFCA86008F5E32 /* UIView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */; };
 		5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */; };
+		5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */; };
+		5FA3198119218B0B0034C815 /* BHRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196919218AF30034C815 /* BHRAdditions.m */; };
+		5FA3198219218B0B0034C815 /* BHRKeyboardStateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */; };
+		5FA3198319218B0B0034C815 /* BHRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196D19218AF30034C815 /* BHRViewController.m */; };
+		5FA3198419218B0B0034C815 /* SIDetailTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196F19218AF30034C815 /* SIDetailTextFieldTableViewCell.m */; };
+		5FA3198519218B0B0034C815 /* SISwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */; };
+		5FA319B21921934F0034C815 /* SIHideTextAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319AC1921934F0034C815 /* SIHideTextAccessoryViewController.m */; };
+		5FA319B31921934F0034C815 /* SIKeyboardAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319AE1921934F0034C815 /* SIKeyboardAccessoryViewController.m */; };
+		5FA319B41921934F0034C815 /* SIKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319B11921934F0034C815 /* SIKeyboardButtonView.m */; };
+		5FA319B8192194CF0034C815 /* SIShellCommandConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319B7192194CF0034C815 /* SIShellCommandConstructor.m */; };
 		5FB82ED618E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB82ED518E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m */; };
-		5FB82ED718E2226000A136B9 /* BHRKeyboardStateController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBFEB4318DE063C0047EE5C /* BHRKeyboardStateController.h */; };
 		5FB82ED818E2226000A136B9 /* NSMutableAttributedString+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FB82ED418E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.h */; };
 		5FBA1DE718BF86000077328F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DE618BF86000077328F /* Foundation.framework */; };
 		5FBA1DF518BF86000077328F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DF418BF86000077328F /* XCTest.framework */; };
@@ -36,22 +44,18 @@
 		5FBA1E2018BFB58D0077328F /* NSURL+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E0D18BF87290077328F /* NSURL+BHRExtensions.h */; };
 		5FBA1E2218BFB58D0077328F /* UITableView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E1118BF87290077328F /* UITableView+BHRExtensions.h */; };
 		5FBA1E2318BFB58D0077328F /* UIView+BHRTableViewExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */; };
-		5FBE848D18C3AF7A00D40FCE /* BHRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */; };
-		5FBFEB4518DE063C0047EE5C /* BHRKeyboardStateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFEB4418DE063C0047EE5C /* BHRKeyboardStateController.m */; };
 		5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */; };
 		5FC0203B18C8871500ED7E5A /* NSObject+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */; };
 		5FC1EF6818D37ED300C33DA9 /* NSObject+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */; };
 		5FC1EF6918D37ED300C33DA9 /* NSDate+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FC0203318C87F1D00ED7E5A /* NSDate+BHRExtensions.h */; };
 		5FC1EF6A18D37ED300C33DA9 /* UIApplication+BHRVersionInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */; };
 		5FC1EF6B18D37ED300C33DA9 /* NSFetchedResultsController+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */; };
-		5FC5F4FF18C3AFB8006F603E /* BHRViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */; };
 		5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */; };
 		5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */; };
 		5FFBB66218BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65A18BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m */; };
 		5FFBB66318BFC0F0004A41B1 /* NSString+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65C18BFC0F0004A41B1 /* NSString+BHRExtensions.m */; };
 		5FFBB66418BFC0F0004A41B1 /* NSString+BHRUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65E18BFC0F0004A41B1 /* NSString+BHRUID.m */; };
 		5FFBB66518BFC0F0004A41B1 /* UIImage+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB66018BFC0F0004A41B1 /* UIImage+BHRExtensions.m */; };
-		5FFBB67718BFC286004A41B1 /* BHRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB66A18BFC286004A41B1 /* BHRAdditions.m */; };
 		5FFBB67A18BFC286004A41B1 /* UIColor+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */; };
 		5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
@@ -73,14 +77,11 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				5FB82ED718E2226000A136B9 /* BHRKeyboardStateController.h in CopyFiles */,
 				5FB82ED818E2226000A136B9 /* NSMutableAttributedString+BHRExtensions.h in CopyFiles */,
 				5FC1EF6818D37ED300C33DA9 /* NSObject+BHRExtensions.h in CopyFiles */,
 				5FC1EF6918D37ED300C33DA9 /* NSDate+BHRExtensions.h in CopyFiles */,
 				5FC1EF6A18D37ED300C33DA9 /* UIApplication+BHRVersionInfo.h in CopyFiles */,
 				5FC1EF6B18D37ED300C33DA9 /* NSFetchedResultsController+BHRExtensions.h in CopyFiles */,
-				5FC5F4FF18C3AFB8006F603E /* BHRViewController.h in CopyFiles */,
-				5F55B08018BFCA86008F5E32 /* BHRAdditions.h in CopyFiles */,
 				5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */,
 				5F55B08218BFCA86008F5E32 /* UIImage+ImageEffects.h in CopyFiles */,
 				5F55B08318BFCA86008F5E32 /* NSArray+BHRExtensions.h in CopyFiles */,
@@ -105,6 +106,26 @@
 		5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+BHRVersionInfo.m"; sourceTree = "<group>"; };
 		5F63231D18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BHRExtensions.h"; sourceTree = "<group>"; };
 		5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BHRExtensions.m"; sourceTree = "<group>"; };
+		5FA3196819218AF30034C815 /* BHRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRAdditions.h; sourceTree = "<group>"; };
+		5FA3196919218AF30034C815 /* BHRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRAdditions.m; sourceTree = "<group>"; };
+		5FA3196A19218AF30034C815 /* BHRKeyboardStateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRKeyboardStateController.h; sourceTree = "<group>"; };
+		5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRKeyboardStateController.m; sourceTree = "<group>"; };
+		5FA3196C19218AF30034C815 /* BHRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRViewController.h; sourceTree = "<group>"; };
+		5FA3196D19218AF30034C815 /* BHRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRViewController.m; sourceTree = "<group>"; };
+		5FA3196E19218AF30034C815 /* SIDetailTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDetailTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		5FA3196F19218AF30034C815 /* SIDetailTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIDetailTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		5FA3197119218AF30034C815 /* SISwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISwitchTableViewCell.h; sourceTree = "<group>"; };
+		5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISwitchTableViewCell.m; sourceTree = "<group>"; };
+		5FA3197419218AF30034C815 /* SITextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SITextFieldTableViewCell.h; sourceTree = "<group>"; };
+		5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SITextFieldTableViewCell.m; sourceTree = "<group>"; };
+		5FA319AB1921934F0034C815 /* SIHideTextAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIHideTextAccessoryViewController.h; sourceTree = "<group>"; };
+		5FA319AC1921934F0034C815 /* SIHideTextAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIHideTextAccessoryViewController.m; sourceTree = "<group>"; };
+		5FA319AD1921934F0034C815 /* SIKeyboardAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIKeyboardAccessoryViewController.h; sourceTree = "<group>"; };
+		5FA319AE1921934F0034C815 /* SIKeyboardAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIKeyboardAccessoryViewController.m; sourceTree = "<group>"; };
+		5FA319B01921934F0034C815 /* SIKeyboardButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIKeyboardButtonView.h; sourceTree = "<group>"; };
+		5FA319B11921934F0034C815 /* SIKeyboardButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIKeyboardButtonView.m; sourceTree = "<group>"; };
+		5FA319B6192194CF0034C815 /* SIShellCommandConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIShellCommandConstructor.h; sourceTree = "<group>"; };
+		5FA319B7192194CF0034C815 /* SIShellCommandConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIShellCommandConstructor.m; sourceTree = "<group>"; };
 		5FB82ED418E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FB82ED518E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FBA1DE318BF86000077328F /* libBHRExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBHRExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,10 +144,6 @@
 		5FBA1E1218BF87290077328F /* UITableView+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHRTableViewExtensions.h"; sourceTree = "<group>"; };
 		5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHRTableViewExtensions.m"; sourceTree = "<group>"; };
-		5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRViewController.h; sourceTree = "<group>"; };
-		5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRViewController.m; sourceTree = "<group>"; };
-		5FBFEB4318DE063C0047EE5C /* BHRKeyboardStateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRKeyboardStateController.h; sourceTree = "<group>"; };
-		5FBFEB4418DE063C0047EE5C /* BHRKeyboardStateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRKeyboardStateController.m; sourceTree = "<group>"; };
 		5FC0203318C87F1D00ED7E5A /* NSDate+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FC0203418C87F1D00ED7E5A /* NSDate+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FC0203918C8871500ED7E5A /* NSObject+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BHRExtensions.h"; sourceTree = "<group>"; };
@@ -143,8 +160,6 @@
 		5FFBB65E18BFC0F0004A41B1 /* NSString+BHRUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BHRUID.m"; sourceTree = "<group>"; };
 		5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FFBB66018BFC0F0004A41B1 /* UIImage+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BHRExtensions.m"; sourceTree = "<group>"; };
-		5FFBB66918BFC286004A41B1 /* BHRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRAdditions.h; sourceTree = "<group>"; };
-		5FFBB66A18BFC286004A41B1 /* BHRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRAdditions.m; sourceTree = "<group>"; };
 		5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -174,6 +189,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FA3196719218AF30034C815 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5FA3196819218AF30034C815 /* BHRAdditions.h */,
+				5FA3196919218AF30034C815 /* BHRAdditions.m */,
+				5FA3196A19218AF30034C815 /* BHRKeyboardStateController.h */,
+				5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */,
+				5FA3196C19218AF30034C815 /* BHRViewController.h */,
+				5FA3196D19218AF30034C815 /* BHRViewController.m */,
+				5FA319AA192193420034C815 /* Table View Cells */,
+				5FA319B5192193540034C815 /* Keyboard Accessory View */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5FA319AA192193420034C815 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5FA3196E19218AF30034C815 /* SIDetailTextFieldTableViewCell.h */,
+				5FA3196F19218AF30034C815 /* SIDetailTextFieldTableViewCell.m */,
+				5FA3197119218AF30034C815 /* SISwitchTableViewCell.h */,
+				5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */,
+				5FA3197419218AF30034C815 /* SITextFieldTableViewCell.h */,
+				5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		5FA319B5192193540034C815 /* Keyboard Accessory View */ = {
+			isa = PBXGroup;
+			children = (
+				5FA319AB1921934F0034C815 /* SIHideTextAccessoryViewController.h */,
+				5FA319AC1921934F0034C815 /* SIHideTextAccessoryViewController.m */,
+				5FA319AD1921934F0034C815 /* SIKeyboardAccessoryViewController.h */,
+				5FA319AE1921934F0034C815 /* SIKeyboardAccessoryViewController.m */,
+				5FA319B01921934F0034C815 /* SIKeyboardButtonView.h */,
+				5FA319B11921934F0034C815 /* SIKeyboardButtonView.m */,
+				5FA319B6192194CF0034C815 /* SIShellCommandConstructor.h */,
+				5FA319B7192194CF0034C815 /* SIShellCommandConstructor.m */,
+			);
+			name = "Keyboard Accessory View";
+			sourceTree = "<group>";
+		};
 		5FBA1DDA18BF86000077328F = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				5FBA1DEB18BF86000077328F /* BHRExtensions.h */,
-				5FFBB67E18BFC28F004A41B1 /* Utilities */,
+				5FA3196719218AF30034C815 /* Utilities */,
 				5FFBB66818BFC23E004A41B1 /* Categories */,
 				5FBA1DE918BF86000077328F /* Supporting Files */,
 			);
@@ -279,19 +337,6 @@
 				5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */,
 			);
 			name = Categories;
-			sourceTree = "<group>";
-		};
-		5FFBB67E18BFC28F004A41B1 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				5FFBB66918BFC286004A41B1 /* BHRAdditions.h */,
-				5FFBB66A18BFC286004A41B1 /* BHRAdditions.m */,
-				5FBE848B18C3AF7A00D40FCE /* BHRViewController.h */,
-				5FBE848C18C3AF7A00D40FCE /* BHRViewController.m */,
-				5FBFEB4318DE063C0047EE5C /* BHRKeyboardStateController.h */,
-				5FBFEB4418DE063C0047EE5C /* BHRKeyboardStateController.m */,
-			);
-			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,23 +421,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */,
+				5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */,
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,
-				5FBE848D18C3AF7A00D40FCE /* BHRViewController.m in Sources */,
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,
+				5FA319B21921934F0034C815 /* SIHideTextAccessoryViewController.m in Sources */,
 				5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */,
 				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
 				5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */,
 				5FB82ED618E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m in Sources */,
 				5FFBB66318BFC0F0004A41B1 /* NSString+BHRExtensions.m in Sources */,
+				5FA3198519218B0B0034C815 /* SISwitchTableViewCell.m in Sources */,
+				5FA3198319218B0B0034C815 /* BHRViewController.m in Sources */,
+				5FA3198419218B0B0034C815 /* SIDetailTextFieldTableViewCell.m in Sources */,
 				5FC0203B18C8871500ED7E5A /* NSObject+BHRExtensions.m in Sources */,
 				5FBA1E1518BF87290077328F /* NSURL+BHRExtensions.m in Sources */,
+				5FA319B8192194CF0034C815 /* SIShellCommandConstructor.m in Sources */,
+				5FA3198119218B0B0034C815 /* BHRAdditions.m in Sources */,
 				5FFBB66418BFC0F0004A41B1 /* NSString+BHRUID.m in Sources */,
+				5FA319B31921934F0034C815 /* SIKeyboardAccessoryViewController.m in Sources */,
+				5FA3198219218B0B0034C815 /* BHRKeyboardStateController.m in Sources */,
 				5FFBB67A18BFC286004A41B1 /* UIColor+BHRExtensions.m in Sources */,
 				5FFBB66218BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m in Sources */,
+				5FA319B41921934F0034C815 /* SIKeyboardButtonView.m in Sources */,
 				5FFBB66518BFC0F0004A41B1 /* UIImage+BHRExtensions.m in Sources */,
-				5FFBB67718BFC286004A41B1 /* BHRAdditions.m in Sources */,
 				5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */,
-				5FBFEB4518DE063C0047EE5C /* BHRKeyboardStateController.m in Sources */,
 				5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */,
 				5F10596118D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m in Sources */,
 			);

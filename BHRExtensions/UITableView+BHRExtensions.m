@@ -128,7 +128,7 @@
 - (void)registerNibWithClass:(Class)class forCellReuseIdentifier:(NSString *)identifier
 {
 	UINib *nib = [UINib nibWithNibName:NSStringFromClass(class)
-								bundle:nil];
+								bundle:[NSBundle bundleForClass:class]];
 	[self registerNib:nib forCellReuseIdentifier:identifier];
 }
 

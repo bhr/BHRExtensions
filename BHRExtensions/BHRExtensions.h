@@ -11,9 +11,15 @@
 #ifndef BHRExtensions_BHRExtensions_h
 #define BHRExtensions_BHRExtensions_h
 
-#import "BHRAdditions.h"
-#import "BHRViewController.h"
-#import "BHRKeyboardStateController.h"
+#import "Utilities/BHRAdditions.h"
+#import "Utilities/BHRViewController.h"
+#import "Utilities/BHRKeyboardStateController.h"
+
+#import "Utilities/SIDetailTextFieldTableViewCell.h"
+#import "Utilities/SISwitchTableViewCell.h"
+#import "Utilities/SITextFieldTableViewCell.h"
+#import "Utilities/SIHideTextAccessoryViewController.h"
+#import "Utilities/SIKeyboardAccessoryViewController.h"
 
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"
