@@ -18,8 +18,11 @@
 #import "Utilities/SIDetailTextFieldTableViewCell.h"
 #import "Utilities/SISwitchTableViewCell.h"
 #import "Utilities/SITextFieldTableViewCell.h"
+#import "Utilities/BHRScriptTextCell.h"
 #import "Utilities/SIHideTextAccessoryViewController.h"
 #import "Utilities/SIKeyboardAccessoryViewController.h"
+#import "Utilities/BHRColorProvider.h"
+#import "Utilities/BHRColorizer.h"
 
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"

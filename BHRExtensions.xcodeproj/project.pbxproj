@@ -30,6 +30,9 @@
 		5FA319B8192194CF0034C815 /* SIShellCommandConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319B7192194CF0034C815 /* SIShellCommandConstructor.m */; };
 		5FB82ED618E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB82ED518E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m */; };
 		5FB82ED818E2226000A136B9 /* NSMutableAttributedString+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FB82ED418E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.h */; };
+		5FB8874919251DA2007F6F31 /* BHRColorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8874819251DA2007F6F31 /* BHRColorizer.m */; };
+		5FB8874E19251F6F007F6F31 /* BHRColorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8874D19251F6F007F6F31 /* BHRColorProvider.m */; };
+		5FB8875D19252503007F6F31 /* BHRScriptTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8875B19252503007F6F31 /* BHRScriptTextCell.m */; };
 		5FBA1DE718BF86000077328F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DE618BF86000077328F /* Foundation.framework */; };
 		5FBA1DF518BF86000077328F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DF418BF86000077328F /* XCTest.framework */; };
 		5FBA1DF618BF86000077328F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DE618BF86000077328F /* Foundation.framework */; };
@@ -128,6 +131,12 @@
 		5FA319B7192194CF0034C815 /* SIShellCommandConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIShellCommandConstructor.m; sourceTree = "<group>"; };
 		5FB82ED418E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FB82ED518E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+BHRExtensions.m"; sourceTree = "<group>"; };
+		5FB8874719251DA2007F6F31 /* BHRColorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRColorizer.h; sourceTree = "<group>"; };
+		5FB8874819251DA2007F6F31 /* BHRColorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRColorizer.m; sourceTree = "<group>"; };
+		5FB8874C19251F6F007F6F31 /* BHRColorProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRColorProvider.h; sourceTree = "<group>"; };
+		5FB8874D19251F6F007F6F31 /* BHRColorProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRColorProvider.m; sourceTree = "<group>"; };
+		5FB8875A19252503007F6F31 /* BHRScriptTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRScriptTextCell.h; sourceTree = "<group>"; };
+		5FB8875B19252503007F6F31 /* BHRScriptTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRScriptTextCell.m; sourceTree = "<group>"; };
 		5FBA1DE318BF86000077328F /* libBHRExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBHRExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBA1DE618BF86000077328F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FBA1DEA18BF86000077328F /* BHRExtensions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BHRExtensions-Prefix.pch"; sourceTree = "<group>"; };
@@ -198,6 +207,7 @@
 				5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */,
 				5FA3196C19218AF30034C815 /* BHRViewController.h */,
 				5FA3196D19218AF30034C815 /* BHRViewController.m */,
+				5FB8874F19251F7A007F6F31 /* Colorizer */,
 				5FA319AA192193420034C815 /* Table View Cells */,
 				5FA319B5192193540034C815 /* Keyboard Accessory View */,
 			);
@@ -213,6 +223,8 @@
 				5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */,
 				5FA3197419218AF30034C815 /* SITextFieldTableViewCell.h */,
 				5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */,
+				5FB8875A19252503007F6F31 /* BHRScriptTextCell.h */,
+				5FB8875B19252503007F6F31 /* BHRScriptTextCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -230,6 +242,17 @@
 				5FA319B7192194CF0034C815 /* SIShellCommandConstructor.m */,
 			);
 			name = "Keyboard Accessory View";
+			sourceTree = "<group>";
+		};
+		5FB8874F19251F7A007F6F31 /* Colorizer */ = {
+			isa = PBXGroup;
+			children = (
+				5FB8874719251DA2007F6F31 /* BHRColorizer.h */,
+				5FB8874819251DA2007F6F31 /* BHRColorizer.m */,
+				5FB8874C19251F6F007F6F31 /* BHRColorProvider.h */,
+				5FB8874D19251F6F007F6F31 /* BHRColorProvider.m */,
+			);
+			name = Colorizer;
 			sourceTree = "<group>";
 		};
 		5FBA1DDA18BF86000077328F = {
@@ -426,13 +449,16 @@
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,
 				5FA319B21921934F0034C815 /* SIHideTextAccessoryViewController.m in Sources */,
 				5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */,
+				5FB8874919251DA2007F6F31 /* BHRColorizer.m in Sources */,
 				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
 				5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */,
 				5FB82ED618E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m in Sources */,
+				5FB8875D19252503007F6F31 /* BHRScriptTextCell.m in Sources */,
 				5FFBB66318BFC0F0004A41B1 /* NSString+BHRExtensions.m in Sources */,
 				5FA3198519218B0B0034C815 /* SISwitchTableViewCell.m in Sources */,
 				5FA3198319218B0B0034C815 /* BHRViewController.m in Sources */,
 				5FA3198419218B0B0034C815 /* SIDetailTextFieldTableViewCell.m in Sources */,
+				5FB8874E19251F6F007F6F31 /* BHRColorProvider.m in Sources */,
 				5FC0203B18C8871500ED7E5A /* NSObject+BHRExtensions.m in Sources */,
 				5FBA1E1518BF87290077328F /* NSURL+BHRExtensions.m in Sources */,
 				5FA319B8192194CF0034C815 /* SIShellCommandConstructor.m in Sources */,
