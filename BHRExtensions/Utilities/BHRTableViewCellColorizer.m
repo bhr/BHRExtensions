@@ -48,6 +48,11 @@
 				[textField setAttributedPlaceholder:placeholder];
 			}
 		}
+
+		if (self.backgroundColor)
+		{
+			textField.backgroundColor = self.backgroundColor;
+		}
 	}
 
 	UIView *backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
