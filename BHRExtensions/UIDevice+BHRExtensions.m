@@ -145,6 +145,9 @@
     }
 }
 
-
+- (BOOL)isiPad
+{
+    return (self.userInterfaceIdiom == UIUserInterfaceIdiomPad);
+}
 
 @end
