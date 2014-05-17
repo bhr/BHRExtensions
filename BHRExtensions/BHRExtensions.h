@@ -23,6 +23,7 @@
 #import "Utilities/SIKeyboardAccessoryViewController.h"
 #import "Utilities/BHRColorProvider.h"
 #import "Utilities/BHRColorizer.h"
+#import "Utilities/BHRTableViewCellColorizer.h"
 
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"

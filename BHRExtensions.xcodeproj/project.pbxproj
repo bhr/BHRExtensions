@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F10596118D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */; };
 		5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */; };
+		5F18AFB61926E6A700954CB4 /* BHRTableViewCellColorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F18AFB51926E6A700954CB4 /* BHRTableViewCellColorizer.m */; };
 		5F55B08118BFCA86008F5E32 /* UIColor+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB66F18BFC286004A41B1 /* UIColor+BHRExtensions.h */; };
 		5F55B08218BFCA86008F5E32 /* UIImage+ImageEffects.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */; };
 		5F55B08318BFCA86008F5E32 /* NSArray+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */; };
@@ -107,6 +108,8 @@
 		5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+BHRExtensions.m"; sourceTree = "<group>"; };
 		5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+BHRVersionInfo.h"; sourceTree = "<group>"; };
 		5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+BHRVersionInfo.m"; sourceTree = "<group>"; };
+		5F18AFB41926E6A700954CB4 /* BHRTableViewCellColorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRTableViewCellColorizer.h; sourceTree = "<group>"; };
+		5F18AFB51926E6A700954CB4 /* BHRTableViewCellColorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTableViewCellColorizer.m; sourceTree = "<group>"; };
 		5F63231D18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BHRExtensions.h"; sourceTree = "<group>"; };
 		5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FA3196819218AF30034C815 /* BHRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRAdditions.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				5FB8874819251DA2007F6F31 /* BHRColorizer.m */,
 				5FB8874C19251F6F007F6F31 /* BHRColorProvider.h */,
 				5FB8874D19251F6F007F6F31 /* BHRColorProvider.m */,
+				5F18AFB41926E6A700954CB4 /* BHRTableViewCellColorizer.h */,
+				5F18AFB51926E6A700954CB4 /* BHRTableViewCellColorizer.m */,
 			);
 			name = Colorizer;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */,
 				5FB82ED618E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m in Sources */,
 				5FB8875D19252503007F6F31 /* BHRScriptTextCell.m in Sources */,
+				5F18AFB61926E6A700954CB4 /* BHRTableViewCellColorizer.m in Sources */,
 				5FFBB66318BFC0F0004A41B1 /* NSString+BHRExtensions.m in Sources */,
 				5FA3198519218B0B0034C815 /* SISwitchTableViewCell.m in Sources */,
 				5FA3198319218B0B0034C815 /* BHRViewController.m in Sources */,
