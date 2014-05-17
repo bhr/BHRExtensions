@@ -51,6 +51,17 @@ NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
 
 }
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+
+	if (selected)
+	{
+	    [self.textView becomeFirstResponder];
+	}
+}
+
+
 - (UILabel *)placeholderLabel
 {
 	if (!_placeholderLabel)

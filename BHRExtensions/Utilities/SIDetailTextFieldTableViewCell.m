@@ -24,11 +24,11 @@ NSString * const SIDetailTextFieldTableViewCellReuseId = @"detailTextFieldCell";
 
 - (void)_setUpConstraints
 {
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-(8)-[switchObject]-20-|"
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-(8)-[valueTextField]-20-|"
 																			 options:0
 																			 metrics:nil
 																			   views:@{ @"label": self.titleLabel,
-																						@"switchObject": self.valueTextField }]];
+																						@"valueTextField": self.valueTextField }]];
 
 	[self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView
 																 attribute:NSLayoutAttributeCenterY
@@ -50,7 +50,11 @@ NSString * const SIDetailTextFieldTableViewCellReuseId = @"detailTextFieldCell";
 {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+	if (selected)
+	{
+		[self.valueTextField becomeFirstResponder];
+	}
+
 }
 
 #pragma mark -

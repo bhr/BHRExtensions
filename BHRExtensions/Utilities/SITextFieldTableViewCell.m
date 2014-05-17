@@ -29,7 +29,7 @@ NSString * const SITextFieldTableViewCellReuseId = @"textFieldCell";
 																			 options:0
 																			 metrics:nil
 																			   views:@{ @"textField": self.textField }]];
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[textField]-8-|"
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[textField]-(8)-|"
 																			 options:0
 																			 metrics:nil
 																			   views:@{ @"textField": self.textField }]];
@@ -39,7 +39,10 @@ NSString * const SITextFieldTableViewCellReuseId = @"textFieldCell";
 {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+	if (selected)
+	{
+		[self.textField becomeFirstResponder];
+	}
 }
 
 #pragma mark - 
