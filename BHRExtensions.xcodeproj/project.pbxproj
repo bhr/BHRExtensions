@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0CCDF41929176100BB1B15 /* UIButton+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0CCDF31929176100BB1B15 /* UIButton+BHRExtensions.m */; };
 		5F10596118D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */; };
 		5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F18A81C18CF235000C9D851 /* UIApplication+BHRVersionInfo.m */; };
 		5F18AFB61926E6A700954CB4 /* BHRTableViewCellColorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F18AFB51926E6A700954CB4 /* BHRTableViewCellColorizer.m */; };
@@ -104,6 +105,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F0CCDF21929176100BB1B15 /* UIButton+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BHRExtensions.h"; sourceTree = "<group>"; };
+		5F0CCDF31929176100BB1B15 /* UIButton+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BHRExtensions.m"; sourceTree = "<group>"; };
 		5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+BHRExtensions.h"; sourceTree = "<group>"; };
 		5F10596018D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+BHRExtensions.m"; sourceTree = "<group>"; };
 		5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+BHRVersionInfo.h"; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				5FB82ED518E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m */,
 				5F63231D18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.h */,
 				5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */,
+				5F0CCDF21929176100BB1B15 /* UIButton+BHRExtensions.h */,
+				5F0CCDF31929176100BB1B15 /* UIButton+BHRExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */,
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,
+				5F0CCDF41929176100BB1B15 /* UIButton+BHRExtensions.m in Sources */,
 				5FA319B21921934F0034C815 /* SIHideTextAccessoryViewController.m in Sources */,
 				5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */,
 				5FB8874919251DA2007F6F31 /* BHRColorizer.m in Sources */,

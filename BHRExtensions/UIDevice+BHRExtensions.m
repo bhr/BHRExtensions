@@ -150,4 +150,15 @@
     return (self.userInterfaceIdiom == UIUserInterfaceIdiomPad);
 }
 
+- (BOOL)is35InchiPhone
+{
+	UIDevicePlatform platform = [self platformType];
+	if (platform == UIDevice4iPhone ||
+		platform == UIDevice4SiPhone)
+	{
+		return YES;
+	}
+	return NO;
+}
+
 @end

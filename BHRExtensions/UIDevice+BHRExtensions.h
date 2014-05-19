@@ -94,7 +94,9 @@ typedef enum {
 
 - (UIDevicePlatform) platformType;
 - (NSString *) platformString;
+
 - (BOOL)isiPad;
+- (BOOL)is35InchiPhone;
 
 @end
 

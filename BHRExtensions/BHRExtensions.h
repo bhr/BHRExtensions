@@ -42,5 +42,7 @@
 #import "NSFetchedResultsController+BHRExtensions.h"
 #import "NSMutableAttributedString+BHRExtensions.h"
 #import "UIDevice+BHRExtensions.h"
+#import "UIButton+BHRExtensions.h"
+
 
 #endif
