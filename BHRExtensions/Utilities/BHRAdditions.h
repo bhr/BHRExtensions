@@ -15,6 +15,7 @@
 CGFloat clampf(CGFloat x, CGFloat low, CGFloat high);
 CGMutablePathRef CGPathCreatePathRotatedAroundBoundingBoxCenter(CGPathRef path, CGFloat radians);
 CGRect CGRectWithScale(CGRect rect, CGFloat scale);
+CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize);
 
 NSString *NSStringFromBOOL(BOOL boolean);
 CGFloat degreeToRadians(CGFloat degreeValue);

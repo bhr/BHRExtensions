@@ -83,7 +83,7 @@
 - (void)_addConstraintsForSubview:(UIView *)view withInsets:(UIEdgeInsets)insets
 {
 	view.frame = self.bounds;
-	[self setTranslatesAutoresizingMaskIntoConstraints:NO];
+	[view setTranslatesAutoresizingMaskIntoConstraints:NO];
 
 	NSDictionary *views = @{@"subview": view};
 	NSDictionary *metrics = @{

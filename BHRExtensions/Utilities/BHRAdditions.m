@@ -43,6 +43,30 @@ CGRect CGRectWithScale(CGRect rect, CGFloat scale)
 					  scale * rect.size.height);
 }
 
+CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize)
+{
+	CGFloat width = originalSize.width;
+	CGFloat height = originalSize.height;
+
+	CGFloat targetWidth = targetSize.width;
+	CGFloat targetHeight = targetSize.height;
+
+	CGFloat scaleFactor = 0.0f;
+
+	CGFloat widthFactor = targetWidth / width;
+	CGFloat heightFactor = targetHeight / height;
+
+	if (widthFactor < heightFactor) {
+		scaleFactor = widthFactor;
+	}
+	else {
+		scaleFactor = heightFactor;
+	}
+
+	return CGSizeMake(width * scaleFactor,
+					  height * scaleFactor);
+}
+
 NSString *NSStringFromBOOL(BOOL boolean)
 {
 	if (boolean) {
