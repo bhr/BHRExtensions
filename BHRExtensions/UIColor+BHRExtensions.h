@@ -26,5 +26,6 @@
 
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 - (BOOL)isWhiteColor;
+- (BOOL)isBlackColor;
 
 @end

@@ -173,4 +173,20 @@
 	return NO;
 }
 
+- (BOOL)isBlackColor
+{
+	CGFloat white = 0.f;
+	CGFloat alpha = 0.f;
+	BOOL success = [self getWhite:&white alpha:&alpha];
+
+	if (success &&
+		white == 0.0f &&
+		alpha == 1.0f)
+	{
+		return YES;
+	}
+	return NO;
+}
+
+
 @end
