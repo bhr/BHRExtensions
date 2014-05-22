@@ -19,3 +19,4 @@ CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize);
 
 NSString *NSStringFromBOOL(BOOL boolean);
 CGFloat degreeToRadians(CGFloat degreeValue);
+id NSNullIfNil(id object);

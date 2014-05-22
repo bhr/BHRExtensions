@@ -79,3 +79,13 @@ CGFloat degreeToRadians(CGFloat degreeValue)
 {
 	return (M_PI / 180) * degreeValue;
 }
+
+id NSNullIfNil(id object)
+{
+	if (object == nil)
+	{
+		return [NSNull null];
+	}
+
+	return object;
+}
