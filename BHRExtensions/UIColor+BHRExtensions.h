@@ -22,6 +22,8 @@
 - (UIColor *)colorByInterpolatingWithColor:(UIColor *)color relativeOffset:(CGFloat)relativeOffset;
 
 + (UIColor *)defaultSystemTintColor;
+
++ (UIColor *)darkKeyboardBackgroundColor;
 + (UIColor *)keyboardBackgroundColor;
 
 + (UIColor *)colorWithHexString:(NSString *)hexString;

@@ -20,10 +20,17 @@
 @property (nonatomic, assign) BOOL highlighted;
 
 @property (nonatomic, strong) NSArray *titleLabelConstraints;
+@property (nonatomic, assign) UIKeyboardAppearance appearance;
 
 @end
 
 @implementation SIKeyboardButtonView
+
+- (instancetype)initWithAppearance:(UIKeyboardAppearance)appearance
+{
+	_appearance = appearance;
+	return [self initWithFrame:CGRectZero];
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -59,7 +66,11 @@
 	_titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
 	_titleLabel.textAlignment = NSTextAlignmentCenter;
 	_titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-	
+
+	if (self.appearance == UIKeyboardAppearanceDark) {
+		_titleLabel.textColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
+	}
+
 	[self addSubview:_titleLabel];
 	
 	
@@ -69,6 +80,12 @@
 	_backgroundLayer.shadowRadius = 0.7f;
 	_backgroundLayer.shadowOpacity = 1.0f;
 	_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.5f alpha:1.f] CGColor];
+
+	if (self.appearance == UIKeyboardAppearanceDark)
+	{
+		_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.15f alpha:1.f] CGColor];
+	}
+
 	_backgroundLayer.shadowOffset = CGSizeMake(0.f, 1.0f);
 	
 	[self _updateBackgroundLayerColors];
@@ -164,8 +181,15 @@
 - (void)_updateBackgroundLayerColors
 {
 	UIColor *backgroundColor;
-	
-	backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+
+	if (self.appearance == UIKeyboardAppearanceDark)
+	{
+		backgroundColor = [UIColor colorWithWhite:0.35f alpha:1.0f];
+	}
+	else
+	{
+		backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+	}
 	
 	if (self.selected) {
 		backgroundColor = [backgroundColor colorByAddingBrightness:-0.25f];

@@ -17,6 +17,8 @@
 
 @property (nonatomic, assign) BOOL selected;
 
+- (instancetype)initWithAppearance:(UIKeyboardAppearance)appearance;
+
 @end
 
 @protocol SIKeyboardButtonViewDelegate <NSObject>

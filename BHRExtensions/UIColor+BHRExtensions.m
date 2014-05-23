@@ -153,6 +153,11 @@
 	return systemTintColor;
 }
 
++ (UIColor *)darkKeyboardBackgroundColor
+{
+	return [UIColor colorWithHue:0.000 saturation:0.000 brightness:0.117f alpha:0.97f];
+}
+
 + (UIColor *)keyboardBackgroundColor
 {
 	return [UIColor colorWithHue:0.600 saturation:0.029 brightness:0.887 alpha:1.000];

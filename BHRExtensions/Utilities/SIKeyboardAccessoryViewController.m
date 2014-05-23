@@ -7,6 +7,7 @@
 //
 
 #import "SIKeyboardAccessoryViewController.h"
+#import "UIColor+BHRExtensions.h"
 
 NSString * const SIShellButtonInfoTitle = @"title";
 NSString * const SIShellButtonInfoType = @"type";
@@ -15,16 +16,18 @@ NSString * const SIShellButtonInfoID = @"identifier";
 @interface SIKeyboardAccessoryViewController ()
 
 @property (nonatomic, strong) NSArray *buttons;
+@property (nonatomic, assign) UIKeyboardAppearance appearance;
+
 @end
 
 @implementation SIKeyboardAccessoryViewController
 
-- (instancetype)init
+- (instancetype)initWithKeyboardAppearance:(UIKeyboardAppearance)appearance
 {
     self = [super init];
     if (self)
 	{
-
+		_appearance = appearance;
     }
     return self;
 }
@@ -35,6 +38,15 @@ NSString * const SIShellButtonInfoID = @"identifier";
     [super viewDidLoad];
 
 	self.view.frame = CGRectMake(0.0f, 0.0f, 320.0f, 32.0f);
+
+	if (self.appearance == UIKeyboardAppearanceDark)
+	{
+		self.view.backgroundColor = [UIColor darkKeyboardBackgroundColor];
+	}
+	else
+	{
+		self.view.backgroundColor = [UIColor keyboardBackgroundColor];
+	}
 
 	NSMutableArray *buttons = [@[] mutableCopy];
 	
@@ -58,7 +70,7 @@ NSString * const SIShellButtonInfoID = @"identifier";
 		}
 		
 		//view creation
-		SIKeyboardButtonView *button = [[SIKeyboardButtonView alloc] initWithFrame:CGRectZero];
+		SIKeyboardButtonView *button = [[SIKeyboardButtonView alloc] initWithAppearance:self.appearance];
 		button.title = buttonTitle;
 		button.delegate = self;
 		button.restorationIdentifier = buttonID;
