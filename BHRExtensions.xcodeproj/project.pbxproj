@@ -20,6 +20,7 @@
 		5F55B08718BFCA86008F5E32 /* UIImage+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */; };
 		5F55B08818BFCA86008F5E32 /* UIView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */; };
 		5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */; };
+		5F8A316F192ECAE4002A6736 /* BHRDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */; };
 		5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */; };
 		5FA3198119218B0B0034C815 /* BHRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196919218AF30034C815 /* BHRAdditions.m */; };
 		5FA3198219218B0B0034C815 /* BHRKeyboardStateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */; };
@@ -116,6 +117,8 @@
 		5F18AFB51926E6A700954CB4 /* BHRTableViewCellColorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTableViewCellColorizer.m; sourceTree = "<group>"; };
 		5F63231D18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BHRExtensions.h"; sourceTree = "<group>"; };
 		5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BHRExtensions.m"; sourceTree = "<group>"; };
+		5F8A316D192ECAE4002A6736 /* BHRDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRDismissSegue.h; sourceTree = "<group>"; };
+		5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRDismissSegue.m; sourceTree = "<group>"; };
 		5FA3196819218AF30034C815 /* BHRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRAdditions.h; sourceTree = "<group>"; };
 		5FA3196919218AF30034C815 /* BHRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRAdditions.m; sourceTree = "<group>"; };
 		5FA3196A19218AF30034C815 /* BHRKeyboardStateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRKeyboardStateController.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				5FA3196C19218AF30034C815 /* BHRViewController.h */,
 				5FA3196D19218AF30034C815 /* BHRViewController.m */,
 				5FEB28D5192A627C002D8901 /* Touch Through */,
+				5F8A316D192ECAE4002A6736 /* BHRDismissSegue.h */,
+				5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */,
 				5FB8874F19251F7A007F6F31 /* Colorizer */,
 				5FA319AA192193420034C815 /* Table View Cells */,
 				5FA319B5192193540034C815 /* Keyboard Accessory View */,
@@ -475,6 +480,7 @@
 				5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */,
 				5FB8874919251DA2007F6F31 /* BHRColorizer.m in Sources */,
 				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
+				5F8A316F192ECAE4002A6736 /* BHRDismissSegue.m in Sources */,
 				5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */,
 				5FEB28D1192A626A002D8901 /* BHRTouchThroughRootView.m in Sources */,
 				5FB82ED618E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m in Sources */,

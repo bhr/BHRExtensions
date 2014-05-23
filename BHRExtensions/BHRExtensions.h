@@ -25,6 +25,7 @@
 #import "Utilities/BHRColorizer.h"
 #import "Utilities/BHRTableViewCellColorizer.h"
 #import "Utilities/BHRTouchThroughRootView.h"
+#import "Utilities/BHRDismissSegue.h"
 
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"
