@@ -56,6 +56,7 @@ NSString * const SITextFieldTableViewCellReuseId = @"textFieldCell";
 
 		_textField.autocorrectionType = UITextAutocorrectionTypeNo;
 		_textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+		_textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 
 		[self.contentView addSubview:_textField];
 	}

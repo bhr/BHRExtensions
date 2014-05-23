@@ -68,7 +68,8 @@ NSString * const SIDetailTextFieldTableViewCellReuseId = @"detailTextFieldCell";
 
 		_valueTextField.autocorrectionType = UITextAutocorrectionTypeNo;
 		_valueTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-
+		_valueTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+		
 		[self.contentView addSubview:_valueTextField];
 	}
 
