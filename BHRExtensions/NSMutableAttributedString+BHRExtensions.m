@@ -12,6 +12,17 @@
 
 - (void)deleteAllOccurrencesOfString:(NSString *)string
 {
+	[self replaceOccurrencesOfString:string withString:nil];
+}
+
+
+- (void)replaceOccurrencesOfString:(NSString *)string withString:(NSString *)replacementString
+{
+	if (replacementString == nil)
+	{
+		replacementString = @"";
+	}
+
 	NSRange searchStringRange;
 
 	if (string == nil)
@@ -25,7 +36,8 @@
 
 		if (searchStringRange.location != NSNotFound)
 		{
-			[self deleteCharactersInRange:searchStringRange];
+			[self replaceCharactersInRange:searchStringRange
+								withString:replacementString];
 		}
 	}
 	while (searchStringRange.location != NSNotFound);

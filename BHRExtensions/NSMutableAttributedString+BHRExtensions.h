@@ -11,5 +11,6 @@
 @interface NSMutableAttributedString (BHRExtensions)
 
 - (void)deleteAllOccurrencesOfString:(NSString *)string;
+- (void)replaceOccurrencesOfString:(NSString *)string withString:(NSString *)replacementString;
 
 @end
