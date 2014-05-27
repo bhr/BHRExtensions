@@ -22,7 +22,7 @@
 	
 	return @[
 			 @{
-				 titleKey: NSLocalizedString(@"hide", nil),
+				 titleKey: [self separatorID],
 				 typeKey: @(SIShellAccessoryButtonHideKeyboard),
 				 },
 			 ];
@@ -31,7 +31,7 @@
 
 - (NSString *)separatorID
 {
-	return NSLocalizedString(@"hide", nil);
+	return NSLocalizedStringFromTable(@"hide", @"BHRExtensionsLocalizable", nil);
 }
 
 @end

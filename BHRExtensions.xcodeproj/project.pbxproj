@@ -20,6 +20,7 @@
 		5F55B08718BFCA86008F5E32 /* UIImage+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */; };
 		5F55B08818BFCA86008F5E32 /* UIView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */; };
 		5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */; };
+		5F8836A31934142400FB2FD3 /* BHRExtensionsLocalizable.strings in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F8836A01934126900FB2FD3 /* BHRExtensionsLocalizable.strings */; };
 		5F8A316F192ECAE4002A6736 /* BHRDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */; };
 		5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */; };
 		5FA3198119218B0B0034C815 /* BHRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196919218AF30034C815 /* BHRAdditions.m */; };
@@ -84,6 +85,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				5F8836A31934142400FB2FD3 /* BHRExtensionsLocalizable.strings in CopyFiles */,
 				5FB82ED818E2226000A136B9 /* NSMutableAttributedString+BHRExtensions.h in CopyFiles */,
 				5FC1EF6818D37ED300C33DA9 /* NSObject+BHRExtensions.h in CopyFiles */,
 				5FC1EF6918D37ED300C33DA9 /* NSDate+BHRExtensions.h in CopyFiles */,
@@ -117,6 +119,8 @@
 		5F18AFB51926E6A700954CB4 /* BHRTableViewCellColorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTableViewCellColorizer.m; sourceTree = "<group>"; };
 		5F63231D18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BHRExtensions.h"; sourceTree = "<group>"; };
 		5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BHRExtensions.m"; sourceTree = "<group>"; };
+		5F8836A11934126900FB2FD3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/BHRExtensionsLocalizable.strings; sourceTree = "<group>"; };
+		5F8836A21934126900FB2FD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BHRExtensionsLocalizable.strings; sourceTree = "<group>"; };
 		5F8A316D192ECAE4002A6736 /* BHRDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRDismissSegue.h; sourceTree = "<group>"; };
 		5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRDismissSegue.m; sourceTree = "<group>"; };
 		5FA3196819218AF30034C815 /* BHRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRAdditions.h; sourceTree = "<group>"; };
@@ -210,6 +214,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F88369F1934126900FB2FD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F8836A01934126900FB2FD3 /* BHRExtensionsLocalizable.strings */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
 		5FA3196719218AF30034C815 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +319,7 @@
 				5FBA1DEB18BF86000077328F /* BHRExtensions.h */,
 				5FA3196719218AF30034C815 /* Utilities */,
 				5FFBB66818BFC23E004A41B1 /* Categories */,
+				5F88369F1934126900FB2FD3 /* Resources */,
 				5FBA1DE918BF86000077328F /* Supporting Files */,
 			);
 			path = BHRExtensions;
@@ -443,6 +456,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = 5FBA1DDA18BF86000077328F;
 			productRefGroup = 5FBA1DE418BF86000077328F /* Products */;
@@ -527,6 +541,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5F8836A01934126900FB2FD3 /* BHRExtensionsLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F8836A11934126900FB2FD3 /* de */,
+				5F8836A21934126900FB2FD3 /* en */,
+			);
+			name = BHRExtensionsLocalizable.strings;
+			sourceTree = "<group>";
+		};
 		5FBA1DFF18BF86000077328F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
