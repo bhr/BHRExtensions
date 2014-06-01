@@ -72,7 +72,8 @@ NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
 		_placeholderLabel.font = [UIFont fontWithName:@"Menlo-Italic" size:14.0f];
 		_placeholderLabel.textColor = [UIColor lightGrayColor];
 
-		[self.contentView addSubview:_placeholderLabel];
+		[self.contentView insertSubview:_placeholderLabel
+						   aboveSubview:self.textView];
 	}
 	return _placeholderLabel;
 }
