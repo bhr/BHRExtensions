@@ -20,6 +20,7 @@
 		5F55B08718BFCA86008F5E32 /* UIImage+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */; };
 		5F55B08818BFCA86008F5E32 /* UIView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */; };
 		5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */; };
+		5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F877DDF193BA91200F8FE9A /* BHRCoreDataErrorManager.m */; };
 		5F8836A31934142400FB2FD3 /* BHRExtensionsLocalizable.strings in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F8836A01934126900FB2FD3 /* BHRExtensionsLocalizable.strings */; };
 		5F8A316F192ECAE4002A6736 /* BHRDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */; };
 		5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */; };
@@ -119,6 +120,8 @@
 		5F18AFB51926E6A700954CB4 /* BHRTableViewCellColorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTableViewCellColorizer.m; sourceTree = "<group>"; };
 		5F63231D18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BHRExtensions.h"; sourceTree = "<group>"; };
 		5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BHRExtensions.m"; sourceTree = "<group>"; };
+		5F877DDE193BA91200F8FE9A /* BHRCoreDataErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRCoreDataErrorManager.h; sourceTree = "<group>"; };
+		5F877DDF193BA91200F8FE9A /* BHRCoreDataErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRCoreDataErrorManager.m; sourceTree = "<group>"; };
 		5F8836A11934126900FB2FD3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/BHRExtensionsLocalizable.strings; sourceTree = "<group>"; };
 		5F8836A21934126900FB2FD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BHRExtensionsLocalizable.strings; sourceTree = "<group>"; };
 		5F8A316D192ECAE4002A6736 /* BHRDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRDismissSegue.h; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				5FEB28D5192A627C002D8901 /* Touch Through */,
 				5F8A316D192ECAE4002A6736 /* BHRDismissSegue.h */,
 				5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */,
+				5F877DDE193BA91200F8FE9A /* BHRCoreDataErrorManager.h */,
+				5F877DDF193BA91200F8FE9A /* BHRCoreDataErrorManager.m */,
 				5FB8874F19251F7A007F6F31 /* Colorizer */,
 				5FA319AA192193420034C815 /* Table View Cells */,
 				5FA319B5192193540034C815 /* Keyboard Accessory View */,
@@ -489,6 +494,7 @@
 				5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */,
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,
+				5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */,
 				5F0CCDF41929176100BB1B15 /* UIButton+BHRExtensions.m in Sources */,
 				5FA319B21921934F0034C815 /* SIHideTextAccessoryViewController.m in Sources */,
 				5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "NSFetchedResultsController+BHRExtensions.h"
+#import "BHRCoreDataErrorManager.h"
 
 @implementation NSFetchedResultsController (BHRExtensions)
 
@@ -32,14 +33,9 @@
 	}
 	
 	NSError *error = nil;
-	if (![[self managedObjectContext] save:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipPINg application, although it may be useful during development.
-		 */
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
+	if (![[self managedObjectContext] save:&error])
+	{
+		[[BHRCoreDataErrorManager sharedManager] showErrorAlert];
 	}
 }
 
@@ -54,14 +50,9 @@
 	
 	// Save the context.
 	NSError *error = nil;
-	if (![context save:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipPINg application, although it may be useful during development.
-		 */
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
+	if (![context save:&error])
+	{
+		[[BHRCoreDataErrorManager sharedManager] showErrorAlert];
 	}
 }
 
