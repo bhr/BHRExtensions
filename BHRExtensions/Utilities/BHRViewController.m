@@ -16,7 +16,14 @@
 
 - (instancetype)init
 {
-    self = [super initWithNibName:NSStringFromClass([self class])
+	NSString *nibName = NSStringFromClass([self class]);
+
+	if([[NSBundle mainBundle] pathForResource:nibName ofType:@"nib"] == nil)
+	{
+		nibName = nil;
+	}
+
+    self = [super initWithNibName:nibName
 						   bundle:nil];
     if (self) {
         // Custom initialization
