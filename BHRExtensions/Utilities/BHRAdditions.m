@@ -75,10 +75,16 @@ NSString *NSStringFromBOOL(BOOL boolean)
 	return @"NO";
 }
 
-CGFloat degreeToRadians(CGFloat degreeValue)
+CGFloat DegreeToRadians(CGFloat degreeValue)
 {
 	return (M_PI / 180) * degreeValue;
 }
+
+CGFloat RadiansToDegrees(CGFloat radiansValue)
+{
+	return radiansValue * (180 / M_PI);
+}
+
 
 id NSNullIfNil(id object)
 {
@@ -88,4 +94,26 @@ id NSNullIfNil(id object)
 	}
 
 	return object;
+}
+
+CGFloat Square(CGFloat value)
+{
+	return value * value;
+}
+
+CGFloat RotateValueAtPositionWithMax(CGFloat value, CGFloat flipPosition, CGFloat max)
+{
+	CGFloat flippedValue = value + flipPosition;
+
+	if (flippedValue < 0.0f)
+	{
+		flippedValue += max;
+	}
+
+	if (flippedValue > max)
+	{
+		flippedValue -= max;
+	}
+
+	return flippedValue;
 }

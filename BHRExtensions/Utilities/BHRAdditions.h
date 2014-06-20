@@ -12,11 +12,17 @@
 
 @end
 
-CGFloat clampf(CGFloat x, CGFloat low, CGFloat high);
 CGMutablePathRef CGPathCreatePathRotatedAroundBoundingBoxCenter(CGPathRef path, CGFloat radians);
 CGRect CGRectWithScale(CGRect rect, CGFloat scale);
 CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize);
 
 NSString *NSStringFromBOOL(BOOL boolean);
-CGFloat degreeToRadians(CGFloat degreeValue);
 id NSNullIfNil(id object);
+
+//MATH
+
+CGFloat clampf(CGFloat x, CGFloat low, CGFloat high);
+CGFloat DegreeToRadians(CGFloat degreeValue);
+CGFloat RadiansToDegrees(CGFloat radiansValue);
+CGFloat Square(CGFloat value);
+CGFloat RotateValueAtPositionWithMax(CGFloat value, CGFloat flipPosition, CGFloat max);
