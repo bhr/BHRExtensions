@@ -46,6 +46,6 @@
 #import "NSMutableAttributedString+BHRExtensions.h"
 #import "UIDevice+BHRExtensions.h"
 #import "UIButton+BHRExtensions.h"
-
+#import "UIBarButtonItem+BHRExtensions.h"
 
 #endif
