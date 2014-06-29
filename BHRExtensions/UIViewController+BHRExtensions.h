@@ -11,5 +11,6 @@
 @interface UIViewController (BHRExtensions)
 
 + (UIViewController*)topViewController;
+- (UIViewController*)topVisibleViewController;
 
 @end

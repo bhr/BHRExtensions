@@ -20,6 +20,7 @@
 		5F55B08718BFCA86008F5E32 /* UIImage+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65F18BFC0F0004A41B1 /* UIImage+BHRExtensions.h */; };
 		5F55B08818BFCA86008F5E32 /* UIView+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */; };
 		5F579B331960610100C94700 /* UIViewController+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F579B321960610100C94700 /* UIViewController+BHRExtensions.m */; };
+		5F579BE81960A71100C94700 /* NSAttributedString+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F579BE71960A71100C94700 /* NSAttributedString+BHRExtensions.m */; };
 		5F5FFA0819530616000E7CC3 /* UIBarButtonItem+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FFA0719530616000E7CC3 /* UIBarButtonItem+BHRExtensions.m */; };
 		5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */; };
 		5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F877DDF193BA91200F8FE9A /* BHRCoreDataErrorManager.m */; };
@@ -122,6 +123,8 @@
 		5F18AFB51926E6A700954CB4 /* BHRTableViewCellColorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTableViewCellColorizer.m; sourceTree = "<group>"; };
 		5F579B311960610100C94700 /* UIViewController+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BHRExtensions.h"; sourceTree = "<group>"; };
 		5F579B321960610100C94700 /* UIViewController+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BHRExtensions.m"; sourceTree = "<group>"; };
+		5F579BE61960A71100C94700 /* NSAttributedString+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+BHRExtensions.h"; sourceTree = "<group>"; };
+		5F579BE71960A71100C94700 /* NSAttributedString+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+BHRExtensions.m"; sourceTree = "<group>"; };
 		5F5FFA0619530616000E7CC3 /* UIBarButtonItem+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BHRExtensions.h"; sourceTree = "<group>"; };
 		5F5FFA0719530616000E7CC3 /* UIBarButtonItem+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BHRExtensions.m"; sourceTree = "<group>"; };
 		5F63231D18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BHRExtensions.h"; sourceTree = "<group>"; };
@@ -414,6 +417,8 @@
 				5F5FFA0719530616000E7CC3 /* UIBarButtonItem+BHRExtensions.m */,
 				5F579B311960610100C94700 /* UIViewController+BHRExtensions.h */,
 				5F579B321960610100C94700 /* UIViewController+BHRExtensions.m */,
+				5F579BE61960A71100C94700 /* NSAttributedString+BHRExtensions.h */,
+				5F579BE71960A71100C94700 /* NSAttributedString+BHRExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F579BE81960A71100C94700 /* NSAttributedString+BHRExtensions.m in Sources */,
 				5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */,
 				5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */,
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,

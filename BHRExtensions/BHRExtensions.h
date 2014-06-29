@@ -48,5 +48,6 @@
 #import "UIButton+BHRExtensions.h"
 #import "UIBarButtonItem+BHRExtensions.h"
 #import "UIViewController+BHRExtensions.h"
+#import "NSAttributedString+BHRExtensions.h"
 
 #endif
