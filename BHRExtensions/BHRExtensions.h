@@ -47,5 +47,6 @@
 #import "UIDevice+BHRExtensions.h"
 #import "UIButton+BHRExtensions.h"
 #import "UIBarButtonItem+BHRExtensions.h"
+#import "UIViewController+BHRExtensions.h"
 
 #endif
