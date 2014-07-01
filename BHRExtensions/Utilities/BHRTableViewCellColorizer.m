@@ -55,10 +55,13 @@
 		}
 	}
 
-	UIView *backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
-	backgroundView.backgroundColor = self.backgroundColor;
-	cell.backgroundView = backgroundView;
-	cell.backgroundColor = self.backgroundColor;
+	if (self.backgroundColor)
+	{
+		UIView *backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+		backgroundView.backgroundColor = self.backgroundColor;
+		cell.backgroundView = backgroundView;
+		cell.backgroundColor = self.backgroundColor;
+	}
 }
 
 @end
