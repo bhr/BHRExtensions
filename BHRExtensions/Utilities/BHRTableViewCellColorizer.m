@@ -41,9 +41,15 @@
 			if ([textField respondsToSelector:@selector(placeholder)] &&
 				self.placeholderColor)
 			{
+				NSString *placeholderString = textField.placeholder;
+
+				if (!placeholderString) {
+					placeholderString = @"";
+				}
+
 				NSDictionary *placeholderAttributes = @{ NSFontAttributeName: textField.font,
 														 NSForegroundColorAttributeName: self.placeholderColor };
-				NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:textField.placeholder
+				NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:placeholderString
 																				  attributes:placeholderAttributes];
 				[textField setAttributedPlaceholder:placeholder];
 			}
