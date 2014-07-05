@@ -63,6 +63,12 @@
 	[self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
 }
 
+- (void)insertConstraintBasedSubview:(UIView *)view atIndex:(NSUInteger)index
+{
+	[self insertSubview:view atIndex:index];
+	[self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
+}
+
 - (void)insertConstraintBasedSubview:(UIView *)view aboveSubView:(UIView *)otherView
 {
 	[self insertSubview:view aboveSubview:otherView];

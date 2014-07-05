@@ -19,6 +19,7 @@
 - (void)insertConstraintBasedSubview:(UIView *)view aboveSubView:(UIView *)otherView;
 - (void)addConstraintBasedSubview:(UIView *)view;
 - (void)addConstraintBasedSubview:(UIView *)view withInsets:(UIEdgeInsets)insets;
+- (void)insertConstraintBasedSubview:(UIView *)view atIndex:(NSUInteger)index;
 
 - (BOOL)findAndResignFirstResponder;
 
