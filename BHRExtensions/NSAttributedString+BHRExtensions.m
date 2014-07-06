@@ -22,12 +22,13 @@
 	 {
 		 NSMutableDictionary *newTextAttributes = [textAttributes mutableCopy];
 
-		 UIColor *textColor = [newTextAttributes objectForKey:NSForegroundColorAttributeName];
+		 UIColor *textColor = newTextAttributes[NSForegroundColorAttributeName];
 
-		 if ([textColor isEqualToColor:existingColor])
+		 if (textColor == nil ||
+			 [textColor isEqualToColor:existingColor])
 		 {
 			 textColor = newColor;
-			 [newTextAttributes setObject:textColor forKey:NSForegroundColorAttributeName];
+			 newTextAttributes[NSForegroundColorAttributeName] = textColor;
 		 }
 
 		 NSAttributedString *adjustedAttributedStringComponent = [[NSAttributedString alloc] initWithString:[[self string] substringWithRange:range]
