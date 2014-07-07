@@ -11,5 +11,6 @@
 @interface NSURL (BHRExtensions)
 
 + (NSURL *)applicationDocumentsDirectory;
++ (NSURL *)applicationSupportDirectory;
 
 @end

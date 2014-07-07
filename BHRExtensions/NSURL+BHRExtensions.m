@@ -20,4 +20,25 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+/**
+ Returns the AppSupportFolder
+ */
++ (NSURL *)applicationSupportDirectory
+{
+	NSString *applicationSupportDirectory = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
+																				 NSUserDomainMask,
+																				 YES) objectAtIndex:0];
+	BOOL isDir = NO;
+	NSError *error = nil;
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+	if (![fileManager fileExistsAtPath:applicationSupportDirectory
+                           isDirectory:&isDir] && isDir == NO) {
+		[fileManager createDirectoryAtPath:applicationSupportDirectory
+               withIntermediateDirectories:NO
+                                attributes:nil
+                                     error:&error];
+	}
+    return [NSURL fileURLWithPath:applicationSupportDirectory];
+}
+
 @end
