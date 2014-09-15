@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 HIRMER.me. All rights reserved.
 //
 
-#import "SIHideTextAccessoryViewController.h"
+#import "SIHideTextAccessoryView.h"
 
-@interface SIHideTextAccessoryViewController ()
+@interface SIHideTextAccessoryView ()
 
 @end
 
-@implementation SIHideTextAccessoryViewController
+@implementation SIHideTextAccessoryView
 
 
 - (NSArray *)buttonsInfo

@@ -25,7 +25,7 @@ NSString * const SITextFieldTableViewCellReuseId = @"textFieldCell";
 
 - (void)_setUpConstraints
 {
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[textField]|"
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[textField]-(>=0)-|"
 																			 options:0
 																			 metrics:nil
 																			   views:@{ @"textField": self.textField }]];
@@ -33,6 +33,14 @@ NSString * const SITextFieldTableViewCellReuseId = @"textFieldCell";
 																			 options:0
 																			 metrics:nil
 																			   views:@{ @"textField": self.textField }]];
+
+	[self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.textField
+																 attribute:NSLayoutAttributeCenterY
+																 relatedBy:NSLayoutRelationEqual
+																	toItem:self.contentView
+																 attribute:NSLayoutAttributeCenterY
+																multiplier:1.0f
+																  constant:0.0f]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

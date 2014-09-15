@@ -15,11 +15,11 @@ extern NSString * const SIShellButtonInfoType;
 extern NSString * const SIShellButtonInfoID;
 
 
-@protocol SIShellAccessoryViewControllerDelegate;
+@protocol SIShellAccessoryViewDelegate;
 
-@interface SIKeyboardAccessoryViewController : UIViewController <SIKeyboardButtonViewDelegate, UIActionSheetDelegate>
+@interface SIKeyboardAccessoryView : UIView <SIKeyboardButtonViewDelegate, UIActionSheetDelegate>
 
-@property (nonatomic, weak) id<SIShellAccessoryViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<SIShellAccessoryViewDelegate> delegate;
 
 - (instancetype)initWithKeyboardAppearance:(UIKeyboardAppearance)appearance;
 
@@ -39,12 +39,12 @@ extern NSString * const SIShellButtonInfoID;
 
 @end
 
-@protocol SIShellAccessoryViewControllerDelegate <NSObject>
+@protocol SIShellAccessoryViewDelegate <NSObject>
 
-- (void)shellAccessoryViewController:(SIKeyboardAccessoryViewController *)shellAccessoryViewController
-					  didPressButton:(SIShellAccessoryButton)button;
+- (void)shellAccessoryView:(SIKeyboardAccessoryView *)shellAccessoryViewController
+			didPressButton:(SIShellAccessoryButton)button;
 
 @optional
-- (UIView *)viewShownFromForAccessoryViewController:(SIKeyboardAccessoryViewController *)shellAccessoryViewController;
+- (UIView *)viewShownFromForAccessoryView:(SIKeyboardAccessoryView *)shellAccessoryViewController;
 
 @end

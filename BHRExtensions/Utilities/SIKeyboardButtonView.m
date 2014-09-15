@@ -172,10 +172,22 @@
 
 - (void)_updateBackgroundLayer
 {
-	CGRect buttonRect = CGRectInset(self.bounds, 1.0f, 1.0f);
-	self.backgroundLayer.path = [[UIBezierPath bezierPathWithRoundedRect:buttonRect
-															cornerRadius:3.0f] CGPath];
-	self.backgroundLayer.frame = self.bounds;
+	//not using bounds here, because on iOS 8 (GM) self.bounds is an invalid rect
+
+	CGRect baseFrame = CGRectMake(0.0f,
+								  0.0f,
+								  CGRectGetWidth(self.frame),
+								  CGRectGetHeight(self.frame));
+	CGRect buttonRect = CGRectInset(baseFrame, 1.0f, 1.0f);
+
+	if (CGRectGetHeight(baseFrame) > 0.0f &&
+		CGRectGetWidth(baseFrame) > 0.0f)
+	{
+	 self.backgroundLayer.path = [[UIBezierPath bezierPathWithRoundedRect:buttonRect
+															 cornerRadius:3.0f] CGPath];
+	}
+	
+	self.backgroundLayer.frame = baseFrame;
 }
 
 - (void)_updateBackgroundLayerColors

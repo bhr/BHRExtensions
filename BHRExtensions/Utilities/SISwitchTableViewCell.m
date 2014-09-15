@@ -25,11 +25,18 @@ NSString * const SISwitchTableViewCellReuseID = @"switchCell";
 
 - (void)_setUpConstraints
 {
+	NSDictionary *viewsDict = @{ @"label": self.label,
+								 @"switchObject": self.switchObject };
+
 	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-(>=4)-[switchObject]-20-|"
 																			 options:0
 																			 metrics:nil
-																			   views:@{ @"label": self.label,
-																						@"switchObject": self.switchObject }]];
+																			   views:viewsDict]];
+
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[label]-(>=0)-|"
+																			 options:0
+																			 metrics:nil
+																			   views:viewsDict]];
 
 	[self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView
 																 attribute:NSLayoutAttributeCenterY

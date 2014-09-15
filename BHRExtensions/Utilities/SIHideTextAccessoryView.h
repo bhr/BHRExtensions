@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SIKeyboardAccessoryViewController.h"
+#import "SIKeyboardAccessoryView.h"
 
-@interface SIHideTextAccessoryViewController : SIKeyboardAccessoryViewController
+@interface SIHideTextAccessoryView : SIKeyboardAccessoryView
 
 
 @end

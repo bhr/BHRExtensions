@@ -32,8 +32,8 @@
 		5FA3198319218B0B0034C815 /* BHRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196D19218AF30034C815 /* BHRViewController.m */; };
 		5FA3198419218B0B0034C815 /* SIDetailTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196F19218AF30034C815 /* SIDetailTextFieldTableViewCell.m */; };
 		5FA3198519218B0B0034C815 /* SISwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */; };
-		5FA319B21921934F0034C815 /* SIHideTextAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319AC1921934F0034C815 /* SIHideTextAccessoryViewController.m */; };
-		5FA319B31921934F0034C815 /* SIKeyboardAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319AE1921934F0034C815 /* SIKeyboardAccessoryViewController.m */; };
+		5FA319B21921934F0034C815 /* SIHideTextAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319AC1921934F0034C815 /* SIHideTextAccessoryView.m */; };
+		5FA319B31921934F0034C815 /* SIKeyboardAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319AE1921934F0034C815 /* SIKeyboardAccessoryView.m */; };
 		5FA319B41921934F0034C815 /* SIKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319B11921934F0034C815 /* SIKeyboardButtonView.m */; };
 		5FA319B8192194CF0034C815 /* SIShellCommandConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319B7192194CF0034C815 /* SIShellCommandConstructor.m */; };
 		5FB82ED618E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB82ED518E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m */; };
@@ -147,10 +147,10 @@
 		5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISwitchTableViewCell.m; sourceTree = "<group>"; };
 		5FA3197419218AF30034C815 /* SITextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SITextFieldTableViewCell.h; sourceTree = "<group>"; };
 		5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SITextFieldTableViewCell.m; sourceTree = "<group>"; };
-		5FA319AB1921934F0034C815 /* SIHideTextAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIHideTextAccessoryViewController.h; sourceTree = "<group>"; };
-		5FA319AC1921934F0034C815 /* SIHideTextAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIHideTextAccessoryViewController.m; sourceTree = "<group>"; };
-		5FA319AD1921934F0034C815 /* SIKeyboardAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIKeyboardAccessoryViewController.h; sourceTree = "<group>"; };
-		5FA319AE1921934F0034C815 /* SIKeyboardAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIKeyboardAccessoryViewController.m; sourceTree = "<group>"; };
+		5FA319AB1921934F0034C815 /* SIHideTextAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIHideTextAccessoryView.h; sourceTree = "<group>"; };
+		5FA319AC1921934F0034C815 /* SIHideTextAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIHideTextAccessoryView.m; sourceTree = "<group>"; };
+		5FA319AD1921934F0034C815 /* SIKeyboardAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIKeyboardAccessoryView.h; sourceTree = "<group>"; };
+		5FA319AE1921934F0034C815 /* SIKeyboardAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIKeyboardAccessoryView.m; sourceTree = "<group>"; };
 		5FA319B01921934F0034C815 /* SIKeyboardButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIKeyboardButtonView.h; sourceTree = "<group>"; };
 		5FA319B11921934F0034C815 /* SIKeyboardButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIKeyboardButtonView.m; sourceTree = "<group>"; };
 		5FA319B6192194CF0034C815 /* SIShellCommandConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIShellCommandConstructor.h; sourceTree = "<group>"; };
@@ -273,10 +273,10 @@
 		5FA319B5192193540034C815 /* Keyboard Accessory View */ = {
 			isa = PBXGroup;
 			children = (
-				5FA319AB1921934F0034C815 /* SIHideTextAccessoryViewController.h */,
-				5FA319AC1921934F0034C815 /* SIHideTextAccessoryViewController.m */,
-				5FA319AD1921934F0034C815 /* SIKeyboardAccessoryViewController.h */,
-				5FA319AE1921934F0034C815 /* SIKeyboardAccessoryViewController.m */,
+				5FA319AB1921934F0034C815 /* SIHideTextAccessoryView.h */,
+				5FA319AC1921934F0034C815 /* SIHideTextAccessoryView.m */,
+				5FA319AD1921934F0034C815 /* SIKeyboardAccessoryView.h */,
+				5FA319AE1921934F0034C815 /* SIKeyboardAccessoryView.m */,
 				5FA319B01921934F0034C815 /* SIKeyboardButtonView.h */,
 				5FA319B11921934F0034C815 /* SIKeyboardButtonView.m */,
 				5FA319B6192194CF0034C815 /* SIShellCommandConstructor.h */,
@@ -512,7 +512,7 @@
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,
 				5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */,
 				5F0CCDF41929176100BB1B15 /* UIButton+BHRExtensions.m in Sources */,
-				5FA319B21921934F0034C815 /* SIHideTextAccessoryViewController.m in Sources */,
+				5FA319B21921934F0034C815 /* SIHideTextAccessoryView.m in Sources */,
 				5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */,
 				5FB8874919251DA2007F6F31 /* BHRColorizer.m in Sources */,
 				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
@@ -534,7 +534,7 @@
 				5FA319B8192194CF0034C815 /* SIShellCommandConstructor.m in Sources */,
 				5FA3198119218B0B0034C815 /* BHRAdditions.m in Sources */,
 				5FFBB66418BFC0F0004A41B1 /* NSString+BHRUID.m in Sources */,
-				5FA319B31921934F0034C815 /* SIKeyboardAccessoryViewController.m in Sources */,
+				5FA319B31921934F0034C815 /* SIKeyboardAccessoryView.m in Sources */,
 				5FA3198219218B0B0034C815 /* BHRKeyboardStateController.m in Sources */,
 				5FFBB67A18BFC286004A41B1 /* UIColor+BHRExtensions.m in Sources */,
 				5FFBB66218BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m in Sources */,

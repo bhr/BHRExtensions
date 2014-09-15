@@ -24,11 +24,19 @@ NSString * const SIDetailTextFieldTableViewCellReuseId = @"detailTextFieldCell";
 
 - (void)_setUpConstraints
 {
+	NSDictionary *viewsDict = @{ @"label": self.titleLabel,
+								 @"valueTextField": self.valueTextField };
+
 	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-(8)-[valueTextField]-20-|"
 																			 options:0
 																			 metrics:nil
-																			   views:@{ @"label": self.titleLabel,
-																						@"valueTextField": self.valueTextField }]];
+																			   views:viewsDict]];
+
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[label]-(>=0)-|"
+																			 options:0
+																			 metrics:nil
+																			   views:viewsDict]];
+
 
 	[self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView
 																 attribute:NSLayoutAttributeCenterY
