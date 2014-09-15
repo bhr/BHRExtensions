@@ -14,4 +14,6 @@
 - (NSAttributedString *)stringbyReplacingTextColor:(UIColor *)existingColor
 										 withColor:(UIColor *)newColor;
 
+- (NSAttributedString *)stringbyReplacingFontWithFont:(UIFont *)newFont;
+
 @end

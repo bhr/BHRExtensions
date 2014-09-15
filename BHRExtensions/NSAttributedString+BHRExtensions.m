@@ -40,4 +40,32 @@
 	return [adjustedAttributedString copy];
 }
 
+
+- (NSAttributedString *)stringbyReplacingFontWithFont:(UIFont *)newFont
+{
+	NSMutableAttributedString *adjustedAttributedString = [[NSMutableAttributedString alloc] init];
+
+	[self enumerateAttributesInRange:NSMakeRange(0, [[self string] length])
+							 options:0
+						  usingBlock:^(NSDictionary *textAttributes, NSRange range, BOOL *stop)
+	 {
+		 NSMutableDictionary *newTextAttributes = [textAttributes mutableCopy];
+
+		 UIFont *currentFont = newTextAttributes[NSFontAttributeName];
+
+		 if (currentFont == nil)
+		 {
+			 currentFont = newFont;
+			 newTextAttributes[NSFontAttributeName] = currentFont;
+		 }
+
+		 NSAttributedString *adjustedAttributedStringComponent = [[NSAttributedString alloc] initWithString:[[self string] substringWithRange:range]
+																								 attributes:newTextAttributes];
+		 [adjustedAttributedString appendAttributedString:adjustedAttributedStringComponent];
+
+	 }];
+
+	return [adjustedAttributedString copy];
+}
+
 @end
