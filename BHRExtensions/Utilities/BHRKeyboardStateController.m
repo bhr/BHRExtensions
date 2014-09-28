@@ -54,7 +54,14 @@
 	
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     BOOL isPortrait = UIInterfaceOrientationIsPortrait(orientation);
-    CGFloat height = isPortrait ? keyboardFrame.size.height : keyboardFrame.size.width;
+
+	CGFloat height = keyboardFrame.size.height;
+
+	//before iOS 8 the frame didn't rotate
+	if (SYSTEM_VERSION_LESS_THAN(_iOS_8_0))
+	{
+		height = isPortrait ? keyboardFrame.size.height : keyboardFrame.size.width;
+	}
 
 //    DDLogVerbose(@"The keyboard height is: %f", height);
 //    DDLogVerbose(@"Updating constraints.");
