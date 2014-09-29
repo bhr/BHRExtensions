@@ -11,6 +11,7 @@
 @interface BHRKeyboardStateController ()
 
 @property (nonatomic, strong) NSLayoutConstraint *constraint;
+@property (nonatomic, assign) CGFloat defaultHeight;
 
 @end
 
@@ -22,7 +23,8 @@
     if (self)
 	{
 		_constraint = constraint;
-		
+		_defaultHeight = _constraint.constant;
+
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(keyboardWillShow:)
 													 name:UIKeyboardWillShowNotification
@@ -86,8 +88,8 @@
 {
 	NSDictionary *info = [notification userInfo];
     NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-	
-    self.constraint.constant = 0.0f;
+
+	self.constraint.constant = self.defaultHeight;
     [UIView animateWithDuration:animationDuration animations:^{
         [[self superview] layoutIfNeeded];
     }];
