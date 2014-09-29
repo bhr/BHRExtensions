@@ -20,6 +20,10 @@
 
 - (UIViewController*)topVisibleViewController
 {
+	if ([self isKindOfClass:[UIAlertController class]])
+	{
+		return nil;
+	}
     if ([self isKindOfClass:[UITabBarController class]])
     {
         UITabBarController* tabBarController = (UITabBarController*)self;
@@ -28,9 +32,17 @@
     else if ([self isKindOfClass:[UINavigationController class]])
     {
         UINavigationController* navigationController = (UINavigationController*)self;
-        return [navigationController.visibleViewController topVisibleViewController];
+
+		UIViewController *topVisibleVC = [navigationController.visibleViewController topVisibleViewController];
+		if (topVisibleVC)
+		{
+			return [navigationController.visibleViewController topVisibleViewController];
+		}
+
+		return [[navigationController topViewController] topVisibleViewController];
     }
-    else if (self.presentedViewController)
+    else if (self.presentedViewController &&
+			 ![self.presentedViewController isKindOfClass:[UIAlertController class]])
     {
         return [self.presentedViewController topVisibleViewController];
     }
