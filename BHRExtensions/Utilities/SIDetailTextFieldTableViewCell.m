@@ -22,6 +22,16 @@ NSString * const SIDetailTextFieldTableViewCellReuseId = @"detailTextFieldCell";
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super initWithCoder:aDecoder];
+	if (self)
+	{
+		[self _setUpConstraints];
+	}
+	return self;
+}
+
 - (void)_setUpConstraints
 {
 	NSDictionary *viewsDict = @{ @"label": self.titleLabel,
@@ -52,6 +62,8 @@ NSString * const SIDetailTextFieldTableViewCellReuseId = @"detailTextFieldCell";
 																 attribute:NSLayoutAttributeCenterY
 																multiplier:1.0f
 																  constant:0.0f]];
+
+	[self.valueTextField setContentHuggingPriority:222 forAxis:UILayoutConstraintAxisHorizontal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -77,6 +89,7 @@ NSString * const SIDetailTextFieldTableViewCellReuseId = @"detailTextFieldCell";
 		_valueTextField.autocorrectionType = UITextAutocorrectionTypeNo;
 		_valueTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		_valueTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+		_valueTextField.textAlignment = NSTextAlignmentRight;
 		
 		[self.contentView addSubview:_valueTextField];
 	}
