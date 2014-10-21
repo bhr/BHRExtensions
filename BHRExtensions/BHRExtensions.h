@@ -27,6 +27,7 @@
 #import "Utilities/BHRTouchThroughRootView.h"
 #import "Utilities/BHRDismissSegue.h"
 #import "Utilities/BHRCoreDataErrorManager.h"
+#import "Utilities/BHRSmallTitleTextFieldTableCell.h"
 
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"
@@ -50,5 +51,6 @@
 #import "UIViewController+BHRExtensions.h"
 #import "NSAttributedString+BHRExtensions.h"
 #import "CJAMacros.h"
+
 
 #endif

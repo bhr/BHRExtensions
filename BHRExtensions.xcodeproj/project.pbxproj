@@ -62,6 +62,7 @@
 		5FC1EF6A18D37ED300C33DA9 /* UIApplication+BHRVersionInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */; };
 		5FC1EF6B18D37ED300C33DA9 /* NSFetchedResultsController+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */; };
 		5FEB28D1192A626A002D8901 /* BHRTouchThroughRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB28D0192A626A002D8901 /* BHRTouchThroughRootView.m */; };
+		5FF9D58119F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9D58019F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m */; };
 		5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */; };
 		5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */; };
 		5FFBB66218BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65A18BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m */; };
@@ -186,6 +187,8 @@
 		5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FEB28CF192A626A002D8901 /* BHRTouchThroughRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRTouchThroughRootView.h; sourceTree = "<group>"; };
 		5FEB28D0192A626A002D8901 /* BHRTouchThroughRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTouchThroughRootView.m; sourceTree = "<group>"; };
+		5FF9D57F19F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRSmallTitleTextFieldTableCell.h; sourceTree = "<group>"; };
+		5FF9D58019F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRSmallTitleTextFieldTableCell.m; sourceTree = "<group>"; };
 		5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BHRExtensions.h"; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */,
 				5FA3197419218AF30034C815 /* SITextFieldTableViewCell.h */,
 				5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */,
+				5FF9D57F19F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.h */,
+				5FF9D58019F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m */,
 				5FB8875A19252503007F6F31 /* BHRScriptTextCell.h */,
 				5FB8875B19252503007F6F31 /* BHRScriptTextCell.m */,
 			);
@@ -515,6 +520,7 @@
 				5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */,
 				5F0CCDF41929176100BB1B15 /* UIButton+BHRExtensions.m in Sources */,
 				5FA319B21921934F0034C815 /* SIHideTextAccessoryView.m in Sources */,
+				5FF9D58119F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m in Sources */,
 				5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */,
 				5FB8874919251DA2007F6F31 /* BHRColorizer.m in Sources */,
 				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
