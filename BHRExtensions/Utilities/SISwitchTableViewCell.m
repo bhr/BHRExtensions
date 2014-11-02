@@ -38,6 +38,11 @@ NSString * const SISwitchTableViewCellReuseID = @"switchCell";
 																			 metrics:nil
 																			   views:viewsDict]];
 
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[switchObject]-(>=0)-|"
+																			 options:0
+																			 metrics:nil
+																			   views:viewsDict]];
+
 	[self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.contentView
 																 attribute:NSLayoutAttributeCenterY
 																 relatedBy:NSLayoutRelationEqual
