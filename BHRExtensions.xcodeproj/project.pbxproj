@@ -136,7 +136,7 @@
 		5F8836A21934126900FB2FD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BHRExtensionsLocalizable.strings; sourceTree = "<group>"; };
 		5F8A316D192ECAE4002A6736 /* BHRDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRDismissSegue.h; sourceTree = "<group>"; };
 		5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRDismissSegue.m; sourceTree = "<group>"; };
-		5F9CEFF919D8A1D9003DFBC8 /* CJAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAMacros.h; sourceTree = "<group>"; };
+		5FA0B5391A0924AA004E892F /* CJAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJAMacros.h; path = BHRExtensions/CJAMacros.h; sourceTree = "<group>"; };
 		5FA3196819218AF30034C815 /* BHRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRAdditions.h; sourceTree = "<group>"; };
 		5FA3196919218AF30034C815 /* BHRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRAdditions.m; sourceTree = "<group>"; };
 		5FA3196A19218AF30034C815 /* BHRKeyboardStateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRKeyboardStateController.h; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 		5FBA1DE518BF86000077328F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F9CEFF919D8A1D9003DFBC8 /* CJAMacros.h */,
+				5FA0B5391A0924AA004E892F /* CJAMacros.h */,
 				5FBA1DE618BF86000077328F /* Foundation.framework */,
 				5FBA1DF418BF86000077328F /* XCTest.framework */,
 				5FBA1DF718BF86000077328F /* UIKit.framework */,
