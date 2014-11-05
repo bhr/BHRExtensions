@@ -62,6 +62,8 @@
 		5FC1EF6A18D37ED300C33DA9 /* UIApplication+BHRVersionInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */; };
 		5FC1EF6B18D37ED300C33DA9 /* NSFetchedResultsController+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */; };
 		5FEB28D1192A626A002D8901 /* BHRTouchThroughRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB28D0192A626A002D8901 /* BHRTouchThroughRootView.m */; };
+		5FF6CF881A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CF871A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m */; };
+		5FF6CF891A0A791900BFF2AC /* UIGestureRecognizer+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FF6CF861A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.h */; };
 		5FF9D58119F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9D58019F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m */; };
 		5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */; };
 		5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */; };
@@ -90,6 +92,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				5FF6CF891A0A791900BFF2AC /* UIGestureRecognizer+BHRExtensions.h in CopyFiles */,
 				5F8836A31934142400FB2FD3 /* BHRExtensionsLocalizable.strings in CopyFiles */,
 				5FB82ED818E2226000A136B9 /* NSMutableAttributedString+BHRExtensions.h in CopyFiles */,
 				5FC1EF6818D37ED300C33DA9 /* NSObject+BHRExtensions.h in CopyFiles */,
@@ -187,6 +190,8 @@
 		5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FEB28CF192A626A002D8901 /* BHRTouchThroughRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRTouchThroughRootView.h; sourceTree = "<group>"; };
 		5FEB28D0192A626A002D8901 /* BHRTouchThroughRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTouchThroughRootView.m; sourceTree = "<group>"; };
+		5FF6CF861A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+BHRExtensions.h"; sourceTree = "<group>"; };
+		5FF6CF871A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FF9D57F19F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRSmallTitleTextFieldTableCell.h; sourceTree = "<group>"; };
 		5FF9D58019F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRSmallTitleTextFieldTableCell.m; sourceTree = "<group>"; };
 		5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHRExtensions.h"; sourceTree = "<group>"; };
@@ -426,6 +431,8 @@
 				5F579B321960610100C94700 /* UIViewController+BHRExtensions.m */,
 				5F579BE61960A71100C94700 /* NSAttributedString+BHRExtensions.h */,
 				5F579BE71960A71100C94700 /* NSAttributedString+BHRExtensions.m */,
+				5FF6CF861A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.h */,
+				5FF6CF871A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -514,6 +521,7 @@
 			files = (
 				5F579BE81960A71100C94700 /* NSAttributedString+BHRExtensions.m in Sources */,
 				5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */,
+				5FF6CF881A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m in Sources */,
 				5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */,
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,

@@ -50,6 +50,7 @@
 #import "UIBarButtonItem+BHRExtensions.h"
 #import "UIViewController+BHRExtensions.h"
 #import "NSAttributedString+BHRExtensions.h"
+#import "UIGestureRecognizer+BHRExtensions.h"
 #import "CJAMacros.h"
 
 
