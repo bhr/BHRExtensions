@@ -18,6 +18,7 @@ CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize);
 
 NSString *NSStringFromBOOL(BOOL boolean);
 id NSNullIfNil(id object);
+NSString *NSStringEmptyIfNil(id object);
 
 //MATH
 

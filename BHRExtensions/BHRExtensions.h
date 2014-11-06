@@ -51,6 +51,7 @@
 #import "UIViewController+BHRExtensions.h"
 #import "NSAttributedString+BHRExtensions.h"
 #import "UIGestureRecognizer+BHRExtensions.h"
+#import "NSDictionary+BHRExtensions.h"
 #import "CJAMacros.h"
 
 

@@ -106,8 +106,7 @@
 
 - (NSString *)HTMLConformString
 {
-	return [self stringByReplacingOccurrencesOfString:@" "
-										   withString:@"%20"];
+	return [self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 

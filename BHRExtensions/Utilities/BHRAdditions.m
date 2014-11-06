@@ -75,6 +75,14 @@ NSString *NSStringFromBOOL(BOOL boolean)
 	return @"NO";
 }
 
+NSString *NSStringEmptyIfNil(id object)
+{
+	if (object == nil) {
+		return @"";
+	}
+	return object;
+}
+
 CGFloat DegreeToRadians(CGFloat degreeValue)
 {
 	return (M_PI / 180) * degreeValue;
