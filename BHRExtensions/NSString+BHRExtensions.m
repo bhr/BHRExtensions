@@ -104,6 +104,12 @@
             [NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (NSString *)HTMLConformString
+{
+	return [self stringByReplacingOccurrencesOfString:@" "
+										   withString:@"%20"];
+}
+
 
 #pragma mark - Conversion
 

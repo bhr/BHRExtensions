@@ -31,4 +31,6 @@
 
 - (NSUInteger)integerValueFromHex;
 
+- (NSString *)HTMLConformString;
+
 @end
