@@ -22,11 +22,6 @@
 		currentObject = [self[oneKey] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		currentKey = [oneKey stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
-		if ([currentObject length] == 0)
-		{
-			continue;
-		}
-
 		if (index > 0)
 		{
 			[encodedParameters appendString:@"&"];

@@ -31,8 +31,14 @@
 {
 	NSRange foundRange;
 	NSRange searchRange;
-	
-	searchRange = NSMakeRange(0, [string length]);
+	NSUInteger searchStringLength = [string length];
+
+	if (searchStringLength > [self length])
+	{
+		return NO;
+	}
+
+	searchRange = NSMakeRange(0, searchStringLength);
 	foundRange = [self rangeOfString:string
 							 options:NSCaseInsensitiveSearch
 							   range:searchRange];
