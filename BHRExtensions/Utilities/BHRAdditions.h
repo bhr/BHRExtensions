@@ -27,3 +27,5 @@ CGFloat DegreeToRadians(CGFloat degreeValue);
 CGFloat RadiansToDegrees(CGFloat radiansValue);
 CGFloat Square(CGFloat value);
 CGFloat RotateValueAtPositionWithMax(CGFloat value, CGFloat flipPosition, CGFloat max);
+
+CGFloat HorizontalDistanceFromRectToPoint(CGRect rect, CGPoint point);
