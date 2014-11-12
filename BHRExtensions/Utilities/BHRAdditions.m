@@ -95,18 +95,19 @@ CGFloat RadiansToDegrees(CGFloat radiansValue)
 
 CGFloat HorizontalDistanceFromRectToPoint(CGRect rect, CGPoint point)
 {
-	// if point is inside rect, distance is zero
-	if (CGRectContainsPoint(rect, point)) return 0.f;
-
 	CGFloat closest = 0.f;
 
-	if (point.x < CGRectGetMinX(rect))
+	if (point.x <= CGRectGetMinX(rect))
 	{
 		closest = CGRectGetMinX(rect);
 	}
-	else if (point.x > CGRectGetMaxX(rect))
+	else if (point.x >= CGRectGetMaxX(rect))
 	{
-		closest = CGRectGetWidth(rect);
+		closest = CGRectGetMaxX(rect);
+	}
+	else
+	{
+		return 0.0f;
 	}
 
 	return closest - point.x;
