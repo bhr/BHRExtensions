@@ -133,4 +133,17 @@
     return NO;
 }
 
+- (UIView *)subviewWithRestorationIdentifier:(NSString *)restorationIdentifier
+{
+	for (UIView *subview in self.subviews)
+	{
+		if ([subview.restorationIdentifier isEqualToString:restorationIdentifier])
+		{
+			return subview;
+		}
+	}
+
+	return nil;
+}
+
 @end
