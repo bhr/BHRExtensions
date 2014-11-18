@@ -54,4 +54,31 @@
     return self;
 }
 
+
+- (void)addConstraintBasedChildViewController:(UIViewController *)childViewController
+{
+	UIView *childView = childViewController.view;
+	childView.translatesAutoresizingMaskIntoConstraints = NO;
+
+	childView.frame = self.view.bounds;
+	[self.view addSubview:childView];
+
+	NSDictionary *views = @{ @"childView": childView,
+							 @"topLayoutGuide": self.topLayoutGuide,
+							 @"bottomLayoutGuide": self.bottomLayoutGuide };
+
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][childView][bottomLayoutGuide]"
+																	  options:0
+																	  metrics:nil
+																		views:views]];
+
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[childView]|"
+																	  options:0
+																	  metrics:nil
+																		views:views]];
+
+	[self addChildViewController:childViewController];
+	[childViewController didMoveToParentViewController:self];
+}
+
 @end

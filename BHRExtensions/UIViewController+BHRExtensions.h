@@ -13,4 +13,9 @@
 + (UIViewController*)topViewController;
 - (UIViewController*)topVisibleViewController;
 
+/**
+ * Adds a constraint based child view controller filling out the whole space by respecting topLayoutGuide and bottomLayoutGuide
+ */
+- (void)addConstraintBasedChildViewController:(UIViewController *)childViewController;
+
 @end
