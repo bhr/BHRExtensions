@@ -8,14 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, BHRChildViewRelation) {
+	BHRChildViewRelationToSuperview,
+	BHRChildViewRelationToLayoutGuides,
+};
+
 @interface UIViewController (BHRExtensions)
 
 + (UIViewController*)topViewController;
 - (UIViewController*)topVisibleViewController;
 
 /**
- * Adds a constraint based child view controller filling out the whole space by respecting topLayoutGuide and bottomLayoutGuide
+ * Adds a constraint based child view controller filling out the whole space by respecting childViewRelationType
  */
-- (void)addConstraintBasedChildViewController:(UIViewController *)childViewController;
+- (void)addConstraintBasedChildViewController:(UIViewController *)childViewController
+							childViewRelation:(BHRChildViewRelation)childViewRelation;
 
 @end

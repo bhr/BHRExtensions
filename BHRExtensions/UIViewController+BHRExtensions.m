@@ -56,6 +56,7 @@
 
 
 - (void)addConstraintBasedChildViewController:(UIViewController *)childViewController
+							childViewRelation:(BHRChildViewRelation)childViewRelation
 {
 	UIView *childView = childViewController.view;
 	childView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -67,10 +68,20 @@
 							 @"topLayoutGuide": self.topLayoutGuide,
 							 @"bottomLayoutGuide": self.bottomLayoutGuide };
 
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][childView][bottomLayoutGuide]"
-																	  options:0
-																	  metrics:nil
-																		views:views]];
+	if (childViewRelation == BHRChildViewRelationToLayoutGuides)
+	{
+		[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][childView][bottomLayoutGuide]"
+																		  options:0
+																		  metrics:nil
+																			views:views]];
+	}
+	else
+	{
+		[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[childView]|"
+																		  options:0
+																		  metrics:nil
+																			views:views]];
+	}
 
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[childView]|"
 																	  options:0
