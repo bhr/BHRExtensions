@@ -18,8 +18,11 @@
 
 + (UIImage *)imageRetinaWithContentsOfFile:(NSString *)file;
 
+/**
+ * Colorizes the clipping masked image
+ */
 - (UIImage *)colorizedImageWithColor:(UIColor *)color;
-
+- (UIImage *)grayscaleImage;
 
 #pragma mark - AppIcon
 
