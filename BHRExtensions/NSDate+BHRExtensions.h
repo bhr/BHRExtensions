@@ -10,7 +10,9 @@
 
 @interface NSDate (BHRExtensions)
 
+- (NSString *)shortDateAndTimeWithSecondsString;
 - (NSString *)shortDateAndTimeString;
+- (NSString *)shortDateAndTimeStringForFilename;
 
 + (NSDate *)today;
 + (NSDate *)yesterday;

@@ -10,7 +10,8 @@
 
 @interface UIImage (BHRExtensions)
 
-- (void)saveToDocumentsDirectoryWithName:(NSString *)name;
+- (NSString *)saveJPEGToDocumentsDirectoryWithName:(NSString *)name;
+- (NSString *)saveToDocumentsDirectoryWithName:(NSString *)name;
 
 - (UIImage *)imageCroppedToRect:(CGRect)rect;
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;

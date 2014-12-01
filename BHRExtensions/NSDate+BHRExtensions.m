@@ -10,6 +10,16 @@
 
 @implementation NSDate (BHRExtensions)
 
+- (NSString *)shortDateAndTimeWithSecondsString
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
+    dateFormatter.dateStyle = NSDateFormatterShortStyle;
+    dateFormatter.timeStyle = NSDateFormatterMediumStyle;
+
+    return [dateFormatter stringFromDate:self];
+}
+
 - (NSString *)shortDateAndTimeString
 {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -18,6 +28,13 @@
 	dateFormatter.timeStyle = NSDateFormatterShortStyle;
 	
 	return [dateFormatter stringFromDate:self];
+}
+
+- (NSString *)shortDateAndTimeStringForFilename
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = [NSString stringWithFormat:@"yyyy-MM-dd_HH-mm-ss"];
+    return [dateFormatter stringFromDate:self];
 }
 
 

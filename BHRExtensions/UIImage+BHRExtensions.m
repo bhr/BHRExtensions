@@ -14,14 +14,27 @@
 
 #pragma mark - Saving Images
 
+- (NSString *)saveJPEGToDocumentsDirectoryWithName:(NSString *)name
+{
+    NSData *pngData = UIImageJPEGRepresentation(self, 0.9f);
 
-- (void)saveToDocumentsDirectoryWithName:(NSString *)name
+    NSString *documentsPath = [NSObject documentsDirectory];
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpeg", name]];
+    [pngData writeToFile:filePath atomically:YES];
+
+    return filePath;
+}
+
+
+- (NSString *)saveToDocumentsDirectoryWithName:(NSString *)name
 {
 	NSData *pngData = UIImagePNGRepresentation(self);
 
 	NSString *documentsPath = [NSObject documentsDirectory];
 	NSString *filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
 	[pngData writeToFile:filePath atomically:YES];
+
+    return filePath;
 }
 
 #pragma mark - Cropping/Scaling
