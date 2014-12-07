@@ -15,4 +15,9 @@ extern NSString * const BHRScriptTextCellReuseID;
 @property (nonatomic, strong) UILabel *placeholderLabel;
 @property (nonatomic, strong) UITextView *textView;
 
+@property (nonatomic, strong) UIButton *importButton;
+@property (nonatomic, assign) BOOL showImportButton;
+
+@property (nonatomic, strong) UILabel *titleLabel;
+
 @end

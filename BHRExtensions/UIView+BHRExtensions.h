@@ -23,4 +23,7 @@
 
 - (BOOL)findAndResignFirstResponder;
 
+- (void)removeAllSubviews;
+
+
 @end

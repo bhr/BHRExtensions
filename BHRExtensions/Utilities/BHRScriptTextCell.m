@@ -7,6 +7,7 @@
 //
 
 #import "BHRScriptTextCell.h"
+#import "UIView+BHRExtensions.h"
 
 NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
 
@@ -21,34 +22,90 @@ NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
 	{
-		[self _setUpConstraints];
+		[self _setupConstraints];
     }
     return self;
 }
 
-- (void)_setUpConstraints
+- (void)_setupConstraints
 {
-	NSDictionary *viewsDict = @{ @"placeholder": self.placeholderLabel ,
-								 @"textView": self.textView };
+    [self.contentView removeAllSubviews];
 
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[textView]-8-|"
-																			 options:0
-																			 metrics:nil
-																			   views:viewsDict]];
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[textView]-8-|"
-																			 options:0
-																			 metrics:nil
-																			   views:viewsDict]];
+    if (self.showImportButton) {
+        [self _setupConstraintsForCellWithImportButton];
+    }
+    else {
+        [self _setupConstraintsForCellWithoutImportButton];
+    }
+}
 
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-16-[placeholder]-(>=0)-|"
-																			 options:0
-																			 metrics:nil
-																			   views:viewsDict]];
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[placeholder]-(>=0)-|"
-																			 options:0
-																			 metrics:nil
-																			   views:viewsDict]];
+- (void)_setupConstraintsForCellWithoutImportButton
+{
+    [self.contentView addSubview:self.textView];
+    [self.contentView insertSubview:self.placeholderLabel
+                       aboveSubview:self.textView];
 
+    NSDictionary *viewsDict = @{ @"placeholder": self.placeholderLabel ,
+                                 @"textView": self.textView };
+
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[textView]-8-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:viewsDict]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[textView]-8-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:viewsDict]];
+
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-16-[placeholder]-(>=0)-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:viewsDict]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[placeholder]-(>=0)-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:viewsDict]];
+}
+
+- (void)_setupConstraintsForCellWithImportButton
+{
+    [self.contentView addSubview:self.textView];
+    [self.contentView insertSubview:self.placeholderLabel
+                       aboveSubview:self.textView];
+    [self.contentView addSubview:self.importButton];
+    [self.contentView addSubview:self.titleLabel];
+
+    NSDictionary *viewsDict = @{ @"title": self.titleLabel,
+                                 @"placeholder": self.placeholderLabel ,
+                                 @"textView": self.textView ,
+                                 @"importButton": self.importButton };
+
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[title]-(>=0)-[importButton]-15-|"
+                                                                             options:NSLayoutFormatAlignAllBaseline
+                                                                             metrics:nil
+                                                                               views:viewsDict]];
+
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[title]-[textView]-8-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:viewsDict]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[textView]-8-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:viewsDict]];
+
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.textView
+                                                                 attribute:NSLayoutAttributeTop
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.placeholderLabel
+                                                                 attribute:NSLayoutAttributeTop
+                                                                multiplier:1.0f
+                                                                  constant:-8.0f]];
+    
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[placeholder]-(>=0)-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:viewsDict]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -61,6 +118,14 @@ NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
 	}
 }
 
+- (void)setShowImportButton:(BOOL)showImportButton
+{
+    if (_showImportButton != showImportButton)
+    {
+        _showImportButton = showImportButton;
+        [self _setupConstraints];
+    }
+}
 
 - (UILabel *)placeholderLabel
 {
@@ -72,8 +137,6 @@ NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
 		_placeholderLabel.font = [UIFont fontWithName:@"Menlo-Italic" size:14.0f];
 		_placeholderLabel.textColor = [UIColor lightGrayColor];
 
-		[self.contentView insertSubview:_placeholderLabel
-						   aboveSubview:self.textView];
 	}
 	return _placeholderLabel;
 }
@@ -84,6 +147,7 @@ NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
 	{
 		_textView = [[UITextView alloc] initWithFrame:CGRectZero];
 		_textView.translatesAutoresizingMaskIntoConstraints = NO;
+        _textView.contentInset = UIEdgeInsetsZero;
 
 		_textView.backgroundColor = [UIColor clearColor];
 		_textView.font = [UIFont fontWithName:@"Menlo" size:14.0f];
@@ -91,10 +155,36 @@ NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
 		_textView.selectable = YES;
 		_textView.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		_textView.autocorrectionType = UITextAutocorrectionTypeNo;
-
-		[self.contentView addSubview:_textView];
 	}
 	return _textView;
+}
+
+- (UIButton *)importButton
+{
+    if (!_importButton)
+    {
+        _importButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        _importButton.translatesAutoresizingMaskIntoConstraints = NO;
+        [_importButton setTitle:NSLocalizedString(@"Import from File", nil)
+                       forState:UIControlStateNormal];
+    }
+
+    return _importButton;
+}
+
+- (UILabel *)titleLabel
+{
+    if (!_titleLabel)
+    {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+
+        _titleLabel.textColor = [UIColor lightGrayColor];
+        _titleLabel.font = [UIFont systemFontOfSize:[UIFont buttonFontSize]-3];
+        _titleLabel.text = NSLocalizedString(@"Script", nil);
+    }
+
+    return _titleLabel;
 }
 
 @end
