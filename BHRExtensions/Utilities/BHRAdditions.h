@@ -17,6 +17,7 @@ CGRect CGRectWithScale(CGRect rect, CGFloat scale);
 CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize);
 
 NSString *NSStringFromBOOL(BOOL boolean);
+NSString *EmptyStringIfNil(id object);
 id NSNullIfNil(id object);
 NSString *NSStringEmptyIfNil(id object);
 

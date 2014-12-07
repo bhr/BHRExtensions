@@ -94,6 +94,14 @@ CGFloat RadiansToDegrees(CGFloat radiansValue)
 }
 
 
+NSString *EmptyStringIfNil(id object)
+{
+    if (!object) {
+        return @"";
+    }
+    return object;
+}
+
 id NSNullIfNil(id object)
 {
 	if (object == nil)
