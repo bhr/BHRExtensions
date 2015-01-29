@@ -25,4 +25,6 @@
 
 - (UIView *)subviewWithRestorationIdentifier:(NSString *)restorationIdentifier;
 
+- (void)removeAllSubviews;
+
 @end
