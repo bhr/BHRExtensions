@@ -16,6 +16,8 @@ CGMutablePathRef CGPathCreatePathRotatedAroundBoundingBoxCenter(CGPathRef path, 
 CGRect CGRectWithScale(CGRect rect, CGFloat scale);
 CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize);
 
+CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets);
+
 NSString *NSStringFromBOOL(BOOL boolean);
 id NSNullIfNil(id object);
 NSString *NSStringEmptyIfNil(id object);

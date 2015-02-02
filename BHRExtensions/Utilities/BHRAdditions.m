@@ -43,6 +43,14 @@ CGRect CGRectWithScale(CGRect rect, CGFloat scale)
 					  scale * rect.size.height);
 }
 
+CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets)
+{
+    return CGRectMake(rect.origin.x += insets.left,
+                      rect.origin.y += insets.top,
+                      rect.size.width -= (insets.left + insets.right),
+                      rect.size.height -= (insets.top + insets.bottom));
+}
+
 CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize)
 {
 	CGFloat width = originalSize.width;
