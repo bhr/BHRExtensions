@@ -28,12 +28,12 @@
 		5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F877DDF193BA91200F8FE9A /* BHRCoreDataErrorManager.m */; };
 		5F8836A31934142400FB2FD3 /* BHRExtensionsLocalizable.strings in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F8836A01934126900FB2FD3 /* BHRExtensionsLocalizable.strings */; };
 		5F8A316F192ECAE4002A6736 /* BHRDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */; };
-		5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */; };
+		5FA3198019218AFC0034C815 /* BHRTextFieldTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197519218AF30034C815 /* BHRTextFieldTableCell.m */; };
 		5FA3198119218B0B0034C815 /* BHRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196919218AF30034C815 /* BHRAdditions.m */; };
 		5FA3198219218B0B0034C815 /* BHRKeyboardStateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */; };
 		5FA3198319218B0B0034C815 /* BHRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196D19218AF30034C815 /* BHRViewController.m */; };
-		5FA3198419218B0B0034C815 /* SIDetailTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196F19218AF30034C815 /* SIDetailTextFieldTableViewCell.m */; };
-		5FA3198519218B0B0034C815 /* SISwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */; };
+		5FA3198419218B0B0034C815 /* BHRTitleAndValueTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196F19218AF30034C815 /* BHRTitleAndValueTableCell.m */; };
+		5FA3198519218B0B0034C815 /* BHRSwitchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197219218AF30034C815 /* BHRSwitchTableCell.m */; };
 		5FA319B21921934F0034C815 /* SIHideTextAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319AC1921934F0034C815 /* SIHideTextAccessoryView.m */; };
 		5FA319B31921934F0034C815 /* SIKeyboardAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319AE1921934F0034C815 /* SIKeyboardAccessoryView.m */; };
 		5FA319B41921934F0034C815 /* SIKeyboardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA319B11921934F0034C815 /* SIKeyboardButtonView.m */; };
@@ -42,7 +42,7 @@
 		5FB82ED818E2226000A136B9 /* NSMutableAttributedString+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FB82ED418E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.h */; };
 		5FB8874919251DA2007F6F31 /* BHRColorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8874819251DA2007F6F31 /* BHRColorizer.m */; };
 		5FB8874E19251F6F007F6F31 /* BHRColorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8874D19251F6F007F6F31 /* BHRColorProvider.m */; };
-		5FB8875D19252503007F6F31 /* BHRScriptTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8875B19252503007F6F31 /* BHRScriptTextCell.m */; };
+		5FB8875D19252503007F6F31 /* BHRScriptTextTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8875B19252503007F6F31 /* BHRScriptTextTableCell.m */; };
 		5FBA1DE718BF86000077328F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DE618BF86000077328F /* Foundation.framework */; };
 		5FBA1DF518BF86000077328F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DF418BF86000077328F /* XCTest.framework */; };
 		5FBA1DF618BF86000077328F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA1DE618BF86000077328F /* Foundation.framework */; };
@@ -66,7 +66,7 @@
 		5FEB28D1192A626A002D8901 /* BHRTouchThroughRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB28D0192A626A002D8901 /* BHRTouchThroughRootView.m */; };
 		5FF6CF881A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CF871A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m */; };
 		5FF6CF891A0A791900BFF2AC /* UIGestureRecognizer+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FF6CF861A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.h */; };
-		5FF9D58119F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9D58019F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m */; };
+		5FF9D58119F6A18200101CDB /* BHRSmallTitleAndValueTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9D58019F6A18200101CDB /* BHRSmallTitleAndValueTableCell.m */; };
 		5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */; };
 		5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65818BFC0F0004A41B1 /* NSArray+BHRExtensions.m */; };
 		5FFBB66218BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB65A18BFC0F0004A41B1 /* NSObject+BHRClassesAggregation.m */; };
@@ -151,12 +151,12 @@
 		5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRKeyboardStateController.m; sourceTree = "<group>"; };
 		5FA3196C19218AF30034C815 /* BHRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRViewController.h; sourceTree = "<group>"; };
 		5FA3196D19218AF30034C815 /* BHRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRViewController.m; sourceTree = "<group>"; };
-		5FA3196E19218AF30034C815 /* SIDetailTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIDetailTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		5FA3196F19218AF30034C815 /* SIDetailTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIDetailTextFieldTableViewCell.m; sourceTree = "<group>"; };
-		5FA3197119218AF30034C815 /* SISwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISwitchTableViewCell.h; sourceTree = "<group>"; };
-		5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISwitchTableViewCell.m; sourceTree = "<group>"; };
-		5FA3197419218AF30034C815 /* SITextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SITextFieldTableViewCell.h; sourceTree = "<group>"; };
-		5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SITextFieldTableViewCell.m; sourceTree = "<group>"; };
+		5FA3196E19218AF30034C815 /* BHRTitleAndValueTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRTitleAndValueTableCell.h; sourceTree = "<group>"; };
+		5FA3196F19218AF30034C815 /* BHRTitleAndValueTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTitleAndValueTableCell.m; sourceTree = "<group>"; };
+		5FA3197119218AF30034C815 /* BHRSwitchTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRSwitchTableCell.h; sourceTree = "<group>"; };
+		5FA3197219218AF30034C815 /* BHRSwitchTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRSwitchTableCell.m; sourceTree = "<group>"; };
+		5FA3197419218AF30034C815 /* BHRTextFieldTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRTextFieldTableCell.h; sourceTree = "<group>"; };
+		5FA3197519218AF30034C815 /* BHRTextFieldTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTextFieldTableCell.m; sourceTree = "<group>"; };
 		5FA319AB1921934F0034C815 /* SIHideTextAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIHideTextAccessoryView.h; sourceTree = "<group>"; };
 		5FA319AC1921934F0034C815 /* SIHideTextAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIHideTextAccessoryView.m; sourceTree = "<group>"; };
 		5FA319AD1921934F0034C815 /* SIKeyboardAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIKeyboardAccessoryView.h; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 		5FB8874819251DA2007F6F31 /* BHRColorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRColorizer.m; sourceTree = "<group>"; };
 		5FB8874C19251F6F007F6F31 /* BHRColorProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRColorProvider.h; sourceTree = "<group>"; };
 		5FB8874D19251F6F007F6F31 /* BHRColorProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRColorProvider.m; sourceTree = "<group>"; };
-		5FB8875A19252503007F6F31 /* BHRScriptTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRScriptTextCell.h; sourceTree = "<group>"; };
-		5FB8875B19252503007F6F31 /* BHRScriptTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRScriptTextCell.m; sourceTree = "<group>"; };
+		5FB8875A19252503007F6F31 /* BHRScriptTextTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRScriptTextTableCell.h; sourceTree = "<group>"; };
+		5FB8875B19252503007F6F31 /* BHRScriptTextTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRScriptTextTableCell.m; sourceTree = "<group>"; };
 		5FBA1DE318BF86000077328F /* libBHRExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBHRExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBA1DE618BF86000077328F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FBA1DEA18BF86000077328F /* BHRExtensions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BHRExtensions-Prefix.pch"; sourceTree = "<group>"; };
@@ -197,8 +197,8 @@
 		5FEB28D0192A626A002D8901 /* BHRTouchThroughRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTouchThroughRootView.m; sourceTree = "<group>"; };
 		5FF6CF861A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FF6CF871A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BHRExtensions.m"; sourceTree = "<group>"; };
-		5FF9D57F19F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRSmallTitleTextFieldTableCell.h; sourceTree = "<group>"; };
-		5FF9D58019F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRSmallTitleTextFieldTableCell.m; sourceTree = "<group>"; };
+		5FF9D57F19F6A18200101CDB /* BHRSmallTitleAndValueTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRSmallTitleAndValueTableCell.h; sourceTree = "<group>"; };
+		5FF9D58019F6A18200101CDB /* BHRSmallTitleAndValueTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRSmallTitleAndValueTableCell.m; sourceTree = "<group>"; };
 		5FFBB65418BFBE7B004A41B1 /* UIView+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FFBB65718BFC0F0004A41B1 /* NSArray+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BHRExtensions.h"; sourceTree = "<group>"; };
@@ -272,16 +272,16 @@
 		5FA319AA192193420034C815 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5FA3196E19218AF30034C815 /* SIDetailTextFieldTableViewCell.h */,
-				5FA3196F19218AF30034C815 /* SIDetailTextFieldTableViewCell.m */,
-				5FA3197119218AF30034C815 /* SISwitchTableViewCell.h */,
-				5FA3197219218AF30034C815 /* SISwitchTableViewCell.m */,
-				5FA3197419218AF30034C815 /* SITextFieldTableViewCell.h */,
-				5FA3197519218AF30034C815 /* SITextFieldTableViewCell.m */,
-				5FF9D57F19F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.h */,
-				5FF9D58019F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m */,
-				5FB8875A19252503007F6F31 /* BHRScriptTextCell.h */,
-				5FB8875B19252503007F6F31 /* BHRScriptTextCell.m */,
+				5FA3196E19218AF30034C815 /* BHRTitleAndValueTableCell.h */,
+				5FA3196F19218AF30034C815 /* BHRTitleAndValueTableCell.m */,
+				5FA3197119218AF30034C815 /* BHRSwitchTableCell.h */,
+				5FA3197219218AF30034C815 /* BHRSwitchTableCell.m */,
+				5FA3197419218AF30034C815 /* BHRTextFieldTableCell.h */,
+				5FA3197519218AF30034C815 /* BHRTextFieldTableCell.m */,
+				5FF9D57F19F6A18200101CDB /* BHRSmallTitleAndValueTableCell.h */,
+				5FF9D58019F6A18200101CDB /* BHRSmallTitleAndValueTableCell.m */,
+				5FB8875A19252503007F6F31 /* BHRScriptTextTableCell.h */,
+				5FB8875B19252503007F6F31 /* BHRScriptTextTableCell.m */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -529,13 +529,13 @@
 				5F579BE81960A71100C94700 /* NSAttributedString+BHRExtensions.m in Sources */,
 				5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */,
 				5FF6CF881A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m in Sources */,
-				5FA3198019218AFC0034C815 /* SITextFieldTableViewCell.m in Sources */,
+				5FA3198019218AFC0034C815 /* BHRTextFieldTableCell.m in Sources */,
 				5FBA1E1818BF87290077328F /* UIView+BHRTableViewExtensions.m in Sources */,
 				5FBA1E1718BF87290077328F /* UITableView+BHRExtensions.m in Sources */,
 				5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */,
 				5F0CCDF41929176100BB1B15 /* UIButton+BHRExtensions.m in Sources */,
 				5FA319B21921934F0034C815 /* SIHideTextAccessoryView.m in Sources */,
-				5FF9D58119F6A18200101CDB /* BHRSmallTitleTextFieldTableCell.m in Sources */,
+				5FF9D58119F6A18200101CDB /* BHRSmallTitleAndValueTableCell.m in Sources */,
 				5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */,
 				5FB8874919251DA2007F6F31 /* BHRColorizer.m in Sources */,
 				5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */,
@@ -543,13 +543,13 @@
 				5FFBB66118BFC0F0004A41B1 /* NSArray+BHRExtensions.m in Sources */,
 				5FEB28D1192A626A002D8901 /* BHRTouchThroughRootView.m in Sources */,
 				5FB82ED618E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m in Sources */,
-				5FB8875D19252503007F6F31 /* BHRScriptTextCell.m in Sources */,
+				5FB8875D19252503007F6F31 /* BHRScriptTextTableCell.m in Sources */,
 				5F5FFA0819530616000E7CC3 /* UIBarButtonItem+BHRExtensions.m in Sources */,
 				5F18AFB61926E6A700954CB4 /* BHRTableViewCellColorizer.m in Sources */,
 				5FFBB66318BFC0F0004A41B1 /* NSString+BHRExtensions.m in Sources */,
-				5FA3198519218B0B0034C815 /* SISwitchTableViewCell.m in Sources */,
+				5FA3198519218B0B0034C815 /* BHRSwitchTableCell.m in Sources */,
 				5FA3198319218B0B0034C815 /* BHRViewController.m in Sources */,
-				5FA3198419218B0B0034C815 /* SIDetailTextFieldTableViewCell.m in Sources */,
+				5FA3198419218B0B0034C815 /* BHRTitleAndValueTableCell.m in Sources */,
 				5FB8874E19251F6F007F6F31 /* BHRColorProvider.m in Sources */,
 				5FC0203B18C8871500ED7E5A /* NSObject+BHRExtensions.m in Sources */,
 				5F05ADC11A0B91A0007E698B /* NSDictionary+BHRExtensions.m in Sources */,

@@ -15,10 +15,10 @@
 #import "Utilities/BHRViewController.h"
 #import "Utilities/BHRKeyboardStateController.h"
 
-#import "Utilities/SIDetailTextFieldTableViewCell.h"
-#import "Utilities/SISwitchTableViewCell.h"
-#import "Utilities/SITextFieldTableViewCell.h"
-#import "Utilities/BHRScriptTextCell.h"
+#import "Utilities/BHRTitleAndValueTableCell.h"
+#import "Utilities/BHRSwitchTableCell.h"
+#import "Utilities/BHRTextFieldTableCell.h"
+#import "Utilities/BHRScriptTextTableCell.h"
 #import "Utilities/SIHideTextAccessoryView.h"
 #import "Utilities/SIKeyboardAccessoryView.h"
 #import "Utilities/BHRColorProvider.h"
@@ -27,7 +27,7 @@
 #import "Utilities/BHRTouchThroughRootView.h"
 #import "Utilities/BHRDismissSegue.h"
 #import "Utilities/BHRCoreDataErrorManager.h"
-#import "Utilities/BHRSmallTitleTextFieldTableCell.h"
+#import "Utilities/BHRSmallTitleAndValueTableCell.h"
 
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"

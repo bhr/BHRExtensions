@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const SISwitchTableViewCellReuseID;
+extern NSString * const BHRSwitchTableCellReuseID;
 
-@interface SISwitchTableViewCell : UITableViewCell
+@interface BHRSwitchTableCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UISwitch *switchObject;

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const BHRScriptTextCellReuseID;
+extern NSString * const BHRScriptTextTableCellReuseID;
 
-@interface BHRScriptTextCell : UITableViewCell
+@interface BHRScriptTextTableCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *placeholderLabel;
 @property (nonatomic, strong) UITextView *textView;

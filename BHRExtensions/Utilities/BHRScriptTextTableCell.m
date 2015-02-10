@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 HIRMER.me. All rights reserved.
 //
 
-#import "BHRScriptTextCell.h"
+#import "BHRScriptTextTableCell.h"
 #import "UIView+BHRExtensions.h"
 
-NSString * const BHRScriptTextCellReuseID = @"scriptTextCell";
+NSString * const BHRScriptTextTableCellReuseID = @"BHRScriptTextTableCell";
 
-@interface BHRScriptTextCell ()
+@interface BHRScriptTextTableCell ()
 
 @end
 
-@implementation BHRScriptTextCell
+@implementation BHRScriptTextTableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

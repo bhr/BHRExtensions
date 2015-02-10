@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 HIRMER.me. All rights reserved.
 //
 
-#import "SITextFieldTableViewCell.h"
+#import "BHRTextFieldTableCell.h"
 
-NSString * const SITextFieldTableViewCellReuseId = @"textFieldCell";
+NSString * const BHRTextFieldTableCellReuseID = @"BHRTextFieldTableCell";
 
 
-@implementation SITextFieldTableViewCell
+@implementation BHRTextFieldTableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

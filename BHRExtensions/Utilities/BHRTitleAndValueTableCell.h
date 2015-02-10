@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const SIDetailTextFieldTableViewCellReuseId;
+extern NSString * const BHRTitleAndValueTableCellReuseID;
 
-@interface SIDetailTextFieldTableViewCell : UITableViewCell
+@interface BHRTitleAndValueTableCell : UITableViewCell
 
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UITextField *valueTextField;

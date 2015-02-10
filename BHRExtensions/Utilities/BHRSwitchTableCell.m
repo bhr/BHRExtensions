@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 HIRMER.me. All rights reserved.
 //
 
-#import "SISwitchTableViewCell.h"
+#import "BHRSwitchTableCell.h"
 
-NSString * const SISwitchTableViewCellReuseID = @"switchCell";
+NSString * const BHRSwitchTableCellReuseID = @"BHRSwitchTableCell";
 
 
-@implementation SISwitchTableViewCell
+@implementation BHRSwitchTableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 HIRMER.me. All rights reserved.
 //
 
-#import "BHRSmallTitleTextFieldTableCell.h"
+#import "BHRSmallTitleAndValueTableCell.h"
 
-NSString * const BHRSmallTitleTextFieldTableCellReuseId = @"smallTitleTextFieldCell";
+NSString * const BHRSmallTitleAndValueTableCellReuseID = @"BHRSmallTitleAndValueTableCell";
 
-@implementation BHRSmallTitleTextFieldTableCell
+@implementation BHRSmallTitleAndValueTableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

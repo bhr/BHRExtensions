@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const SITextFieldTableViewCellReuseId;
+extern NSString * const BHRTextFieldTableCellReuseID;
 
-@interface SITextFieldTableViewCell : UITableViewCell
+@interface BHRTextFieldTableCell : UITableViewCell
 
 @property (nonatomic, strong) UITextField *textField;
 
