@@ -10,7 +10,9 @@
 
 @interface NSDate (BHRExtensions)
 
+- (NSString *)shortDateAndTimeWithSecondsString;
 - (NSString *)shortDateAndTimeString;
+- (NSString *)shortDateAndTimeStringForFilename;
 
 + (NSDate *)today;
 + (NSDate *)yesterday;
@@ -19,5 +21,15 @@
 + (NSDate *)last7Days;
 + (NSDate *)thisMonth;
 + (NSDate *)lastMonth;
+
+/**
+ *	Returns the date in XML conform string format, e.g. 2010-11-26T07:35:55.000000Z
+ */
+- (NSString *)ISO8601FRACXMLString;
+
+/**
+ * Takes an XML date string and converts it to NSDate
+ */
++ (NSDate *)dateWithISO8601FRACXMLString:(NSString *)XMLString;
 
 @end

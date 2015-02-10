@@ -10,7 +10,8 @@
 
 @interface UIImage (BHRExtensions)
 
-- (void)saveToDocumentsDirectoryWithName:(NSString *)name;
+- (NSString *)saveJPEGToDocumentsDirectoryWithName:(NSString *)name;
+- (NSString *)saveToDocumentsDirectoryWithName:(NSString *)name;
 
 - (UIImage *)imageCroppedToRect:(CGRect)rect;
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
@@ -18,8 +19,11 @@
 
 + (UIImage *)imageRetinaWithContentsOfFile:(NSString *)file;
 
+/**
+ * Colorizes the clipping masked image
+ */
 - (UIImage *)colorizedImageWithColor:(UIColor *)color;
-
+- (UIImage *)grayscaleImage;
 
 #pragma mark - AppIcon
 

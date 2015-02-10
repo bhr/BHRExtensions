@@ -16,6 +16,8 @@ CGMutablePathRef CGPathCreatePathRotatedAroundBoundingBoxCenter(CGPathRef path, 
 CGRect CGRectWithScale(CGRect rect, CGFloat scale);
 CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize);
 
+CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets);
+
 NSString *NSStringFromBOOL(BOOL boolean);
 NSString *EmptyStringIfNil(id object);
 id NSNullIfNil(id object);
@@ -28,3 +30,5 @@ CGFloat DegreeToRadians(CGFloat degreeValue);
 CGFloat RadiansToDegrees(CGFloat radiansValue);
 CGFloat Square(CGFloat value);
 CGFloat RotateValueAtPositionWithMax(CGFloat value, CGFloat flipPosition, CGFloat max);
+
+CGFloat HorizontalDistanceFromRectToPoint(CGRect rect, CGPoint point);

@@ -1,0 +1,17 @@
+# xcode noise
+build/
+*.pbxuser
+*.perspectivev3
+*.mode1v3
+*.xcuserdatad
+
+# osx noise
+.DS_Store
+profile
+
+*.xccheckout
+.idea/
+
+BinariesPomfort/*
+!BinariesPomfort/*.zip
+

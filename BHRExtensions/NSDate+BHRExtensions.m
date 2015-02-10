@@ -10,6 +10,16 @@
 
 @implementation NSDate (BHRExtensions)
 
+- (NSString *)shortDateAndTimeWithSecondsString
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
+    dateFormatter.dateStyle = NSDateFormatterShortStyle;
+    dateFormatter.timeStyle = NSDateFormatterMediumStyle;
+
+    return [dateFormatter stringFromDate:self];
+}
+
 - (NSString *)shortDateAndTimeString
 {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -18,6 +28,13 @@
 	dateFormatter.timeStyle = NSDateFormatterShortStyle;
 	
 	return [dateFormatter stringFromDate:self];
+}
+
+- (NSString *)shortDateAndTimeStringForFilename
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = [NSString stringWithFormat:@"yyyy-MM-dd_HH-mm-ss"];
+    return [dateFormatter stringFromDate:self];
 }
 
 
@@ -112,6 +129,26 @@
 	NSDate *lastMonth  = [cal dateFromComponents:components];
 	
 	return lastMonth;
+}
+
+//2010-11-26T07:35:55.000000Z
+- (NSString *)ISO8601FRACXMLString
+{
+	NSDateFormatter* formatter = [[self class] _XMLDateFormatter];
+	return [formatter stringFromDate:self];
+}
+
++ (NSDate *)dateWithISO8601FRACXMLString:(NSString *)XMLString
+{
+	NSDateFormatter* formatter = [[self class] _XMLDateFormatter];
+	return [formatter dateFromString:XMLString];
+}
+
++ (NSDateFormatter *)_XMLDateFormatter
+{
+	NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+	formatter.dateFormat = [NSString stringWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXXX"];
+	return formatter;
 }
 
 @end

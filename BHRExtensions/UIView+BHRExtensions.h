@@ -11,7 +11,7 @@
 
 @interface UIView (BHRExtensions)
 
--(UIImage *)blurredSnapshotWithEffect:(UIImageBlurEffect)effect;
+- (UIImage *)blurredSnapshotWithEffect:(UIImageBlurEffect)effect;
 - (UIImage *)blurredSnapshot;
 - (UIImage *)snapshot;
 
@@ -23,7 +23,8 @@
 
 - (BOOL)findAndResignFirstResponder;
 
-- (void)removeAllSubviews;
+- (UIView *)subviewWithRestorationIdentifier:(NSString *)restorationIdentifier;
 
+- (void)removeAllSubviews;
 
 @end

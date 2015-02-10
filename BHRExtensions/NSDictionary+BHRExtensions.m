@@ -19,7 +19,31 @@
 
 	for (NSString *oneKey in self)
 	{
-		currentObject = [self[oneKey] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        id value = self[oneKey];
+
+        if ([value isKindOfClass:[NSArray class]])
+        {
+            NSString *arrayString = [(NSArray *)value componentsJoinedByString:@","];
+            value = [arrayString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        }
+        else if ([value isKindOfClass:[NSDictionary class]])
+        {
+            NSMutableString *valueString = [NSMutableString string];
+
+            [(NSDictionary *)value enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop)
+            {
+                 [valueString appendString:[NSString stringWithFormat:@"%@+%@,", key, obj]];
+            }];
+
+            if ([valueString length] > 0)
+            {
+                [valueString deleteCharactersInRange:NSMakeRange([valueString length] - 1, 1)];
+            }
+
+            value = valueString;
+        }
+
+        currentObject = [value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		currentKey = [oneKey stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
 		if (index > 0)

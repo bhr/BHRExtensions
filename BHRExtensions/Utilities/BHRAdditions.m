@@ -43,6 +43,14 @@ CGRect CGRectWithScale(CGRect rect, CGFloat scale)
 					  scale * rect.size.height);
 }
 
+CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets)
+{
+    return CGRectMake(rect.origin.x += insets.left,
+                      rect.origin.y += insets.top,
+                      rect.size.width -= (insets.left + insets.right),
+                      rect.size.height -= (insets.top + insets.bottom));
+}
+
 CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize)
 {
 	CGFloat width = originalSize.width;
@@ -92,6 +100,27 @@ CGFloat RadiansToDegrees(CGFloat radiansValue)
 {
 	return radiansValue * (180 / M_PI);
 }
+
+CGFloat HorizontalDistanceFromRectToPoint(CGRect rect, CGPoint point)
+{
+	CGFloat closest = 0.f;
+
+	if (point.x <= CGRectGetMinX(rect))
+	{
+		closest = CGRectGetMinX(rect);
+	}
+	else if (point.x >= CGRectGetMaxX(rect))
+	{
+		closest = CGRectGetMaxX(rect);
+	}
+	else
+	{
+		return 0.0f;
+	}
+
+	return closest - point.x;
+}
+
 
 
 NSString *EmptyStringIfNil(id object)
