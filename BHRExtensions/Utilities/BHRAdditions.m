@@ -51,6 +51,31 @@ CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets)
                       rect.size.height -= (insets.top + insets.bottom));
 }
 
+CGRect CGRectSquareInRect(CGRect rect)
+{
+    CGFloat width = CGRectGetWidth(rect);
+    CGFloat height = CGRectGetHeight(rect);
+    CGFloat aspect = width / height;
+
+    //rect wider than heigh
+    if (aspect >= 1.0f)
+    {
+        CGFloat offsetX = 0.5f * (width - height);
+        return CGRectMake(CGRectGetMinX(rect) + offsetX,
+                          CGRectGetMinY(rect),
+                          height,
+                          height);
+    }
+    else
+    {
+        CGFloat offsetY = 0.5f * (height - width);
+        return CGRectMake(CGRectGetMinX(rect),
+                          CGRectGetMinY(rect) + offsetY,
+                          width,
+                          width);
+    }
+}
+
 CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize)
 {
 	CGFloat width = originalSize.width;

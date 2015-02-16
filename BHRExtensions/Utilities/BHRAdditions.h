@@ -17,6 +17,7 @@ CGRect CGRectWithScale(CGRect rect, CGFloat scale);
 CGSize CGSizeScaledProportionallyToSize(CGSize originalSize, CGSize targetSize);
 
 CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets);
+CGRect CGRectSquareInRect(CGRect rect);
 
 NSString *NSStringFromBOOL(BOOL boolean);
 NSString *EmptyStringIfNil(id object);
