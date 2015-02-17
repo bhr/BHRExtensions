@@ -192,6 +192,26 @@
 	return newImage;
 }
 
++ (UIImage*)solidColorImageWithColor:(UIColor*)color
+{
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    CGSize size = CGSizeMake(1.f, 1.f);
+
+    UIGraphicsBeginImageContextWithOptions(size, NO, scale);
+
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect frame = CGRectMake(0, 0, size.width, size.height);
+
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, frame);
+
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+
+    UIGraphicsEndImageContext();
+
+    return image;
+}
+
 #pragma mark -
 
 + (UIImage *)iPhoneAppIcon;

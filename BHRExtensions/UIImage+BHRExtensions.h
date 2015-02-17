@@ -24,6 +24,7 @@
  */
 - (UIImage *)colorizedImageWithColor:(UIColor *)color;
 - (UIImage *)grayscaleImage;
++ (UIImage*)solidColorImageWithColor:(UIColor*)color;
 
 #pragma mark - AppIcon
 
