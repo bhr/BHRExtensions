@@ -65,6 +65,7 @@
 		5FC1EF6A18D37ED300C33DA9 /* UIApplication+BHRVersionInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F18A81B18CF235000C9D851 /* UIApplication+BHRVersionInfo.h */; };
 		5FC1EF6B18D37ED300C33DA9 /* NSFetchedResultsController+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F10595F18D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.h */; };
 		5FEB28D1192A626A002D8901 /* BHRTouchThroughRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEB28D0192A626A002D8901 /* BHRTouchThroughRootView.m */; };
+		5FEF58FD1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF58FC1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.m */; };
 		5FF6CF881A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6CF871A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m */; };
 		5FF6CF891A0A791900BFF2AC /* UIGestureRecognizer+BHRExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FF6CF861A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.h */; };
 		5FF9D58119F6A18200101CDB /* BHRSmallTitleAndValueTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9D58019F6A18200101CDB /* BHRSmallTitleAndValueTableCell.m */; };
@@ -198,6 +199,8 @@
 		5FC0203A18C8871500ED7E5A /* NSObject+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FEB28CF192A626A002D8901 /* BHRTouchThroughRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRTouchThroughRootView.h; sourceTree = "<group>"; };
 		5FEB28D0192A626A002D8901 /* BHRTouchThroughRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRTouchThroughRootView.m; sourceTree = "<group>"; };
+		5FEF58FB1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+BHRExtensions.h"; sourceTree = "<group>"; };
+		5FEF58FC1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FF6CF861A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+BHRExtensions.h"; sourceTree = "<group>"; };
 		5FF6CF871A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FF9D57F19F6A18200101CDB /* BHRSmallTitleAndValueTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRSmallTitleAndValueTableCell.h; sourceTree = "<group>"; };
@@ -445,6 +448,8 @@
 				5FF6CF871A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m */,
 				5F05ADBF1A0B91A0007E698B /* NSDictionary+BHRExtensions.h */,
 				5F05ADC01A0B91A0007E698B /* NSDictionary+BHRExtensions.m */,
+				5FEF58FB1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.h */,
+				5FEF58FC1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F579BE81960A71100C94700 /* NSAttributedString+BHRExtensions.m in Sources */,
+				5FEF58FD1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.m in Sources */,
 				5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */,
 				5FF6CF881A0A78D400BFF2AC /* UIGestureRecognizer+BHRExtensions.m in Sources */,
 				5FA3198019218AFC0034C815 /* BHRTextFieldTableCell.m in Sources */,

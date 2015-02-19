@@ -53,7 +53,7 @@
 #import "UIGestureRecognizer+BHRExtensions.h"
 #import "NSDictionary+BHRExtensions.h"
 #import "NSManagedObject+BHRPermanentObjectID.h"
-
+#import "UIControl+BHRExtensions.h"
 
 #import "CJAMacros.h"
 
