@@ -45,7 +45,11 @@
 	
 	for (NSIndexPath *indexPath in indexPaths)
 	{
-		[context deleteObject:[self objectAtIndexPath:indexPath]];
+        NSManagedObject *object = [self objectAtIndexPath:indexPath];
+        if (object)
+        {
+            [context deleteObject:object];
+        }
 	}
 	
 	// Save the context.
