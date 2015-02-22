@@ -155,15 +155,37 @@
     return (self.userInterfaceIdiom == UIUserInterfaceIdiomPad);
 }
 
-- (BOOL)is35InchiPhone
+- (UIDeviceScreenSize) screenSizeType
 {
-	UIDevicePlatform platform = [self platformType];
-	if (platform == UIDevice4iPhone ||
-		platform == UIDevice4SiPhone)
-	{
-		return YES;
-	}
-	return NO;
+    switch ([self platformType])
+    {
+        case UIDevice1GiPhone: return UIDeviceScreenSize35Inch;
+        case UIDevice3GiPhone: return UIDeviceScreenSize35Inch;
+        case UIDevice3GSiPhone: return UIDeviceScreenSize35Inch;
+        case UIDevice4iPhone: return UIDeviceScreenSize35Inch;
+        case UIDevice4SiPhone: return UIDeviceScreenSize35Inch;
+        case UIDevice5iPhone: return UIDeviceScreenSize4Inch;
+        case UIDevice5CiPhone: return UIDeviceScreenSize4Inch;
+        case UIDevice5SiPhone: return UIDeviceScreenSize4Inch;
+        case UIDevice6iPhone: return UIDeviceScreenSize47Inch;
+        case UIDevice6PlusiPhone: return UIDeviceScreenSize55Inch;
+
+        case UIDevice1GiPod: return UIDeviceScreenSize35Inch;
+        case UIDevice2GiPod: return UIDeviceScreenSize35Inch;
+        case UIDevice3GiPod: return UIDeviceScreenSize35Inch;
+        case UIDevice4GiPod: return UIDeviceScreenSize35Inch;
+        case UIDevice5GiPod: return UIDeviceScreenSize4Inch;
+
+        case UIDevice1GiPad : return UIDeviceScreenSize97Inch;
+        case UIDevice2GiPad : return UIDeviceScreenSize97Inch;
+        case UIDevice3GiPad : return UIDeviceScreenSize97Inch;
+        case UIDevice4GiPad : return UIDeviceScreenSize97Inch;
+        case UIDevice1GiPadAir: return UIDeviceScreenSize97Inch;
+        case UIDevice1GiPadMini: return UIDeviceScreenSize79Inch;
+        case UIDevice2GiPadMini: return UIDeviceScreenSize79Inch;
+
+        default: return UIDeviceScreenSizeUnknown;
+    }
 }
 
 @end

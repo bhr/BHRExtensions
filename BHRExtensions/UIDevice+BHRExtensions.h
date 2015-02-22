@@ -93,14 +93,24 @@ typedef enum {
 
 } UIDevicePlatform;
 
+typedef NS_ENUM(NSUInteger, UIDeviceScreenSize)
+{
+    UIDeviceScreenSizeUnknown = 0,
+    UIDeviceScreenSize35Inch,
+    UIDeviceScreenSize4Inch,
+    UIDeviceScreenSize47Inch,
+    UIDeviceScreenSize55Inch,
+    UIDeviceScreenSize79Inch,
+    UIDeviceScreenSize97Inch,
+};
 
 @interface UIDevice (BHRExtensions)
 
 - (UIDevicePlatform) platformType;
+- (UIDeviceScreenSize) screenSizeType;
 - (NSString *) platformString;
 
 - (BOOL)isiPad;
-- (BOOL)is35InchiPhone;
 
 @end
 
