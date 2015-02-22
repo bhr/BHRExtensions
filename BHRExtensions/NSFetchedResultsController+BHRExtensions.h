@@ -18,4 +18,6 @@
 
 - (NSArray *)objectsAtIndexPaths:(NSArray *)indexPaths;
 
+- (void)flattenObjectsWithSortingKey:(NSString *)sortingKey;
+
 @end

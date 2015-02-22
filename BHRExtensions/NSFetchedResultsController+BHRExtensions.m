@@ -24,19 +24,17 @@
 	// Now re-insert it at the destination.
 	[objects insertObject:movedObject atIndex:[destinationIndexPath row]];
 	
-	// All of the objects are now in their correct order. Update each
-	// object's displayOrder field by iterating through the array.
-	int i = 0;
-	for (NSManagedObject *object in objects)
-	{
-		[object setValue:@(i++) forKey:@"sortIndex"];
-	}
-	
-	NSError *error = nil;
-	if (![[self managedObjectContext] save:&error])
-	{
-		[[BHRCoreDataErrorManager sharedManager] showErrorAlert];
-	}
+    int i = 0;
+    for (NSManagedObject *object in objects)
+    {
+        [object setValue:@(i++) forKey:@"sortIndex"];
+    }
+
+    NSError *error = nil;
+    if (![[self managedObjectContext] save:&error])
+    {
+        [[BHRCoreDataErrorManager sharedManager] showErrorAlert];
+    }
 }
 
 - (void)deleteObjectsAtIndexPaths:(NSArray *)indexPaths
@@ -60,6 +58,18 @@
 	}
 }
 
+- (void)flattenObjectsWithSortingKey:(NSString *)sortingKey
+{
+    NSArray *objects = [self fetchedObjects];
+
+    // All of the objects are now in their correct order. Update each
+    // object's displayOrder field by iterating through the array.
+    int i = 0;
+    for (NSManagedObject *object in objects)
+    {
+        [object setValue:@(i++) forKey:sortingKey];
+    }
+}
 
 - (NSArray *)objectsAtIndexPaths:(NSArray *)indexPaths
 {
