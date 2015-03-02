@@ -53,7 +53,6 @@
 }
 
 
-//Makes pics blurry?!
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize {
 
 	UIImage *sourceImage = self;
@@ -97,7 +96,7 @@
 
 	// this is actually the interesting part:
 
-	UIGraphicsBeginImageContext(targetSize);
+	UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0f);
 
 	CGRect thumbnailRect = CGRectZero;
 	thumbnailRect.origin = thumbnailPoint;

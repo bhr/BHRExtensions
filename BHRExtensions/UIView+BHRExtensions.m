@@ -11,7 +11,7 @@
 @implementation UIView (BHRExtensions)
 
 
--(UIImage *)blurredSnapshotWithEffect:(UIImageBlurEffect)effect
+- (UIImage *)blurredSnapshotWithEffect:(UIImageBlurEffect)effect
 {
 	// Create the image context
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, self.window.screen.scale);
@@ -36,7 +36,7 @@
 }
 
 
--(UIImage *)blurredSnapshot
+- (UIImage *)blurredSnapshot
 {
 	return [self blurredSnapshotWithEffect:UIImageBlurEffectNeutral];
 }
@@ -45,7 +45,7 @@
 {
 	// Create the image context
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, self.window.screen.scale);
-	
+
     // There he is! The new API method
 	[self drawViewHierarchyInRect:self.frame afterScreenUpdates:NO];
 	
