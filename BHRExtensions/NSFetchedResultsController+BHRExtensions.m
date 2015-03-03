@@ -61,4 +61,19 @@
 }
 
 
+- (NSArray *)objectsAtIndexPaths:(NSArray *)indexPaths
+{
+    NSMutableArray *objects = [NSMutableArray array];
+
+    for (NSIndexPath *path in indexPaths)
+    {
+        id object = [self objectAtIndexPath:path];
+        if (object)
+        {
+            [objects addObject:object];
+        }
+    }
+
+    return objects;
+}
 @end

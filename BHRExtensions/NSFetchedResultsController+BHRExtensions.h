@@ -16,4 +16,6 @@
 
 - (void)deleteObjectsAtIndexPaths:(NSArray *)indexPaths;
 
+- (NSArray *)objectsAtIndexPaths:(NSArray *)indexPaths;
+
 @end
