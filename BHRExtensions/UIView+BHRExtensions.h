@@ -27,4 +27,6 @@
 
 - (void)removeAllSubviews;
 
+- (void)printSubviewsWithIndentation:(int)indentation;
+
 @end
