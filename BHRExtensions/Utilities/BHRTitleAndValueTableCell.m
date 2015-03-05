@@ -10,6 +10,13 @@
 
 NSString * const BHRTitleAndValueTableCellReuseID = @"BHRTitleAndValueTableCell";
 
+@interface BHRTitleAndValueTableCell ()
+
+@property (nonatomic, strong) NSLayoutConstraint *leftLayoutMarginConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *rightLayoutMarginConstraint;
+
+@end
+
 @implementation BHRTitleAndValueTableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -37,7 +44,7 @@ NSString * const BHRTitleAndValueTableCellReuseID = @"BHRTitleAndValueTableCell"
 	NSDictionary *viewsDict = @{ @"label": self.titleLabel,
 								 @"valueTextField": self.valueTextField };
 
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-(8)-[valueTextField]-20-|"
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[label]-(8)-[valueTextField]"
 																			 options:0
 																			 metrics:nil
 																			   views:viewsDict]];
@@ -62,6 +69,24 @@ NSString * const BHRTitleAndValueTableCellReuseID = @"BHRTitleAndValueTableCell"
 																 attribute:NSLayoutAttributeCenterY
 																multiplier:1.0f
 																  constant:0.0f]];
+
+    self.leftLayoutMarginConstraint = [NSLayoutConstraint constraintWithItem:self.titleLabel
+                                                                   attribute:NSLayoutAttributeLeading
+                                                                   relatedBy:NSLayoutRelationEqual
+                                                                      toItem:self.contentView
+                                                                   attribute:NSLayoutAttributeLeading
+                                                                  multiplier:1.0f
+                                                                    constant:self.layoutMargins.left];
+    [self.contentView addConstraint:self.leftLayoutMarginConstraint];
+
+    self.rightLayoutMarginConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
+                                                                    attribute:NSLayoutAttributeTrailing
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.valueTextField
+                                                                    attribute:NSLayoutAttributeTrailing
+                                                                   multiplier:1.0f
+                                                                     constant:self.layoutMargins.right];
+    [self.contentView addConstraint:self.rightLayoutMarginConstraint];
 
 	[self.valueTextField setContentHuggingPriority:222 forAxis:UILayoutConstraintAxisHorizontal];
 }
@@ -107,6 +132,14 @@ NSString * const BHRTitleAndValueTableCellReuseID = @"BHRTitleAndValueTableCell"
 	}
 
 	return _titleLabel;
+}
+
+- (void)layoutMarginsDidChange
+{
+    [super layoutMarginsDidChange];
+
+    self.leftLayoutMarginConstraint.constant = self.layoutMargins.left;
+    self.rightLayoutMarginConstraint.constant = self.layoutMargins.right;
 }
 
 @end
