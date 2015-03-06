@@ -37,6 +37,25 @@
     return [dateFormatter stringFromDate:self];
 }
 
+- (NSString *)shortRelativeDateString
+{
+    NSComparisonResult result = [[NSDate today] compare:self];
+    NSDateFormatter *relativeDateFormatter = [[NSDateFormatter alloc] init];
+    relativeDateFormatter.doesRelativeDateFormatting = YES;
+
+    if (result != NSOrderedDescending)
+    {
+        relativeDateFormatter.timeStyle = NSDateFormatterShortStyle;
+        relativeDateFormatter.dateStyle = NSDateFormatterNoStyle;
+    }
+    else
+    {
+        relativeDateFormatter.dateStyle = NSDateFormatterShortStyle;
+        relativeDateFormatter.timeStyle = NSDateFormatterNoStyle;
+    }
+
+    return [relativeDateFormatter stringFromDate:self];
+}
 
 + (NSDate *)today
 {

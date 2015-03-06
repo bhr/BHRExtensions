@@ -13,6 +13,7 @@
 - (NSString *)shortDateAndTimeWithSecondsString;
 - (NSString *)shortDateAndTimeString;
 - (NSString *)shortDateAndTimeStringForFilename;
+- (NSString *)shortRelativeDateString;
 
 + (NSDate *)today;
 + (NSDate *)yesterday;
