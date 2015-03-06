@@ -11,11 +11,16 @@
 
 @interface BHRTableViewCellColorizer : NSObject
 
-@property (nonatomic, strong) UIColor *textColor;
-@property (nonatomic, strong) UIColor *disabledTextColor;
-@property (nonatomic, strong) UIColor *placeholderColor;
-@property (nonatomic, strong) UIColor *selectionColor;
-@property (nonatomic, strong) UIColor *backgroundColor;
+@property (nonatomic, copy) UIColor *textColor;
+@property (nonatomic, copy) UIColor *disabledTextColor;
+@property (nonatomic, copy) UIColor *placeholderColor;
+@property (nonatomic, copy) UIColor *selectionColor;
+@property (nonatomic, copy) UIColor *backgroundColor;
+
+/**
+ * ignores tha class and all its subviews
+ */
+@property (nonatomic, copy) NSArray *ignoredClasses;
 
 - (void)colorizeCell:(UITableViewCell *)cell;
 

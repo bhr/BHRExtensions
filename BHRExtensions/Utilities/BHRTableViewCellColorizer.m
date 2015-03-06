@@ -24,42 +24,7 @@
 		cell.textLabel.textColor = self.textColor;
 	}
 
-	for (UITextField *textField in [cell.contentView subviews])
-	{
-		if ([textField respondsToSelector:@selector(textColor)])
-		{
-			if (!textField.enabled && self.disabledTextColor) {
-				textField.textColor = self.disabledTextColor;
-			}
-			else if (self.textColor) {
-				textField.textColor = self.textColor;
-			}
-		}
-
-		if ([textField isKindOfClass:[UITextField class]])
-		{
-			if ([textField respondsToSelector:@selector(placeholder)] &&
-				self.placeholderColor)
-			{
-				NSString *placeholderString = textField.placeholder;
-
-				if (!placeholderString) {
-					placeholderString = @"";
-				}
-
-				NSDictionary *placeholderAttributes = @{ NSFontAttributeName: textField.font,
-														 NSForegroundColorAttributeName: self.placeholderColor };
-				NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:placeholderString
-																				  attributes:placeholderAttributes];
-				[textField setAttributedPlaceholder:placeholder];
-			}
-		}
-
-		if (self.backgroundColor)
-		{
-			textField.backgroundColor = self.backgroundColor;
-		}
-	}
+    [self _colorizeView:[cell contentView]];
 
 	if (self.backgroundColor)
 	{
@@ -69,6 +34,50 @@
 		cell.backgroundColor = self.backgroundColor;
 		cell.contentView.backgroundColor = self.backgroundColor;
 	}
+}
+
+- (void)_colorizeView:(UIView *)view
+{
+    for (UITextField *textField in [view subviews])
+    {
+        if ([self.ignoredClasses containsObject:[textField class]])
+        {
+            continue;
+        }
+        
+        if ([textField respondsToSelector:@selector(textColor)])
+        {
+            if (!textField.enabled && self.disabledTextColor) {
+                textField.textColor = self.disabledTextColor;
+            }
+            else if (self.textColor) {
+                textField.textColor = self.textColor;
+            }
+        }
+
+        if ([textField isKindOfClass:[UITextField class]])
+        {
+            if ([textField respondsToSelector:@selector(placeholder)] &&
+                self.placeholderColor)
+            {
+                NSString *placeholderString = textField.placeholder;
+
+                if (!placeholderString) {
+                    placeholderString = @"";
+                }
+
+                NSDictionary *placeholderAttributes = @{ NSFontAttributeName: textField.font,
+                                                         NSForegroundColorAttributeName: self.placeholderColor };
+                NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:placeholderString
+                                                                                  attributes:placeholderAttributes];
+                [textField setAttributedPlaceholder:placeholder];
+            }
+        }
+        
+
+        //recursive call
+        [self _colorizeView:textField];
+    }
 }
 
 @end
