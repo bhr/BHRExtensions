@@ -26,6 +26,7 @@
 		5F5FFA0819530616000E7CC3 /* UIBarButtonItem+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FFA0719530616000E7CC3 /* UIBarButtonItem+BHRExtensions.m */; };
 		5F63231F18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */; };
 		5F63800C1A8B75190001C13E /* NSManagedObject+BHRPermanentObjectID.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F63800B1A8B75190001C13E /* NSManagedObject+BHRPermanentObjectID.m */; };
+		5F6AE13D1AAC4E6E0020B3B9 /* BHRRoundedRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AE13C1AAC4E6E0020B3B9 /* BHRRoundedRectButton.m */; };
 		5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F877DDF193BA91200F8FE9A /* BHRCoreDataErrorManager.m */; };
 		5F8836A31934142400FB2FD3 /* BHRExtensionsLocalizable.strings in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F8836A01934126900FB2FD3 /* BHRExtensionsLocalizable.strings */; };
 		5F8A316F192ECAE4002A6736 /* BHRDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */; };
@@ -142,6 +143,8 @@
 		5F63231E18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BHRExtensions.m"; sourceTree = "<group>"; };
 		5F63800A1A8B75190001C13E /* NSManagedObject+BHRPermanentObjectID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+BHRPermanentObjectID.h"; sourceTree = "<group>"; };
 		5F63800B1A8B75190001C13E /* NSManagedObject+BHRPermanentObjectID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+BHRPermanentObjectID.m"; sourceTree = "<group>"; };
+		5F6AE13B1AAC4E6E0020B3B9 /* BHRRoundedRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRRoundedRectButton.h; sourceTree = "<group>"; };
+		5F6AE13C1AAC4E6E0020B3B9 /* BHRRoundedRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRRoundedRectButton.m; sourceTree = "<group>"; };
 		5F877DDE193BA91200F8FE9A /* BHRCoreDataErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRCoreDataErrorManager.h; sourceTree = "<group>"; };
 		5F877DDF193BA91200F8FE9A /* BHRCoreDataErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRCoreDataErrorManager.m; sourceTree = "<group>"; };
 		5F8836A11934126900FB2FD3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/BHRExtensionsLocalizable.strings; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 			children = (
 				5FA3196819218AF30034C815 /* BHRAdditions.h */,
 				5FA3196919218AF30034C815 /* BHRAdditions.m */,
+				5F6AE13B1AAC4E6E0020B3B9 /* BHRRoundedRectButton.h */,
+				5F6AE13C1AAC4E6E0020B3B9 /* BHRRoundedRectButton.m */,
 				5FA3196A19218AF30034C815 /* BHRKeyboardStateController.h */,
 				5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */,
 				5FA3196C19218AF30034C815 /* BHRViewController.h */,
@@ -568,6 +573,7 @@
 				5FBA1E1518BF87290077328F /* NSURL+BHRExtensions.m in Sources */,
 				5F63800C1A8B75190001C13E /* NSManagedObject+BHRPermanentObjectID.m in Sources */,
 				5FA319B8192194CF0034C815 /* SIShellCommandConstructor.m in Sources */,
+				5F6AE13D1AAC4E6E0020B3B9 /* BHRRoundedRectButton.m in Sources */,
 				5FA3198119218B0B0034C815 /* BHRAdditions.m in Sources */,
 				5FFBB66418BFC0F0004A41B1 /* NSString+BHRUID.m in Sources */,
 				5FA319B31921934F0034C815 /* SIKeyboardAccessoryView.m in Sources */,

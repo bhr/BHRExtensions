@@ -28,6 +28,7 @@
 #import "Utilities/BHRDismissSegue.h"
 #import "Utilities/BHRCoreDataErrorManager.h"
 #import "Utilities/BHRSmallTitleAndValueTableCell.h"
+#import "Utilities/BHRRoundedRectButton.h"
 
 #import "NSURL+BHRExtensions.h"
 #import "UITableView+BHRExtensions.h"
