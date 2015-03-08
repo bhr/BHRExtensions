@@ -75,8 +75,12 @@
         }
         
 
-        //recursive call
-        [self _colorizeView:textField];
+        //going recursively into UITextFields leads to wrong coloring of placeholders after cells reload
+        if (![textField isKindOfClass:[UITextField class]])
+        {
+            //recursive call
+            [self _colorizeView:textField];
+        }
     }
 }
 
