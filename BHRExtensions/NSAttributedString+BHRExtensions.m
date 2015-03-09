@@ -31,7 +31,16 @@
 			 newTextAttributes[NSForegroundColorAttributeName] = textColor;
 		 }
 
-		 NSAttributedString *adjustedAttributedStringComponent = [[NSAttributedString alloc] initWithString:[[self string] substringWithRange:range]
+         NSString *string = [self string];
+
+         //adjust length if strings length is less than range
+         //note: this shouldn't happen but did happen, so we resolve it manually
+         if (NSMaxRange(range) > [string length])
+         {
+             range.length -= (NSMaxRange(range) - [string length]);
+         }
+
+		 NSAttributedString *adjustedAttributedStringComponent = [[NSAttributedString alloc] initWithString:[string substringWithRange:range]
 																								 attributes:newTextAttributes];
 		 [adjustedAttributedString appendAttributedString:adjustedAttributedStringComponent];
 
