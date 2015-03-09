@@ -73,7 +73,12 @@
                 [textField setAttributedPlaceholder:placeholder];
             }
         }
-        
+
+        if ([textField isKindOfClass:[UITextView class]] && self.backgroundColor)
+        {
+            UITextView *textView = (UITextView *)textField;
+            textView.backgroundColor = self.backgroundColor;
+        }
 
         //going recursively into UITextFields leads to wrong coloring of placeholders after cells reload
         if (![textField isKindOfClass:[UITextField class]])
