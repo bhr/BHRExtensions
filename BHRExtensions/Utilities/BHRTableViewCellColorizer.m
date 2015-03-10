@@ -19,12 +19,7 @@
 		cell.selectedBackgroundView = selectedBackgroundView;
 	}
 
-	if (self.textColor)
-	{
-		cell.textLabel.textColor = self.textColor;
-	}
-
-    [self _colorizeView:[cell contentView]];
+    [self _colorizeView:cell];
 
 	if (self.backgroundColor)
 	{
@@ -32,7 +27,6 @@
 		backgroundView.backgroundColor = self.backgroundColor;
 		cell.backgroundView = backgroundView;
 		cell.backgroundColor = self.backgroundColor;
-		cell.contentView.backgroundColor = self.backgroundColor;
 	}
 }
 
@@ -47,11 +41,16 @@
         
         if ([textField respondsToSelector:@selector(textColor)])
         {
+            NSString *restorationIdentifier = textField.restorationIdentifier;
+            BOOL useLabelColor = [[restorationIdentifier lowercaseString] containsString:@"labelcolor"];
             if (!textField.enabled && self.disabledTextColor) {
                 textField.textColor = self.disabledTextColor;
             }
-            else if (self.textColor) {
-                textField.textColor = self.textColor;
+            else if (useLabelColor && self.labelTextColor) {
+                textField.textColor = self.labelTextColor;
+            }
+            else if (self.contentTextColor) {
+                textField.textColor = self.contentTextColor;
             }
         }
 

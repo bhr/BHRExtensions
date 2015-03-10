@@ -11,7 +11,15 @@
 
 @interface BHRTableViewCellColorizer : NSObject
 
-@property (nonatomic, copy) UIColor *textColor;
+/**
+ * contentTextColor is used for UITextField, UILabel, or UITextField that doesn't use the restorationIdentifier that contains "labelColor" and that are enabled
+ */
+@property (nonatomic, copy) UIColor *contentTextColor;
+
+/**
+ * labelTextColor is used when the restorationIdentifier of the UITextField, UILabel, or UITextField contains "labelColor"
+ */
+@property (nonatomic, copy) UIColor *labelTextColor;
 @property (nonatomic, copy) UIColor *disabledTextColor;
 @property (nonatomic, copy) UIColor *placeholderColor;
 @property (nonatomic, copy) UIColor *selectionColor;
