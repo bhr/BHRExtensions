@@ -20,4 +20,16 @@
 
 - (void)flattenObjectsWithSortingKey:(NSString *)sortingKey;
 
+
+- (id)nextObjectForObject:(id)object;
+- (id)previousObjectForObject:(id)object;
+- (BOOL)isLastInSection:(NSIndexPath *)indexPath;
+- (BOOL)isFirstInSection:(NSIndexPath *)indexPath;
+- (BOOL)isLastSection:(NSUInteger)section;
+- (BOOL)isFirstSection:(NSUInteger)section;
+- (NSUInteger)nextSectionForSection:(NSUInteger)section;
+- (NSUInteger)previousSectionForSection:(NSUInteger)section;
+- (NSIndexPath *)nextIndexPathForIndexPath:(NSIndexPath *)indexPath;
+- (NSIndexPath *)previousIndexPathForIndexPath:(NSIndexPath *)indexPath;
+
 @end
