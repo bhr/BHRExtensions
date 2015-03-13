@@ -10,20 +10,20 @@
 
 @implementation UIView (BHROrientation)
 
-+ (ViewOrientation)viewOrientationForSize:(CGSize)size {
-    return (size.width > size.height) ? ViewOrientationLandscape : ViewOrientationPortrait;
++ (BHRViewOrientation)orientationForSize:(CGSize)size {
+    return (size.width > size.height) ? BHRViewOrientationLandscape : BHRViewOrientationPortrait;
 }
 
-- (ViewOrientation)viewOrientation {
-    return [[self class] viewOrientationForSize:self.bounds.size];
+- (BHRViewOrientation)orientation {
+    return [[self class] orientationForSize:self.bounds.size];
 }
 
-- (BOOL)isViewOrientationPortrait {
-    return [self viewOrientation] == ViewOrientationPortrait;
+- (BOOL)isPortraitOrienation {
+    return [self orientation] == BHRViewOrientationPortrait;
 }
 
-- (BOOL)isViewOrientationLandscape {
-    return [self viewOrientation] == ViewOrientationLandscape;
+- (BOOL)isLandscapeOrienation {
+    return [self orientation] == BHRViewOrientationLandscape;
 }
 
 @end

@@ -13,24 +13,26 @@
 #define StatusBarOrientationIsPortrait      UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])
 #define StatusBarOrientationIsLandscape     UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
 
-typedef NS_ENUM(NSInteger, ViewOrientation) {
-    ViewOrientationPortrait,
-    ViewOrientationLandscape
+typedef NS_ENUM(NSUInteger, BHRViewOrientation) {
+    BHRViewOrientationPortrait,
+    BHRViewOrientationLandscape
 };
 
 
 @interface UIView (BHROrientation)
 
 /** Returns the "orientation" of size. width > height is considered "landscape", otherwise "portrait" */
-+ (ViewOrientation)viewOrientationForSize:(CGSize)size;
++ (BHRViewOrientation)orientationForSize:(CGSize)size;
 
 /** Returns the "orientation" of a view based on its size. width > height is considered "landscape", otherwise "portrait" */
-- (ViewOrientation)viewOrientation;
+- (BHRViewOrientation)orientation;
 
 /** Returns YES if height >= width */
-- (BOOL)isViewOrientationPortrait;
+- (BOOL)isPortraitOrienation;
 
 /** Returns YES if width > height */
-- (BOOL)isViewOrientationLandscape;
+- (BOOL)isLandscapeOrienation;
 
 @end
+
+
