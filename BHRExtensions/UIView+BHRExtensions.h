@@ -21,6 +21,9 @@
 - (void)addConstraintBasedSubview:(UIView *)view withInsets:(UIEdgeInsets)insets;
 - (void)insertConstraintBasedSubview:(UIView *)view atIndex:(NSUInteger)index;
 
+- (void)addConstraintsForSubview:(UIView *)view toFitWithInsets:(UIEdgeInsets)insets;
+- (NSArray *)constraintsForSubview:(UIView *)view toFitWithInsets:(UIEdgeInsets)insets;
+
 - (BOOL)findAndResignFirstResponder;
 
 - (UIView *)subviewWithRestorationIdentifier:(NSString *)restorationIdentifier;

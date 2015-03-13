@@ -60,19 +60,19 @@
 - (void)insertConstraintBasedSubview:(UIView *)view belowSubView:(UIView *)otherView
 {
     [self insertSubview:view belowSubview:otherView];
-    [self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
+    [self addConstraintsForSubview:view toFitWithInsets:UIEdgeInsetsZero];
 }
 
 - (void)insertConstraintBasedSubview:(UIView *)view atIndex:(NSUInteger)index
 {
     [self insertSubview:view atIndex:index];
-    [self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
+    [self addConstraintsForSubview:view toFitWithInsets:UIEdgeInsetsZero];
 }
 
 - (void)insertConstraintBasedSubview:(UIView *)view aboveSubView:(UIView *)otherView
 {
     [self insertSubview:view aboveSubview:otherView];
-    [self _addConstraintsForSubview:view withInsets:UIEdgeInsetsZero];
+    [self addConstraintsForSubview:view toFitWithInsets:UIEdgeInsetsZero];
 }
 
 - (void)addConstraintBasedSubview:(UIView *)view
@@ -83,13 +83,22 @@
 - (void)addConstraintBasedSubview:(UIView *)view withInsets:(UIEdgeInsets)insets
 {
     [self addSubview:view];
-    [self _addConstraintsForSubview:view withInsets:insets];
+    [self addConstraintsForSubview:view toFitWithInsets:insets];
 }
 
-- (void)_addConstraintsForSubview:(UIView *)view withInsets:(UIEdgeInsets)insets
+- (void)addConstraintsForSubview:(UIView *)view toFitWithInsets:(UIEdgeInsets)insets
 {
     view.frame = self.bounds;
     [view setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+    NSArray *constraints = [self constraintsForSubview:view
+                                       toFitWithInsets:insets];
+    [self addConstraints:constraints];
+}
+
+- (NSArray *)constraintsForSubview:(UIView *)view toFitWithInsets:(UIEdgeInsets)insets
+{
+    NSMutableArray *constraints = [NSMutableArray array];
 
     NSDictionary *views = @{@"subview": view};
     NSDictionary *metrics = @{
@@ -99,18 +108,15 @@
                               @"bottom": @(insets.bottom),
                               };
 
-    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[subview]-right-|"
-                                                                   options:0
-                                                                   metrics:metrics
-                                                                     views:views];
-    [self addConstraints:constraints];
-
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[subview]-bottom-|"
-                                                          options:0
-                                                          metrics:metrics
-                                                            views:views];
-
-    [self addConstraints:constraints];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-left-[subview]-right-|"
+                                                                             options:0
+                                                                             metrics:metrics
+                                                                               views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[subview]-bottom-|"
+                                                                             options:0
+                                                                             metrics:metrics
+                                                                               views:views]];
+    return constraints;
 }
 
 #pragma mark -
