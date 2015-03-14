@@ -30,6 +30,7 @@
 		5F877DE0193BA91200F8FE9A /* BHRCoreDataErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F877DDF193BA91200F8FE9A /* BHRCoreDataErrorManager.m */; };
 		5F8836A31934142400FB2FD3 /* BHRExtensionsLocalizable.strings in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F8836A01934126900FB2FD3 /* BHRExtensionsLocalizable.strings */; };
 		5F8A316F192ECAE4002A6736 /* BHRDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */; };
+		5F92063C1AB307EC0072F8A4 /* UIView+BHROrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F92063B1AB307EC0072F8A4 /* UIView+BHROrientation.m */; };
 		5FA3198019218AFC0034C815 /* BHRTextFieldTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3197519218AF30034C815 /* BHRTextFieldTableCell.m */; };
 		5FA3198119218B0B0034C815 /* BHRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196919218AF30034C815 /* BHRAdditions.m */; };
 		5FA3198219218B0B0034C815 /* BHRKeyboardStateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3196B19218AF30034C815 /* BHRKeyboardStateController.m */; };
@@ -151,6 +152,8 @@
 		5F8836A21934126900FB2FD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BHRExtensionsLocalizable.strings; sourceTree = "<group>"; };
 		5F8A316D192ECAE4002A6736 /* BHRDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRDismissSegue.h; sourceTree = "<group>"; };
 		5F8A316E192ECAE4002A6736 /* BHRDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRDismissSegue.m; sourceTree = "<group>"; };
+		5F92063A1AB307EC0072F8A4 /* UIView+BHROrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHROrientation.h"; sourceTree = "<group>"; };
+		5F92063B1AB307EC0072F8A4 /* UIView+BHROrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHROrientation.m"; sourceTree = "<group>"; };
 		5FA0B5391A0924AA004E892F /* CJAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJAMacros.h; path = BHRExtensions/CJAMacros.h; sourceTree = "<group>"; };
 		5FA3196819218AF30034C815 /* BHRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRAdditions.h; sourceTree = "<group>"; };
 		5FA3196919218AF30034C815 /* BHRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRAdditions.m; sourceTree = "<group>"; };
@@ -437,6 +440,8 @@
 				5FFBB65518BFBE7B004A41B1 /* UIView+BHRExtensions.m */,
 				5FBA1E1318BF87290077328F /* UIView+BHRTableViewExtensions.h */,
 				5FBA1E1418BF87290077328F /* UIView+BHRTableViewExtensions.m */,
+				5F92063A1AB307EC0072F8A4 /* UIView+BHROrientation.h */,
+				5F92063B1AB307EC0072F8A4 /* UIView+BHROrientation.m */,
 				5FB82ED418E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.h */,
 				5FB82ED518E2217800A136B9 /* NSMutableAttributedString+BHRExtensions.m */,
 				5F63231D18F5CF1F00FC3F82 /* UIDevice+BHRExtensions.h */,
@@ -571,6 +576,7 @@
 				5F05ADC11A0B91A0007E698B /* NSDictionary+BHRExtensions.m in Sources */,
 				5F579B331960610100C94700 /* UIViewController+BHRExtensions.m in Sources */,
 				5FBA1E1518BF87290077328F /* NSURL+BHRExtensions.m in Sources */,
+				5F92063C1AB307EC0072F8A4 /* UIView+BHROrientation.m in Sources */,
 				5F63800C1A8B75190001C13E /* NSManagedObject+BHRPermanentObjectID.m in Sources */,
 				5FA319B8192194CF0034C815 /* SIShellCommandConstructor.m in Sources */,
 				5F6AE13D1AAC4E6E0020B3B9 /* BHRRoundedRectButton.m in Sources */,
