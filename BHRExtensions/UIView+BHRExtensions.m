@@ -164,7 +164,7 @@
              [currentViewDescription appendString:@"   "];
          }
 
-         [currentViewDescription appendFormat:@"[%lu]: %@ - frame: %@, bounds: %@", idx, NSStringFromClass([currentSubview class]), NSStringFromCGRect([currentSubview frame]), NSStringFromCGRect([currentSubview bounds])];
+         [currentViewDescription appendFormat:@"[%lu]: %@ - frame: %@, bounds: %@", (unsigned long)idx, NSStringFromClass([currentSubview class]), NSStringFromCGRect([currentSubview frame]), NSStringFromCGRect([currentSubview bounds])];
 
          NSLog(@"%@", currentViewDescription);
          
