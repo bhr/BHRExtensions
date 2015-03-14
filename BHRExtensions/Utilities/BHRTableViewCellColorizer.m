@@ -21,6 +21,18 @@
 
     [self _colorizeView:cell];
 
+
+    if (self.contentTextColor)
+    {
+        cell.textLabel.textColor = self.contentTextColor;
+        cell.detailTextLabel.textColor = self.contentTextColor;
+    }
+
+    if (self.labelTextColor)
+    {
+        cell.detailTextLabel.textColor = self.labelTextColor;
+    }
+
 	if (self.backgroundColor)
 	{
 		UIView *backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
