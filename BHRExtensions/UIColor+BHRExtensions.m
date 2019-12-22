@@ -86,7 +86,7 @@
 		color = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
 	}
 
-	CGFloat ownColorWeight = 1.0f - fabsf(relativeOffset);
+	CGFloat ownColorWeight = 1.0f - fabs(relativeOffset);
 	CGFloat otherColorWeight = 1.0f - ownColorWeight;
 
 	CGFloat firstHue = 0.0f;
