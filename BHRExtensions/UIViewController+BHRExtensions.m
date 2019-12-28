@@ -13,8 +13,26 @@
 
 + (UIViewController*)topViewController
 {
-    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+	UIWindow *keyWindow = nil;
+	
+	for (UIWindowScene *scene in UIApplication.sharedApplication.connectedScenes)
+	{
+		if (scene.activationState == UISceneActivationStateBackground)
+		{
+			continue;
+		}
+		
+		for (UIWindow *window in scene.windows)
+		{
+			if (window.isKeyWindow)
+			{
+				keyWindow = window;
+				break;
+			}
+		}
+	}
 
+	UIViewController *rootViewController = keyWindow.rootViewController;
     return [rootViewController topVisibleViewController];
 }
 
