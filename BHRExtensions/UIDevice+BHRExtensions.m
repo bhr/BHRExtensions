@@ -155,7 +155,7 @@
     return (self.userInterfaceIdiom == UIUserInterfaceIdiomPad);
 }
 
-- (UIDeviceScreenSize) screenSizeType
+- (UIDeviceScreenSize)screenSizeType
 {
     switch ([self platformType])
     {

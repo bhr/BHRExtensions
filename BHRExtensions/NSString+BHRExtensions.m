@@ -112,7 +112,7 @@
 
 - (NSString *)HTMLConformString
 {
-	return [self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	return [self stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
 }
 
 

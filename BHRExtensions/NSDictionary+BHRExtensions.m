@@ -24,7 +24,7 @@
         if ([value isKindOfClass:[NSArray class]])
         {
             NSString *arrayString = [(NSArray *)value componentsJoinedByString:@","];
-            value = [arrayString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+			[arrayString stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLPathAllowedCharacterSet];
         }
         else if ([value isKindOfClass:[NSDictionary class]])
         {
@@ -43,8 +43,8 @@
             value = valueString;
         }
 
-        currentObject = [value stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-		currentKey = [oneKey stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        currentObject = [value stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLPathAllowedCharacterSet];
+		currentKey = [oneKey stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLPathAllowedCharacterSet];
 
 		if (index > 0)
 		{
