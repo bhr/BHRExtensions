@@ -76,35 +76,26 @@
 - (void)addConstraintBasedChildViewController:(UIViewController *)childViewController
 							childViewRelation:(BHRChildViewRelation)childViewRelation
 {
+	UIView *parentView = self.view;
 	UIView *childView = childViewController.view;
 	childView.translatesAutoresizingMaskIntoConstraints = NO;
 
 	childView.frame = self.view.bounds;
-	[self.view addSubview:childView];
-
-	NSDictionary *views = @{ @"childView": childView,
-							 @"topLayoutGuide": self.topLayoutGuide,
-							 @"bottomLayoutGuide": self.bottomLayoutGuide };
+	[parentView addSubview:childView];
 
 	if (childViewRelation == BHRChildViewRelationToLayoutGuides)
 	{
-		[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][childView][bottomLayoutGuide]"
-																		  options:0
-																		  metrics:nil
-																			views:views]];
+		[parentView addConstraint:[childView.topAnchor constraintEqualToAnchor:parentView.safeAreaLayoutGuide.topAnchor]];
+		[parentView addConstraint:[childView.bottomAnchor constraintEqualToAnchor:parentView.safeAreaLayoutGuide.bottomAnchor]];
 	}
 	else
 	{
-		[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[childView]|"
-																		  options:0
-																		  metrics:nil
-																			views:views]];
+		[parentView addConstraint:[childView.topAnchor constraintEqualToAnchor:parentView.bottomAnchor]];
+		[parentView addConstraint:[childView.bottomAnchor constraintEqualToAnchor:parentView.topAnchor]];
 	}
-
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[childView]|"
-																	  options:0
-																	  metrics:nil
-																		views:views]];
+	
+	[parentView addConstraint:[childView.leftAnchor constraintEqualToAnchor:parentView.leftAnchor]];
+	[parentView addConstraint:[childView.rightAnchor constraintEqualToAnchor:parentView.rightAnchor]];
 
 	[self addChildViewController:childViewController];
 	[childViewController didMoveToParentViewController:self];
