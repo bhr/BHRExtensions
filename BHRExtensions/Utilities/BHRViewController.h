@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^BHRViewControllerPresentationBlock)(void);
+
 @interface BHRViewController : UIViewController
 
 @end
