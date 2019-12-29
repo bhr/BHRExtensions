@@ -15,8 +15,9 @@ typedef NS_ENUM(NSUInteger, BHRChildViewRelation) {
 
 @interface UIViewController (BHRExtensions)
 
-+ (UIViewController*)topViewController;
-- (UIViewController*)topVisibleViewController;
++ (UIViewController *)windowRootViewController;
++ (UIViewController *)topViewController;
+- (UIViewController *)topVisibleViewController;
 
 /**
  * Adds a constraint based child view controller filling out the whole space by respecting childViewRelationType

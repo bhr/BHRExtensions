@@ -11,7 +11,7 @@
 @implementation UIViewController (BHRExtensions)
 
 
-+ (UIViewController*)topViewController
++ (UIViewController *)windowRootViewController
 {
 	UIWindow *keyWindow = nil;
 	
@@ -31,12 +31,18 @@
 			}
 		}
 	}
-
+	
 	UIViewController *rootViewController = keyWindow.rootViewController;
+	return rootViewController;
+}
+
++ (UIViewController *)topViewController
+{
+	UIViewController *rootViewController = [UIViewController windowRootViewController];
     return [rootViewController topVisibleViewController];
 }
 
-- (UIViewController*)topVisibleViewController
+- (UIViewController *)topVisibleViewController
 {
 	if ([self isKindOfClass:[UIAlertController class]])
 	{
