@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSMutableAttributedString (BHRExtensions)
 
-- (void)deleteAllOccurrencesOfString:(NSString *)string;
-- (void)replaceOccurrencesOfString:(NSString *)string withString:(NSString *)replacementString;
+- (void)bhr_deleteAllOccurrencesOfString:(NSString *)string;
+- (void)bhr_replaceOccurrencesOfString:(NSString *)string withString:(NSString *)replacementString;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -10,26 +10,15 @@
 
 @implementation NSMutableAttributedString (BHRExtensions)
 
-- (void)deleteAllOccurrencesOfString:(NSString *)string
+- (void)bhr_deleteAllOccurrencesOfString:(NSString *)string
 {
-	[self replaceOccurrencesOfString:string withString:nil];
+	[self bhr_replaceOccurrencesOfString:string withString:@""];
 }
 
 
-- (void)replaceOccurrencesOfString:(NSString *)string withString:(NSString *)replacementString
+- (void)bhr_replaceOccurrencesOfString:(NSString *)string withString:(NSString *)replacementString
 {
-	if (replacementString == nil)
-	{
-		replacementString = @"";
-	}
-
 	NSRange searchStringRange;
-
-	if (string == nil)
-	{
-		return;
-	}
-
 	do
 	{
 		searchStringRange = [[self string] rangeOfString:string];
