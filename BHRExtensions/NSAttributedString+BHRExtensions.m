@@ -15,8 +15,9 @@
 										 withColor:(UIColor *)newColor
 {
 	NSMutableAttributedString *adjustedAttributedString = [[NSMutableAttributedString alloc] init];
-
-	[self enumerateAttributesInRange:NSMakeRange(0, [[self string] length])
+	
+	
+	[self enumerateAttributesInRange:NSMakeRange(0, self.length)
 										 options:0
 									  usingBlock:^(NSDictionary *textAttributes, NSRange range, BOOL *stop)
 	 {
