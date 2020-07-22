@@ -72,7 +72,8 @@ NSString * const BHRSmallTitleAndValueTableCellReuseID = @"BHRSmallTitleAndValue
 		_valueTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		_valueTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
 		_valueTextField.textAlignment = NSTextAlignmentLeft;
-
+		_valueTextField.textColor = UIColor.labelColor;
+		
 		[self.contentView addSubview:_valueTextField];
 	}
 
@@ -86,7 +87,8 @@ NSString * const BHRSmallTitleAndValueTableCellReuseID = @"BHRSmallTitleAndValue
 		_titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		_titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		_titleLabel.font = [UIFont systemFontOfSize:11.0f];
-
+		_titleLabel.textColor = UIColor.secondaryLabelColor;
+		
 		[self.contentView addSubview:_titleLabel];
 	}
 

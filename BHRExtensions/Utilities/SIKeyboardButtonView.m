@@ -20,15 +20,14 @@
 @property (nonatomic, assign) BOOL highlighted;
 
 @property (nonatomic, strong) NSArray *titleLabelConstraints;
-@property (nonatomic, assign) UIKeyboardAppearance appearance;
 
 @end
 
 @implementation SIKeyboardButtonView
 
-- (instancetype)initWithAppearance:(UIKeyboardAppearance)appearance
+- (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
 {
-	_appearance = appearance;
+	_interfaceStyle = interfaceStyle;
 	return [self initWithFrame:CGRectZero];
 }
 
@@ -67,10 +66,6 @@
 	_titleLabel.textAlignment = NSTextAlignmentCenter;
 	_titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
-	if (self.appearance == UIKeyboardAppearanceDark) {
-		_titleLabel.textColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
-	}
-
 	[self addSubview:_titleLabel];
 	
 	
@@ -79,13 +74,7 @@
 	_backgroundLayer.zPosition = -1;
 	_backgroundLayer.shadowRadius = 0.7f;
 	_backgroundLayer.shadowOpacity = 1.0f;
-	_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.5f alpha:1.f] CGColor];
-
-	if (self.appearance == UIKeyboardAppearanceDark)
-	{
-		_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.15f alpha:1.f] CGColor];
-	}
-
+	
 	_backgroundLayer.shadowOffset = CGSizeMake(0.f, 1.0f);
 	
 	[self _updateBackgroundLayerColors];
@@ -190,17 +179,33 @@
 	self.backgroundLayer.frame = baseFrame;
 }
 
+- (void)setInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
+{
+	if (_interfaceStyle != interfaceStyle)
+	{
+		_interfaceStyle = interfaceStyle;
+		[self _updateBackgroundLayerColors];
+	}
+}
+
 - (void)_updateBackgroundLayerColors
 {
 	UIColor *backgroundColor;
-
-	if (self.appearance == UIKeyboardAppearanceDark)
-	{
-		backgroundColor = [UIColor colorWithWhite:0.35f alpha:1.0f];
-	}
-	else
-	{
-		backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+	
+	switch (self.interfaceStyle) {
+		case UIUserInterfaceStyleDark:
+		{
+			_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.15f alpha:1.f] CGColor];
+			backgroundColor = [UIColor colorWithWhite:0.35f alpha:1.0f];
+		}
+			break;
+		case UIUserInterfaceStyleLight:
+		case UIUserInterfaceStyleUnspecified:
+		{
+			_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.5f alpha:1.f] CGColor];
+			backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+		}
+			break;
 	}
 	
 	if (self.selected) {

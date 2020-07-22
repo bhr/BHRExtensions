@@ -52,7 +52,7 @@ NSString * const BHRScriptTextTableCellReuseID = @"BHRScriptTextTableCell";
                                                                              options:0
                                                                              metrics:nil
                                                                                views:viewsDict]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[textView]-8-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[textView]-8-|"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:viewsDict]];
@@ -61,10 +61,12 @@ NSString * const BHRScriptTextTableCellReuseID = @"BHRScriptTextTableCell";
                                                                              options:0
                                                                              metrics:nil
                                                                                views:viewsDict]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[placeholder]-(>=0)-|"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDict]];
+	
+	UILabel *placeholder = self.placeholderLabel;
+	UIView *contentView = self.contentView;
+	
+	[[placeholder.leadingAnchor constraintEqualToAnchor:contentView.layoutMarginsGuide.leadingAnchor] setActive:YES];
+	[[contentView.layoutMarginsGuide.trailingAnchor constraintEqualToAnchor:placeholder.trailingAnchor] setActive:YES];
 }
 
 - (void)_setupConstraintsForCellWithImportButton

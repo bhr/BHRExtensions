@@ -20,8 +20,9 @@ extern NSString * const SIShellButtonInfoID;
 @interface SIKeyboardAccessoryView : UIView <SIKeyboardButtonViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, weak) id<SIShellAccessoryViewDelegate> delegate;
+@property (nonatomic, assign) UIUserInterfaceStyle interfaceStyle;
 
-- (instancetype)initWithKeyboardAppearance:(UIKeyboardAppearance)appearance;
+- (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle;
 
 - (void)sendButtonWithType:(SIShellAccessoryButton)buttonType;
 

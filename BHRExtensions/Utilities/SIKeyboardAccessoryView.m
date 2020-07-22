@@ -16,19 +16,18 @@ NSString * const SIShellButtonInfoID = @"identifier";
 @interface SIKeyboardAccessoryView ()
 
 @property (nonatomic, strong) NSArray *buttons;
-@property (nonatomic, assign) UIKeyboardAppearance appearance;
 
 @end
 
 @implementation SIKeyboardAccessoryView
 
-- (instancetype)initWithKeyboardAppearance:(UIKeyboardAppearance)appearance
+- (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
 {
 	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 32.0f)];
 
 	if (self)
 	{
-		_appearance = appearance;
+		_interfaceStyle = interfaceStyle;
 		[self _sharedInit];
 	}
 	return self;
@@ -37,15 +36,6 @@ NSString * const SIShellButtonInfoID = @"identifier";
 
 - (void)_sharedInit
 {
-	if (self.appearance == UIKeyboardAppearanceDark)
-	{
-		self.backgroundColor = [UIColor darkKeyboardBackgroundColor];
-	}
-	else
-	{
-		self.backgroundColor = [UIColor keyboardBackgroundColor];
-	}
-
 	NSMutableArray *buttons = [@[] mutableCopy];
 
 
@@ -68,7 +58,7 @@ NSString * const SIShellButtonInfoID = @"identifier";
 		}
 
 		//view creation
-		SIKeyboardButtonView *button = [[SIKeyboardButtonView alloc] initWithAppearance:self.appearance];
+		SIKeyboardButtonView *button = [[SIKeyboardButtonView alloc] initWithInterfaceStyle:self.interfaceStyle];
 		button.title = buttonTitle;
 		button.delegate = self;
 		button.restorationIdentifier = buttonID;
@@ -120,6 +110,38 @@ NSString * const SIShellButtonInfoID = @"identifier";
 													  constant:0.0f]];
 
 	self.buttons = buttons;
+	[self _updateColors];
+}
+
+- (void)_updateColors
+{
+	for (SIKeyboardButtonView *button in self.buttons)
+	{
+		button.interfaceStyle = self.interfaceStyle;
+	}
+	
+	switch (self.interfaceStyle) {
+		case UIUserInterfaceStyleDark:
+		{
+			self.backgroundColor = [UIColor darkKeyboardBackgroundColor];
+		}
+			break;
+		case UIUserInterfaceStyleLight:
+		case UIUserInterfaceStyleUnspecified:
+		{
+			self.backgroundColor = [UIColor keyboardBackgroundColor];
+		}
+			break;
+	}
+}
+
+- (void)setInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
+{
+	if (_interfaceStyle != interfaceStyle)
+	{
+		_interfaceStyle = interfaceStyle;
+		[self _updateColors];
+	}
 }
 
 #pragma mark - Actions

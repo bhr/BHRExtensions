@@ -16,8 +16,9 @@
 @property (nonatomic, strong) NSString *title;
 
 @property (nonatomic, assign) BOOL selected;
+@property (nonatomic, assign) UIUserInterfaceStyle interfaceStyle;
 
-- (instancetype)initWithAppearance:(UIKeyboardAppearance)appearance;
+- (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle;
 
 @end
 

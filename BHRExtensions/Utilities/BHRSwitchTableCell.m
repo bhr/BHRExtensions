@@ -28,10 +28,13 @@ NSString * const BHRSwitchTableCellReuseID = @"BHRSwitchTableCell";
 	NSDictionary *viewsDict = @{ @"label": self.label,
 								 @"switchObject": self.switchObject };
 
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-(>=4)-[switchObject]-20-|"
-																			 options:0
-																			 metrics:nil
-																			   views:viewsDict]];
+	UILabel *label = self.label;
+	UISwitch *switchObject = self.switchObject;
+	UIView *contentView = self.contentView;
+	
+	[[label.leadingAnchor constraintEqualToAnchor:contentView.layoutMarginsGuide.leadingAnchor] setActive:YES];
+	[[switchObject.leadingAnchor constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:label.trailingAnchor multiplier:1.0] setActive:YES];
+	[[contentView.layoutMarginsGuide.trailingAnchor constraintEqualToAnchor:switchObject.trailingAnchor] setActive:YES];
 
 	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[label]-(>=0)-|"
 																			 options:0
