@@ -146,24 +146,7 @@
 
 - (UIImage *)colorizedImageWithColor:(UIColor *)color
 {
-	CGRect rect = CGRectMake(0.0f, 0.0f, self.size.width, self.size.height);
-
-	UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
-
-	[color set];
-
-	CGContextRef context = UIGraphicsGetCurrentContext();
-	CGContextTranslateCTM(context, 0.0f, rect.size.height);
-	CGContextScaleCTM(context, 1.0, -1.0);
-
-	CGContextClipToMask(context, rect, [self CGImage]);
-	CGContextFillRect(context, rect);
-
-	UIImage *colorizedImage = UIGraphicsGetImageFromCurrentImageContext();
-
-	UIGraphicsEndImageContext();
-
-	return colorizedImage;
+	return [self imageWithTintColor:color renderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 - (UIImage *)grayscaleImage
