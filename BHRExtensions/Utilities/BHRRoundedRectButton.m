@@ -66,10 +66,9 @@
     else
     {
         //Hack for having always the button highlighted - even when pressing button only shortly
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
-                       {
-                           [super setHighlighted:highlighted];
-                       });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[super setHighlighted:highlighted];
+		});
     }
 }
 
