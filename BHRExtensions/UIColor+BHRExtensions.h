@@ -15,6 +15,8 @@
 - (UIColor *)colorByAddingBrightness:(CGFloat)brightnessOffset;
 - (UIColor *)colorByAddingAlpha:(CGFloat)alphaOffset;
 
+- (UIColor *)cgSafeColor;
+
 /**
  * Works only on RGB color spaces
  */

@@ -80,6 +80,18 @@
 	return nil;
 }
 
+- (UIColor *)cgSafeColor
+{
+	CGFloat red = 0.0f;
+	CGFloat green = 0.0f;
+	CGFloat blue = 0.0f;
+	CGFloat alpha = 0.0f;
+	
+	BOOL succeeded = [self getRed:&red green:&green blue:&blue alpha:&alpha];
+	NSAssert(succeeded, @"First Color needs to be in RGB color space");
+	return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
 - (UIColor *)colorByInterpolatingWithColor:(UIColor *)color relativeOffset:(CGFloat)relativeOffset
 {
 	if (color == nil) {
@@ -155,7 +167,7 @@
 
 + (UIColor *)darkKeyboardBackgroundColor
 {
-	return [UIColor colorWithHue:0.000 saturation:0.000 brightness:0.117f alpha:0.97f];
+	return [UIColor colorWithHue:0.6666 saturation:0.02 brightness:0.22 alpha:0.97f];
 }
 
 + (UIColor *)keyboardBackgroundColor
