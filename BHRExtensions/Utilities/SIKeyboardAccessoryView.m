@@ -1,5 +1,5 @@
 //
-//  SIShellAccessoryViewController.m
+//  SIShellAccessoryView.m
 //  SimpleSSH
 //
 //  Created by Benedikt Hirmer on 2/23/14.
@@ -32,7 +32,6 @@ NSString * const SIShellButtonInfoID = @"identifier";
 	}
 	return self;
 }
-
 
 - (void)_sharedInit
 {
@@ -92,25 +91,21 @@ NSString * const SIShellButtonInfoID = @"identifier";
 																 options:NSLayoutFormatAlignAllBottom | NSLayoutFormatAlignAllTop
 																 metrics:nil
 																   views:viewsDict]];
-
-	[self addConstraint:[NSLayoutConstraint constraintWithItem:referenceView
-													 attribute:NSLayoutAttributeCenterY
-													 relatedBy:NSLayoutRelationEqual
-														toItem:self
-													 attribute:NSLayoutAttributeCenterY
-													multiplier:1.0f
-													  constant:0.0f]];
-
-	[self addConstraint:[NSLayoutConstraint constraintWithItem:referenceView
-													 attribute:NSLayoutAttributeHeight
-													 relatedBy:NSLayoutRelationEqual
-														toItem:self
-													 attribute:NSLayoutAttributeHeight
-													multiplier:0.9f
-													  constant:0.0f]];
-
+	
+	[[referenceView.topAnchor constraintEqualToAnchor:self.topAnchor constant:4.0] setActive:YES];
+	[[self.bottomAnchor constraintEqualToAnchor:referenceView.bottomAnchor constant:4.0] setActive:YES];
+	[[referenceView.heightAnchor constraintEqualToConstant:40.0f] setActive:YES];
+	
 	self.buttons = buttons;
 	[self _updateColors];
+	
+	CGSize size = [self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+	self.frame = CGRectMake(0.f, 0.f, size.width, size.height);
+}
+
++ (BOOL)requiresConstraintBasedLayout
+{
+	return YES;
 }
 
 - (void)_updateColors

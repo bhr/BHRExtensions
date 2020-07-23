@@ -1,5 +1,5 @@
 //
-//  SIShellAccessoryViewController.h
+//  SIShellAccessoryView.h
 //  SimpleSSH
 //
 //  Created by Benedikt Hirmer on 2/23/14.
@@ -22,7 +22,10 @@ extern NSString * const SIShellButtonInfoID;
 @property (nonatomic, weak) id<SIShellAccessoryViewDelegate> delegate;
 @property (nonatomic, assign) UIUserInterfaceStyle interfaceStyle;
 
-- (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle;
+- (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithCoder:(NSCoder *)coder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 - (void)sendButtonWithType:(SIShellAccessoryButton)buttonType;
 
@@ -46,6 +49,6 @@ extern NSString * const SIShellButtonInfoID;
 			didPressButton:(SIShellAccessoryButton)button;
 
 @optional
-- (UIView *)viewShownFromForAccessoryView:(SIKeyboardAccessoryView *)shellAccessoryViewController;
+- (UIViewController *)viewControllerForAlertAccessoryView:(SIKeyboardAccessoryView *)shellAccessoryViewController;
 
 @end

@@ -21,6 +21,7 @@
 #import "Utilities/BHRScriptTextTableCell.h"
 #import "Utilities/SIHideTextAccessoryView.h"
 #import "Utilities/SIKeyboardAccessoryView.h"
+#import "Utilities/SIShellAccessoryView.h"
 #import "Utilities/BHRColorProvider.h"
 #import "Utilities/BHRColorizer.h"
 #import "Utilities/BHRTableViewCellColorizer.h"

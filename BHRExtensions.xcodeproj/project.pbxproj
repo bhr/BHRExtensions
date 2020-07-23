@@ -79,6 +79,7 @@
 		5FFBB66518BFC0F0004A41B1 /* UIImage+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB66018BFC0F0004A41B1 /* UIImage+BHRExtensions.m */; };
 		5FFBB67A18BFC286004A41B1 /* UIColor+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */; };
 		5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */; };
+		8D1BCE8A24C9E3C300C36FE7 /* SIShellAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BCE8924C9E3C300C36FE7 /* SIShellAccessoryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,8 @@
 		5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BHRExtensions.m"; sourceTree = "<group>"; };
 		5FFBB67118BFC286004A41B1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		8D1BCE8824C9E3C300C36FE7 /* SIShellAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIShellAccessoryView.h; sourceTree = "<group>"; };
+		8D1BCE8924C9E3C300C36FE7 /* SIShellAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIShellAccessoryView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +314,8 @@
 				5FA319B11921934F0034C815 /* SIKeyboardButtonView.m */,
 				5FA319B6192194CF0034C815 /* SIShellCommandConstructor.h */,
 				5FA319B7192194CF0034C815 /* SIShellCommandConstructor.m */,
+				8D1BCE8824C9E3C300C36FE7 /* SIShellAccessoryView.h */,
+				8D1BCE8924C9E3C300C36FE7 /* SIShellAccessoryView.m */,
 			);
 			name = "Keyboard Accessory View";
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D1BCE8A24C9E3C300C36FE7 /* SIShellAccessoryView.m in Sources */,
 				5F579BE81960A71100C94700 /* NSAttributedString+BHRExtensions.m in Sources */,
 				5FEF58FD1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.m in Sources */,
 				5F18A81D18CF235000C9D851 /* UIApplication+BHRVersionInfo.m in Sources */,
