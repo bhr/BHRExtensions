@@ -10,6 +10,12 @@
 
 NSString * const BHRSmallTitleAndValueTableCellReuseID = @"BHRSmallTitleAndValueTableCell";
 
+@interface BHRSmallTitleAndValueTableCell ()
+
+@property (nonatomic, strong) UIView *containerView;
+
+@end
+
 @implementation BHRSmallTitleAndValueTableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -37,13 +43,18 @@ NSString * const BHRSmallTitleAndValueTableCellReuseID = @"BHRSmallTitleAndValue
 	NSDictionary *viewsDict = @{ @"label": self.titleLabel,
 								 @"valueTextField": self.valueTextField };
 
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[valueTextField]-20-|"
-																			 options:0
-																			 metrics:nil
-																			   views:viewsDict]];
-
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=4)-[label]-0-[valueTextField]-(>=8)-|"
-																			 options:NSLayoutFormatAlignAllLeading
+	
+	[[self.containerView.leftAnchor constraintEqualToAnchor:self.contentView.layoutMarginsGuide.leftAnchor] setActive:YES];
+	[[self.contentView.layoutMarginsGuide.rightAnchor constraintEqualToAnchor:self.containerView.rightAnchor] setActive:YES];
+	
+	[[self.containerView.centerYAnchor constraintEqualToAnchor:self.contentView.centerYAnchor] setActive:YES];
+	[[self.containerView.topAnchor constraintGreaterThanOrEqualToAnchor:self.contentView.layoutMarginsGuide.topAnchor] setActive:YES];
+	[[self.contentView.layoutMarginsGuide.bottomAnchor constraintGreaterThanOrEqualToAnchor:self.containerView.bottomAnchor] setActive:YES];
+	
+	[[self.titleLabel.leftAnchor constraintEqualToAnchor:self.containerView.leftAnchor] setActive:YES];
+	[[self.containerView.rightAnchor constraintEqualToAnchor:self.titleLabel.rightAnchor] setActive:YES];
+	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[label]-4-[valueTextField]|"
+																			 options:NSLayoutFormatAlignAllLeading | NSLayoutFormatAlignAllTrailing
 																			 metrics:nil
 																			   views:viewsDict]];
 }
@@ -74,7 +85,7 @@ NSString * const BHRSmallTitleAndValueTableCellReuseID = @"BHRSmallTitleAndValue
 		_valueTextField.textAlignment = NSTextAlignmentLeft;
 		_valueTextField.textColor = UIColor.labelColor;
 		
-		[self.contentView addSubview:_valueTextField];
+		[self.containerView addSubview:_valueTextField];
 	}
 
 	return _valueTextField;
@@ -89,10 +100,22 @@ NSString * const BHRSmallTitleAndValueTableCellReuseID = @"BHRSmallTitleAndValue
 		_titleLabel.font = [UIFont systemFontOfSize:11.0f];
 		_titleLabel.textColor = UIColor.secondaryLabelColor;
 		
-		[self.contentView addSubview:_titleLabel];
+		[self.containerView addSubview:_titleLabel];
 	}
 
 	return _titleLabel;
+}
+
+- (UIView *)containerView
+{
+	if (!_containerView)
+	{
+		_containerView = [[UIView alloc] init];
+		_containerView.translatesAutoresizingMaskIntoConstraints = NO;
+		[self.contentView addSubview:_containerView];
+	}
+	
+	return _containerView;
 }
 
 @end

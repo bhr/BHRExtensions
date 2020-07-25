@@ -56,6 +56,7 @@
 #import "NSDictionary+BHRExtensions.h"
 #import "NSManagedObject+BHRPermanentObjectID.h"
 #import "UIControl+BHRExtensions.h"
+#import "UITableViewCell+BHRExtensions.h"
 #import "UIView+BHROrientation.h"
 
 #import "CJAMacros.h"

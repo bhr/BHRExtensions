@@ -80,6 +80,7 @@
 		5FFBB67A18BFC286004A41B1 /* UIColor+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB67018BFC286004A41B1 /* UIColor+BHRExtensions.m */; };
 		5FFBB67B18BFC286004A41B1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */; };
 		8D1BCE8A24C9E3C300C36FE7 /* SIShellAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BCE8924C9E3C300C36FE7 /* SIShellAccessoryView.m */; };
+		8D8FCEAB24CBC4900000AF08 /* UITableViewCell+BHRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FCEAA24CBC4900000AF08 /* UITableViewCell+BHRExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +231,8 @@
 		5FFBB67218BFC286004A41B1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		8D1BCE8824C9E3C300C36FE7 /* SIShellAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIShellAccessoryView.h; sourceTree = "<group>"; };
 		8D1BCE8924C9E3C300C36FE7 /* SIShellAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIShellAccessoryView.m; sourceTree = "<group>"; };
+		8D8FCEA924CBC4900000AF08 /* UITableViewCell+BHRExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+BHRExtensions.h"; sourceTree = "<group>"; };
+		8D8FCEAA24CBC4900000AF08 /* UITableViewCell+BHRExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+BHRExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +468,8 @@
 				5F05ADC01A0B91A0007E698B /* NSDictionary+BHRExtensions.m */,
 				5FEF58FB1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.h */,
 				5FEF58FC1A95F1AF00DAB6C5 /* UIControl+BHRExtensions.m */,
+				8D8FCEA924CBC4900000AF08 /* UITableViewCell+BHRExtensions.h */,
+				8D8FCEAA24CBC4900000AF08 /* UITableViewCell+BHRExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 				5FA319B41921934F0034C815 /* SIKeyboardButtonView.m in Sources */,
 				5FFBB66518BFC0F0004A41B1 /* UIImage+BHRExtensions.m in Sources */,
 				5FFBB65618BFBE7B004A41B1 /* UIView+BHRExtensions.m in Sources */,
+				8D8FCEAB24CBC4900000AF08 /* UITableViewCell+BHRExtensions.m in Sources */,
 				5FC0203518C87F1D00ED7E5A /* NSDate+BHRExtensions.m in Sources */,
 				5F10596118D2397C00F3EE2F /* NSFetchedResultsController+BHRExtensions.m in Sources */,
 			);

@@ -25,14 +25,12 @@ NSString * const BHRTextFieldTableCellReuseID = @"BHRTextFieldTableCell";
 
 - (void)_setUpConstraints
 {
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(==0)-[textField]-(==0)-|"
-																			 options:0
-																			 metrics:nil
-																			   views:@{ @"textField": self.textField }]];
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[textField]-(8)-|"
-																			 options:0
-																			 metrics:nil
-																			   views:@{ @"textField": self.textField }]];
+	[[self.textField.leftAnchor constraintEqualToAnchor:self.contentView.layoutMarginsGuide.leftAnchor] setActive:YES];
+	[[self.contentView.layoutMarginsGuide.rightAnchor constraintEqualToAnchor:self.textField.rightAnchor] setActive:YES];
+	
+	[[self.textField.centerYAnchor constraintEqualToAnchor:self.contentView.centerYAnchor] setActive:YES];
+	[[self.textField.topAnchor constraintGreaterThanOrEqualToAnchor:self.contentView.layoutMarginsGuide.topAnchor] setActive:YES];
+	[[self.contentView.layoutMarginsGuide.bottomAnchor constraintGreaterThanOrEqualToAnchor:self.textField.bottomAnchor] setActive:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
