@@ -15,7 +15,7 @@
 /**
  Returns the URL to the application's Documents directory.
  */
-+ (NSURL *)applicationDocumentsDirectory
++ (NSURL *)bhr_applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
@@ -23,7 +23,7 @@
 /**
  Returns the AppSupportFolder
  */
-+ (NSURL *)applicationSupportDirectory
++ (NSURL *)bhr_applicationSupportDirectory
 {
 	NSString *applicationSupportDirectory = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
 																				 NSUserDomainMask,

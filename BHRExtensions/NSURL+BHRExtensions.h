@@ -10,7 +10,7 @@
 
 @interface NSURL (BHRExtensions)
 
-+ (NSURL *)applicationDocumentsDirectory;
-+ (NSURL *)applicationSupportDirectory;
++ (NSURL *)bhr_applicationDocumentsDirectory;
++ (NSURL *)bhr_applicationSupportDirectory;
 
 @end
