@@ -33,3 +33,25 @@ CGFloat Square(CGFloat value);
 CGFloat RotateValueAtPositionWithMax(CGFloat value, CGFloat flipPosition, CGFloat max);
 
 CGFloat HorizontalDistanceFromRectToPoint(CGRect rect, CGPoint point);
+
+NS_INLINE void dispatch_on_main_async(dispatch_block_t dispatchBlock) {
+	if ([NSThread isMainThread]) {
+		dispatchBlock();
+		return;
+	}
+	
+	dispatch_async(dispatch_get_main_queue(), ^{
+		dispatchBlock();
+	});
+}
+
+NS_INLINE void dispatch_on_main_sync(dispatch_block_t dispatchBlock) {
+	if ([NSThread isMainThread]) {
+		dispatchBlock();
+		return;
+	}
+	
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		dispatchBlock();
+	});
+}
