@@ -62,7 +62,7 @@
 	CGFloat xDifferenceCurrentNearestToCurrentTextField = NSIntegerMax;
 	CGRect viewFrame = view.frame;
 	
-	for (UIView *subview in tableViewCell.contentView.subviews)
+	for (UIView *subview in [self allSubviewsInTableViewCell:tableViewCell])
 	{
 		if (![subview canBecomeFirstResponder] || subview == view)
 		{
@@ -81,6 +81,23 @@
 	return nearestNextSubview;
 }
 
+- (NSArray<UIView *> *)allSubviewsInTableViewCell:(UITableViewCell *)tableViewCell
+{
+	NSMutableArray<UIView *> *subviews = [tableViewCell.contentView.subviews mutableCopy];
+	for (UIView *subview in subviews.copy) {
+		[subviews addObjectsFromArray:[self allSubviewsInView:subview]];
+	}
+	return subviews;
+}
+
+- (NSArray<UIView *> *)allSubviewsInView:(UIView *)view
+{
+	NSMutableArray<UIView *> *subviews = [view.subviews mutableCopy];
+	for (UIView *subview in subviews.copy) {
+		[subviews addObjectsFromArray:[self allSubviewsInView:subview]];
+	}
+	return subviews;
+}
 
 - (NSIndexPath *)nextIndexForPath:(NSIndexPath *) indexPath
 {
