@@ -54,7 +54,15 @@
     NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect keyboardFrame = [kbFrame CGRectValue];
 	
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+	UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
+	for (UIWindowScene *windowScene in [[UIApplication sharedApplication] connectedScenes]) {
+		if ([windowScene isKindOfClass:UIWindowScene.class]) {
+			orientation = windowScene.interfaceOrientation;
+			break;
+		}
+	}
+	
+//	Use the interfaceOrientation property of the window scene instead
     BOOL isPortrait = UIInterfaceOrientationIsPortrait(orientation);
 
 	CGFloat height = self.defaultHeight + keyboardFrame.size.height;
