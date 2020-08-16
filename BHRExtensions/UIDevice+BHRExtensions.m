@@ -13,9 +13,7 @@
 #include <net/if.h>
 #include <net/if_dl.h>
 
-
 @implementation UIDevice (BHRExtensions)
-
 
 #pragma mark sysctlbyname utils
 - (NSString *) getSysInfoByName:(char *)typeSpecifier
@@ -32,7 +30,7 @@
     return results;
 }
 
-- (NSString *) platform
+- (NSString *)platform
 {
     return [self getSysInfoByName:"hw.machine"];
 }

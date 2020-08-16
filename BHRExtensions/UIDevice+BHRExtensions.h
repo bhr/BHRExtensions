@@ -106,9 +106,9 @@ typedef NS_ENUM(NSUInteger, UIDeviceScreenSize)
 
 @interface UIDevice (BHRExtensions)
 
-- (UIDevicePlatform) platformType;
+- (NSString *)platform;
 - (UIDeviceScreenSize) screenSizeType;
-- (NSString *) platformString;
+- (NSString *)platformString __deprecated_msg("Please use `platform`");
 
 - (BOOL)isiPad;
 
