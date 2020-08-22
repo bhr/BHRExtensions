@@ -14,7 +14,7 @@
 @interface SIKeyboardButtonView ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) CAShapeLayer *backgroundLayer;
+@property (nonatomic, strong) CALayer *backgroundLayer;
 
 @property (nonatomic, strong) UILongPressGestureRecognizer *buttonGestureRecognizer;
 @property (nonatomic, assign) BOOL highlighted;
@@ -69,9 +69,10 @@
 	[self addSubview:_titleLabel];
 	
 	
-	_backgroundLayer = [CAShapeLayer layer];
+	_backgroundLayer = [CALayer layer];
 	_backgroundLayer.contentsScale = [UIScreen mainScreen].scale;
 	_backgroundLayer.zPosition = -1;
+	_backgroundLayer.cornerRadius = 3.0f;
 	_backgroundLayer.shadowRadius = 0.7f;
 	_backgroundLayer.shadowOpacity = 1.0f;
 	
@@ -161,22 +162,11 @@
 
 - (void)_updateBackgroundLayer
 {
-	//not using bounds here, because on iOS 8 (GM) self.bounds is an invalid rect
-
-	CGRect baseFrame = CGRectMake(0.0f,
-								  0.0f,
-								  CGRectGetWidth(self.frame),
-								  CGRectGetHeight(self.frame));
-	CGRect buttonRect = CGRectInset(baseFrame, 1.0f, 1.0f);
-
-	if (CGRectGetHeight(baseFrame) > 0.0f &&
-		CGRectGetWidth(baseFrame) > 0.0f)
-	{
-	 self.backgroundLayer.path = [[UIBezierPath bezierPathWithRoundedRect:buttonRect
-															 cornerRadius:3.0f] CGPath];
-	}
-	
-	self.backgroundLayer.frame = baseFrame;
+	CGRect buttonRect = CGRectInset(self.bounds, 1.0f, 1.0f);
+	CGRect shadowRect = CGRectMake(0, 0, CGRectGetWidth(buttonRect), CGRectGetHeight(buttonRect));
+	CGFloat shadowCornerRadius = self.backgroundLayer.cornerRadius;
+	self.backgroundLayer.frame = buttonRect;
+	self.backgroundLayer.shadowPath = CGPathCreateWithRoundedRect(shadowRect, shadowCornerRadius, shadowCornerRadius, nil);
 }
 
 - (void)setInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
@@ -216,7 +206,7 @@
 		backgroundColor = [backgroundColor colorByAddingAlpha:-0.4f];
 	}
 	
-	self.backgroundLayer.fillColor = [backgroundColor CGColor];
+	self.backgroundLayer.backgroundColor = [backgroundColor CGColor];
 }
 
 #pragma mark -
