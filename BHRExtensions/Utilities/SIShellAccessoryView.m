@@ -128,6 +128,9 @@
 	
 	[alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil]];
 	
+	alertController.popoverPresentationController.sourceView = fnButtonView;
+	alertController.popoverPresentationController.sourceRect = fnButtonView.bounds;
+	
 	UIViewController *viewController = nil;
 	if ([self.delegate respondsToSelector:@selector(viewControllerForAlertAccessoryView:)])
 	{
