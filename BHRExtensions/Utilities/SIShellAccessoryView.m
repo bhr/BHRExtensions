@@ -30,48 +30,48 @@
 	
 	return @[
 		@{
-			titleKey: NSLocalizedString(@"esc", nil),
+			titleKey: NSLocalizedString(@"esc", @"KeyboardAccessoryViewButtonTitleEscapeKey"),
 			typeKey: @(SIShellAccessoryButtonEsc),
 		},
 		@{
-			titleKey: NSLocalizedString(@"tab", nil),
+			titleKey: NSLocalizedString(@"tab", @"KeyboardAccessoryViewButtonTitleTabKey"),
 			typeKey: @(SIShellAccessoryButtonTab),
 		},
 		@{
-			titleKey: NSLocalizedString(@"ctrl", nil),
+			titleKey: NSLocalizedString(@"ctrl", @"KeyboardAccessoryViewButtonTitleControlKey"),
 			typeKey: @(SIShellAccessoryButtonControl),
 		},
 		@{
-			titleKey: NSLocalizedString(@"fn", nil),
+			titleKey: NSLocalizedString(@"fn", @"KeyboardAccessoryViewButtonTitleFunctionKey"),
 			typeKey: @(SIShellAccessoryButtonFn),
 		},
 		@{
-			titleKey: NSLocalizedString(@"/", nil),
+			titleKey: @"/",
 			identifierKey: @"slash",
 			typeKey: @(SIShellAccessoryButtonSlash),
 		},
 		@{
-			titleKey: NSLocalizedString(@";", nil),
+			titleKey: @";",
 			identifierKey: @"semicolon",
 			typeKey: @(SIShellAccessoryButtonSemiColon),
 		},
 		@{
-			titleKey: NSLocalizedString(@"▲", nil),
+			titleKey: @"▲",
 			identifierKey: @"up",
 			typeKey: @(SIShellAccessoryButtonArrowUp),
 		},
 		@{
-			titleKey: NSLocalizedString(@"▼", nil),
+			titleKey: @"▼",
 			identifierKey: @"down",
 			typeKey: @(SIShellAccessoryButtonArrowDown),
 		},
 		@{
-			titleKey: NSLocalizedString(@"◀", nil),
+			titleKey: @"◀",
 			identifierKey: @"left",
 			typeKey: @(SIShellAccessoryButtonArrowLeft),
 		},
 		@{
-			titleKey: NSLocalizedString(@"▶", nil),
+			titleKey: @"▶",
 			identifierKey: @"right",
 			typeKey: @(SIShellAccessoryButtonArrowRight),
 		},
@@ -126,7 +126,7 @@
 		}]];
 	}
 	
-	[alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil]];
+	[alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"CancelButtonTitle") style:UIAlertActionStyleCancel handler:nil]];
 	
 	alertController.popoverPresentationController.sourceView = fnButtonView;
 	alertController.popoverPresentationController.sourceRect = fnButtonView.bounds;

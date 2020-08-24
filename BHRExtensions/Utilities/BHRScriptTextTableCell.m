@@ -167,7 +167,7 @@ NSString * const BHRScriptTextTableCellReuseID = @"BHRScriptTextTableCell";
     {
         _importButton = [UIButton buttonWithType:UIButtonTypeSystem];
         _importButton.translatesAutoresizingMaskIntoConstraints = NO;
-        [_importButton setTitle:NSLocalizedString(@"Import from File", nil)
+        [_importButton setTitle:NSLocalizedString(@"Import from File", @"ScriptCellButtonTitleImportFromFile")
                        forState:UIControlStateNormal];
     }
 
@@ -183,7 +183,7 @@ NSString * const BHRScriptTextTableCellReuseID = @"BHRScriptTextTableCell";
 
         _titleLabel.textColor = [UIColor lightGrayColor];
         _titleLabel.font = [UIFont systemFontOfSize:[UIFont buttonFontSize]-3];
-        _titleLabel.text = NSLocalizedString(@"Script", nil);
+        _titleLabel.text = NSLocalizedString(@"Script", @"ScriptCellTitleScript");
     }
 
     return _titleLabel;

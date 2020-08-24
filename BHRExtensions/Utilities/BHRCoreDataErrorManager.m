@@ -19,11 +19,11 @@
 - (void)showErrorAlert
 {
 	dispatch_async(dispatch_get_main_queue(), ^{
-		NSString *title = NSLocalizedString(@"Unresolved error!", nil);
-		NSString *message = NSLocalizedString(@"An unresolved error occurred when trying to save your changes. \n\nPlease restart the app and try again.", nil);
+		NSString *title = NSLocalizedString(@"Unresolved error!", @"SavingChangesErrorAlertTitle");
+		NSString *message = NSLocalizedString(@"An unresolved error occurred when trying to save your changes. \n\nPlease restart the app and try again.", @"SavingChangesErrorAlertMessage");
 		UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
 		
-		NSString *actionTitle = [NSString stringWithFormat:NSLocalizedString(@"Quit %@", nil), [UIApplication appName]];
+		NSString *actionTitle = [NSString stringWithFormat:NSLocalizedString(@"Quit %@", @"SavingChangesErrorAlertActionQuitButtonTitle appName-1"), [UIApplication appName]];
 		[alertController addAction:[UIAlertAction actionWithTitle:actionTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 			abort();
 		}]];

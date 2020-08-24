@@ -31,7 +31,7 @@
 
 - (NSString *)separatorID
 {
-	return NSLocalizedStringFromTable(@"hide", @"BHRExtensionsLocalizable", nil);
+	return NSLocalizedStringFromTable(@"hide", @"BHRExtensionsLocalizable", @"KeyboardAccessoryViewButtonTitleHide");
 }
 
 @end
