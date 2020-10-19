@@ -87,7 +87,7 @@
 	CGFloat blue = 0.0f;
 	CGFloat alpha = 0.0f;
 	
-	BOOL succeeded = [self getRed:&red green:&green blue:&blue alpha:&alpha];
+	__unused BOOL succeeded = [self getRed:&red green:&green blue:&blue alpha:&alpha];
 	NSAssert(succeeded, @"First Color needs to be in RGB color space");
 	return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }

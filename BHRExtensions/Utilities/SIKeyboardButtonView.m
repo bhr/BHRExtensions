@@ -166,7 +166,9 @@
 	CGRect shadowRect = CGRectMake(0, 0, CGRectGetWidth(buttonRect), CGRectGetHeight(buttonRect));
 	CGFloat shadowCornerRadius = self.backgroundLayer.cornerRadius;
 	self.backgroundLayer.frame = buttonRect;
-	self.backgroundLayer.shadowPath = CGPathCreateWithRoundedRect(shadowRect, shadowCornerRadius, shadowCornerRadius, nil);
+	CGPathRef path = CGPathCreateWithRoundedRect(shadowRect, shadowCornerRadius, shadowCornerRadius, nil);
+	self.backgroundLayer.shadowPath = path;
+	CGPathRelease(path);
 }
 
 - (void)setInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
