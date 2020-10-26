@@ -13,8 +13,6 @@
 
 - (void)selectNextResponderForView:(UIView *)view
 {
-	[view resignFirstResponder];
-	
     UITableViewCell *currentCell = (UITableViewCell *)[view tableViewCell];
 	
 	UIView *nextResponder = [self nextSubviewInTableViewCell:currentCell
@@ -28,12 +26,12 @@
 	
 	NSIndexPath *nextIndexPath = nil;
 	UITableViewCell *nextCell = currentCell;
-
+	BOOL nextCellIsVisible = NO;
+	
 	do {
 		NSIndexPath *currentIndexPath = [self indexPathForCell:nextCell];
 		
-		
-		NSIndexPath *nextIndexPath = [self nextIndexForPath:currentIndexPath];
+		nextIndexPath = [self nextIndexForPath:currentIndexPath];
 		
 		if (nextIndexPath == nil)
 		{
@@ -41,18 +39,41 @@
 		}
 		
 		nextCell = [self cellForRowAtIndexPath:nextIndexPath];
-		
-		[self scrollToRowAtIndexPath:nextIndexPath
-					atScrollPosition:UITableViewScrollPositionMiddle
-							animated:YES];
+		nextCellIsVisible = nextCell != nil;
+		if (nextCellIsVisible == NO)
+		{
+			nextCell = [self.dataSource tableView:self cellForRowAtIndexPath:nextIndexPath];
+		}
 		
 		nextResponder = [self nextSubviewInTableViewCell:nextCell
 										  relativeToView:nil];
 
-	} while (nextResponder == nil || nextIndexPath != nil);
+	} while (nextResponder == nil);
 	
-	[nextResponder becomeFirstResponder];
-	
+	if (nextResponder == nil)
+	{
+		[view resignFirstResponder];
+	}
+	else
+	{
+		[self scrollToRowAtIndexPath:nextIndexPath
+					atScrollPosition:UITableViewScrollPositionMiddle
+							animated:YES];
+		
+		if (nextCellIsVisible)
+		{
+			[nextResponder becomeFirstResponder];
+		}
+		else
+		{
+			// if the next cell is not visible we have to wait until we've scrolled there so that the cell is available
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				UITableViewCell *realCell = [self cellForRowAtIndexPath:nextIndexPath];
+				UIResponder *realResponder = [self nextSubviewInTableViewCell:realCell relativeToView:nil];
+				[realResponder becomeFirstResponder];
+			});
+		}
+	}
 	return;
 }
 
