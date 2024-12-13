@@ -23,10 +23,10 @@ NSString * const SIShellButtonInfoID = @"identifier";
 
 - (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
 {
-	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 32.0f)];
+	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 0.0f)];
 
 	if (self)
-	{
+{
 		_interfaceStyle = interfaceStyle;
 		[self _sharedInit];
 	}
@@ -35,9 +35,12 @@ NSString * const SIShellButtonInfoID = @"identifier";
 
 - (void)_sharedInit
 {
+    self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
 	NSMutableArray *buttons = [@[] mutableCopy];
-
-
+    UIView *buttonsContainer = [[UIView alloc] initWithFrame:CGRectZero];
+    buttonsContainer.translatesAutoresizingMaskIntoConstraints = false;
+    
 	NSMutableDictionary *viewsDict = [@{} mutableCopy];
 	UIView *referenceView = nil;
 	NSArray *buttonsInfo = [self buttonsInfo];
@@ -63,7 +66,7 @@ NSString * const SIShellButtonInfoID = @"identifier";
 		button.restorationIdentifier = buttonID;
 
 		[buttons addObject:button];
-		[self addSubview:button];
+		[buttonsContainer addSubview:button];
 
 		//constraints
 		if (referenceView == nil)
@@ -87,20 +90,25 @@ NSString * const SIShellButtonInfoID = @"identifier";
 
 	[horizontalFormatString appendFormat:@"|"];
 
-	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:horizontalFormatString
+	[buttonsContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:horizontalFormatString
 																 options:NSLayoutFormatAlignAllBottom | NSLayoutFormatAlignAllTop
 																 metrics:nil
 																   views:viewsDict]];
 	
-	[[referenceView.topAnchor constraintEqualToAnchor:self.topAnchor constant:4.0] setActive:YES];
-	[[self.bottomAnchor constraintEqualToAnchor:referenceView.bottomAnchor constant:4.0] setActive:YES];
-	[[referenceView.heightAnchor constraintEqualToConstant:40.0f] setActive:YES];
+	[[referenceView.topAnchor constraintEqualToAnchor:buttonsContainer.topAnchor constant:4.0] setActive:YES];
+    [[buttonsContainer.bottomAnchor constraintEqualToAnchor:referenceView.bottomAnchor constant:4.0] setActive:YES];
+    [[referenceView.heightAnchor constraintEqualToConstant:40.0f] setActive:YES];
 	
 	self.buttons = buttons;
 	[self _updateColors];
 	
-	CGSize size = [self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-	self.frame = CGRectMake(0.f, 0.f, size.width, size.height);
+    [self addSubview:buttonsContainer];
+    [NSLayoutConstraint activateConstraints:@[
+        [buttonsContainer.topAnchor constraintEqualToAnchor:self.topAnchor],
+        [buttonsContainer.leftAnchor constraintEqualToAnchor: self.leftAnchor],
+        [buttonsContainer.bottomAnchor constraintEqualToAnchor: self.safeAreaLayoutGuide.bottomAnchor],
+        [buttonsContainer.rightAnchor constraintEqualToAnchor:self.rightAnchor]
+    ]];
 }
 
 + (BOOL)requiresConstraintBasedLayout
