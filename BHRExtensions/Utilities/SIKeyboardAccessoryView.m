@@ -23,7 +23,7 @@ NSString * const SIShellButtonInfoID = @"identifier";
 
 - (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
 {
-	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 0.0f)];
+	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 48.0f)];
 
 	if (self)
 {
@@ -36,10 +36,11 @@ NSString * const SIShellButtonInfoID = @"identifier";
 - (void)_sharedInit
 {
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    self.translatesAutoresizingMaskIntoConstraints = NO;
     
 	NSMutableArray *buttons = [@[] mutableCopy];
     UIView *buttonsContainer = [[UIView alloc] initWithFrame:CGRectZero];
-    buttonsContainer.translatesAutoresizingMaskIntoConstraints = false;
+    buttonsContainer.translatesAutoresizingMaskIntoConstraints = NO;
     
 	NSMutableDictionary *viewsDict = [@{} mutableCopy];
 	UIView *referenceView = nil;
@@ -97,7 +98,11 @@ NSString * const SIShellButtonInfoID = @"identifier";
 	
 	[[referenceView.topAnchor constraintEqualToAnchor:buttonsContainer.topAnchor constant:4.0] setActive:YES];
     [[buttonsContainer.bottomAnchor constraintEqualToAnchor:referenceView.bottomAnchor constant:4.0] setActive:YES];
-    [[referenceView.heightAnchor constraintEqualToConstant:40.0f] setActive:YES];
+    NSLayoutConstraint *heightAnchor = [referenceView.heightAnchor constraintEqualToConstant:40.0f];
+    [heightAnchor setActive:YES];
+    heightAnchor.priority = UILayoutPriorityDefaultHigh;
+    
+    [[referenceView.heightAnchor constraintGreaterThanOrEqualToConstant:32.0f] setActive:YES];
 	
 	self.buttons = buttons;
 	[self _updateColors];
@@ -109,6 +114,10 @@ NSString * const SIShellButtonInfoID = @"identifier";
         [buttonsContainer.bottomAnchor constraintEqualToAnchor: self.safeAreaLayoutGuide.bottomAnchor],
         [buttonsContainer.rightAnchor constraintEqualToAnchor:self.rightAnchor]
     ]];
+}
+
+-(CGSize)intrinsicContentSize {
+    return CGSizeMake(320.0f, 48.0f);
 }
 
 + (BOOL)requiresConstraintBasedLayout
