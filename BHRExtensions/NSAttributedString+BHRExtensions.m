@@ -8,8 +8,115 @@
 
 #import "NSAttributedString+BHRExtensions.h"
 #import "UIColor+BHRExtensions.h"
+#import <CoreText/CoreText.h>
+
+NSArray<NSString *> *ColorAttributeKeys(void) {
+    static NSArray<NSString *> *keys;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        keys = @[
+            NSForegroundColorAttributeName,
+            NSBackgroundColorAttributeName,
+            NSStrokeColorAttributeName,
+            NSUnderlineColorAttributeName,
+            NSStrikethroughColorAttributeName
+        ];
+    });
+    return keys;
+}
 
 @implementation NSAttributedString (BHRExtensions)
+
++ (UIColor *)uiColorForValue:(id)value
+{
+    if (!value) {
+        return value;
+    }
+    
+    if ([value isKindOfClass:[UIColor class]]) {
+        return value;
+    }
+    
+    if (CFGetTypeID((__bridge CFTypeRef)(value)) == CGColorGetTypeID()) {
+        return [UIColor colorWithCGColor:(__bridge CGColorRef _Nonnull)(value)];
+    }
+    
+    @throw [NSException exceptionWithName:NSGenericException
+                                   reason:@"Unexpected color value"
+                                 userInfo:@{ @"value": value }];
+
+}
+
+UIFont *UIFontFromCTFont(CTFontRef ctFont) {
+    if (!ctFont) return nil;
+
+    CFStringRef fontName = CTFontCopyPostScriptName(ctFont); // or CTFontCopyFullName()
+    CGFloat fontSize = CTFontGetSize(ctFont);
+    
+    UIFont *uiFont = [UIFont fontWithName:(__bridge_transfer NSString *)fontName size:fontSize];
+    return uiFont;
+}
+
++ (UIFont *)uiFontForValue:(id)value
+{
+    if (!value) {
+        return value;
+    }
+    
+    if ([value isKindOfClass:[UIFont class]]) {
+        return value;
+    }
+    
+    if (CFGetTypeID((__bridge CFTypeRef)(value)) == CTFontGetTypeID()) {
+        return UIFontFromCTFont((__bridge CTFontRef)(value));
+    }
+    
+    @throw [NSException exceptionWithName:NSGenericException
+                                   reason:@"Unexpected font value"
+                                 userInfo:@{ @"value": value }];
+
+}
+
+- (NSAttributedString *)stringBySanitizingTypes
+{
+    NSMutableAttributedString *adjustedAttributedString = [[NSMutableAttributedString alloc] init];
+    
+    
+    [self enumerateAttributesInRange:NSMakeRange(0, self.length)
+                                         options:0
+                                      usingBlock:^(NSDictionary *textAttributes, NSRange range, BOOL *stop)
+     {
+        NSMutableDictionary *newTextAttributes = [textAttributes mutableCopy];
+        
+        for (NSString *key in ColorAttributeKeys()) {
+            UIColor *textColor = [NSAttributedString uiColorForValue:newTextAttributes[key]];
+            if (textColor) {
+                newTextAttributes[key] = textColor;
+            }
+        }
+        
+        UIFont *currentFont = [NSAttributedString uiFontForValue:newTextAttributes[NSFontAttributeName]];
+        if (currentFont) {
+            newTextAttributes[NSFontAttributeName] = currentFont;
+        }
+
+         NSString *string = [self string];
+
+         //adjust length if strings length is less than range
+         //note: this shouldn't happen but did happen, so we resolve it manually
+         if (NSMaxRange(range) > [string length])
+         {
+             range.length -= (NSMaxRange(range) - [string length]);
+         }
+
+         NSAttributedString *adjustedAttributedStringComponent = [[NSAttributedString alloc] initWithString:[string substringWithRange:range]
+                                                                                                 attributes:newTextAttributes];
+         [adjustedAttributedString appendAttributedString:adjustedAttributedStringComponent];
+
+     }];
+
+    return [adjustedAttributedString copy];
+}
 
 - (NSAttributedString *)stringbyReplacingTextColor:(UIColor *)existingColor
 										 withColor:(UIColor *)newColor
@@ -21,9 +128,8 @@
 										 options:0
 									  usingBlock:^(NSDictionary *textAttributes, NSRange range, BOOL *stop)
 	 {
-		 NSMutableDictionary *newTextAttributes = [textAttributes mutableCopy];
-
-		 UIColor *textColor = newTextAttributes[NSForegroundColorAttributeName];
+        NSMutableDictionary *newTextAttributes = [textAttributes mutableCopy];
+        UIColor *textColor = [NSAttributedString uiColorForValue:newTextAttributes[NSForegroundColorAttributeName]];
 
 		 if (textColor == nil ||
 			 [textColor isEqualToColor:existingColor])
@@ -61,7 +167,7 @@
 	 {
 		 NSMutableDictionary *newTextAttributes = [textAttributes mutableCopy];
 
-		 UIFont *currentFont = newTextAttributes[NSFontAttributeName];
+        UIFont *currentFont = [NSAttributedString uiFontForValue:newTextAttributes[NSFontAttributeName]];
 
 		 if (currentFont == nil)
 		 {

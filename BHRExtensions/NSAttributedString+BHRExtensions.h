@@ -11,6 +11,8 @@
 
 @interface NSAttributedString (BHRExtensions)
 
+- (NSAttributedString *)stringBySanitizingTypes;
+
 - (NSAttributedString *)stringbyReplacingTextColor:(UIColor *)existingColor
 										 withColor:(UIColor *)newColor;
 
