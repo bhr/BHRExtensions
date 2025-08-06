@@ -25,6 +25,20 @@ NSArray<NSString *> *ColorAttributeKeys(void) {
     return keys;
 }
 
+BOOL UIColorComponentsEqual(UIColor *c1, UIColor *c2) {
+    CGFloat r1, g1, b1, a1;
+    CGFloat r2, g2, b2, a2;
+    
+    [c1 getRed:&r1 green:&g1 blue:&b1 alpha:&a1];
+    [c2 getRed:&r2 green:&g2 blue:&b2 alpha:&a2];
+    
+    CGFloat epsilon = 0.01;
+    return (fabs(r1 - r2) < epsilon &&
+            fabs(g1 - g2) < epsilon &&
+            fabs(b1 - b2) < epsilon &&
+            fabs(a1 - a2) < epsilon);
+}
+
 @implementation NSAttributedString (BHRExtensions)
 
 + (UIColor *)uiColorForValue:(id)value
@@ -132,10 +146,9 @@ UIFont *UIFontFromCTFont(CTFontRef ctFont) {
         UIColor *textColor = [NSAttributedString uiColorForValue:newTextAttributes[NSForegroundColorAttributeName]];
 
 		 if (textColor == nil ||
-			 [textColor isEqualToColor:existingColor])
+			 UIColorComponentsEqual(textColor, existingColor))
 		 {
-			 textColor = newColor;
-			 newTextAttributes[NSForegroundColorAttributeName] = textColor;
+			 newTextAttributes[NSForegroundColorAttributeName] = newColor;
 		 }
 
          NSString *string = [self string];
@@ -171,8 +184,7 @@ UIFont *UIFontFromCTFont(CTFontRef ctFont) {
 
 		 if (currentFont == nil)
 		 {
-			 currentFont = newFont;
-			 newTextAttributes[NSFontAttributeName] = currentFont;
+			 newTextAttributes[NSFontAttributeName] = newFont;
 		 }
 
 		 NSAttributedString *adjustedAttributedStringComponent = [[NSAttributedString alloc] initWithString:[[self string] substringWithRange:range]
