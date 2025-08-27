@@ -13,6 +13,9 @@ NSString * const SIShellButtonInfoTitle = @"title";
 NSString * const SIShellButtonInfoType = @"type";
 NSString * const SIShellButtonInfoID = @"identifier";
 
+double KEYBOARD_HEIGHT = 52.0f;
+double VERTICAL_PADDING = 4.0f;
+
 @interface SIKeyboardAccessoryView ()
 
 @property (nonatomic, strong) NSArray *buttons;
@@ -23,7 +26,7 @@ NSString * const SIShellButtonInfoID = @"identifier";
 
 - (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
 {
-	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 48.0f)];
+	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, KEYBOARD_HEIGHT)];
 
 	if (self)
 {
@@ -46,13 +49,25 @@ NSString * const SIShellButtonInfoID = @"identifier";
 	UIView *referenceView = nil;
 	NSArray *buttonsInfo = [self buttonsInfo];
 	CGFloat itemSpace = [self itemSpace];
+    CGFloat outerItemSpace = 8.0f;
 
-	NSMutableString *horizontalFormatString = [NSMutableString stringWithFormat:@"H:|-%f-",itemSpace];
-
-	for (NSDictionary *buttonDictionary in buttonsInfo)
-	{
-		NSString *buttonTitle = [buttonDictionary objectForKey:SIShellButtonInfoTitle];
+    
+    BOOL firstIsSeparator = [[[buttonsInfo firstObject] objectForKey:SIShellButtonInfoTitle] isEqualToString:[self separatorID]];
+    
+    NSMutableString *horizontalFormatString = [NSMutableString stringWithFormat:@"H:|-%@%f-", firstIsSeparator? @">=" : @"", outerItemSpace];
+    BOOL lastIsSeparator = NO;
+    
+    for (NSUInteger index = 0; index < buttonsInfo.count; index++) {
+        NSDictionary *buttonDictionary = buttonsInfo[index];
+    
+	    NSString *buttonTitle = [buttonDictionary objectForKey:SIShellButtonInfoTitle];
 		NSString *buttonID = [buttonDictionary objectForKey:SIShellButtonInfoID];
+        SIShellAccessoryButton buttonType = [[buttonDictionary objectForKey:SIShellButtonInfoType] unsignedIntegerValue];
+        
+        // skip "none" button
+        if (buttonType == SIShellAccessoryButtonNone) {
+            continue;
+        }
 
 		//if no id was given use title as ID
 		if (buttonID == nil)
@@ -78,27 +93,35 @@ NSString * const SIShellButtonInfoID = @"identifier";
 		[viewsDict setObject:button
 					  forKey:button.restorationIdentifier];
 
-		if ([buttonID isEqualToString:[self separatorID]])
+        BOOL isSeparator = [buttonID isEqualToString:[self separatorID]];
+        
+        if (index < buttonsInfo.count - 1)
 		{
-			[horizontalFormatString appendFormat:@"[%@]-(>=%f)-", button.restorationIdentifier, itemSpace];
-		}
-		else
-		{
-			[horizontalFormatString appendFormat:@"[%@]-%f-", button.restorationIdentifier, itemSpace];
-		}
-
+            if (isSeparator)
+            {
+                [horizontalFormatString appendFormat:@"[%@]-(>=%f)-", button.restorationIdentifier, itemSpace];
+            }
+            else
+            {
+                [horizontalFormatString appendFormat:@"[%@]-%f-", button.restorationIdentifier, itemSpace];
+            }
+        }
+        else {
+            lastIsSeparator = isSeparator;
+            [horizontalFormatString appendFormat:@"[%@]", button.restorationIdentifier];
+        }
 	}
 
-	[horizontalFormatString appendFormat:@"|"];
+    [horizontalFormatString appendFormat:@"-%@%f-|", lastIsSeparator ? @">=" : @"",outerItemSpace];
 
 	[buttonsContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:horizontalFormatString
 																 options:NSLayoutFormatAlignAllBottom | NSLayoutFormatAlignAllTop
 																 metrics:nil
 																   views:viewsDict]];
 	
-	[[referenceView.topAnchor constraintEqualToAnchor:buttonsContainer.topAnchor constant:4.0] setActive:YES];
-    [[buttonsContainer.bottomAnchor constraintEqualToAnchor:referenceView.bottomAnchor constant:4.0] setActive:YES];
-    NSLayoutConstraint *heightAnchor = [referenceView.heightAnchor constraintEqualToConstant:40.0f];
+	[[referenceView.topAnchor constraintEqualToAnchor:buttonsContainer.topAnchor constant:VERTICAL_PADDING] setActive:YES];
+    [[buttonsContainer.bottomAnchor constraintEqualToAnchor:referenceView.bottomAnchor constant:VERTICAL_PADDING] setActive:YES];
+    NSLayoutConstraint *heightAnchor = [referenceView.heightAnchor constraintEqualToConstant:KEYBOARD_HEIGHT - 2 * VERTICAL_PADDING];
     [heightAnchor setActive:YES];
     heightAnchor.priority = UILayoutPriorityDefaultHigh;
     
@@ -117,7 +140,7 @@ NSString * const SIShellButtonInfoID = @"identifier";
 }
 
 -(CGSize)intrinsicContentSize {
-    return CGSizeMake(320.0f, 48.0f);
+    return CGSizeMake(320.0f, KEYBOARD_HEIGHT);
 }
 
 + (BOOL)requiresConstraintBasedLayout
@@ -191,7 +214,7 @@ NSString * const SIShellButtonInfoID = @"identifier";
 
 - (CGFloat)itemSpace
 {
-	return 2.0f;
+	return 3.0f;
 }
 
 @end

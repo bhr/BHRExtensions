@@ -20,18 +20,22 @@
 	NSString *titleKey = SIShellButtonInfoTitle;
 	NSString *typeKey = SIShellButtonInfoType;
 	
-	return @[
-			 @{
-				 titleKey: [self separatorID],
-				 typeKey: @(SIShellAccessoryButtonHideKeyboard),
-				 },
-			 ];
-	
+    return @[
+        @{
+            titleKey: [self separatorID],
+            typeKey: @(SIShellAccessoryButtonNone),
+        },
+        @{
+            titleKey: NSLocalizedStringFromTable(@"hide", @"BHRExtensionsLocalizable", @"KeyboardAccessoryViewButtonTitleHide"),
+            typeKey: @(SIShellAccessoryButtonHideKeyboard),
+        },
+    ];
+    
 }
 
 - (NSString *)separatorID
 {
-	return NSLocalizedStringFromTable(@"hide", @"BHRExtensionsLocalizable", @"KeyboardAccessoryViewButtonTitleHide");
+	return @"none";
 }
 
 @end

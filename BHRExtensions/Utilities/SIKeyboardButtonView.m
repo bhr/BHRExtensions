@@ -9,7 +9,11 @@
 #import "SIKeyboardButtonView.h"
 #import "UIColor+BHRExtensions.h"
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_260000
+#define MIN_WIDTH 24.0f
+#else
 #define MIN_WIDTH 20.0f
+#endif
 
 @interface SIKeyboardButtonView ()
 
@@ -64,20 +68,29 @@
 	
 	_titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
 	_titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    if (@available(iOS 26.0, *)) {
+        _titleLabel.font = [UIFont systemFontOfSize:18.0f weight:UIFontWeightMedium width:UIFontWidthCondensed];
+    }
+    
 	_titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
 	[self addSubview:_titleLabel];
 	
-	
 	_backgroundLayer = [CALayer layer];
 	_backgroundLayer.contentsScale = [UIScreen mainScreen].scale;
 	_backgroundLayer.zPosition = -1;
-	_backgroundLayer.cornerRadius = 3.0f;
-	_backgroundLayer.shadowRadius = 0.7f;
-	_backgroundLayer.shadowOpacity = 1.0f;
-	
-	_backgroundLayer.shadowOffset = CGSizeMake(0.f, 1.0f);
-	
+	_backgroundLayer.cornerRadius = 8.0f;
+
+    if (@available(iOS 26.0, *)) {
+        // do nothing
+    } else {
+        _backgroundLayer.shadowRadius = 0.7f;
+        _backgroundLayer.shadowOpacity = 1.0f;
+        
+        _backgroundLayer.shadowOffset = CGSizeMake(0.f, 1.0f);
+    }
+    
 	[self _updateBackgroundLayerColors];
 	
 	[self.layer addSublayer:_backgroundLayer];
@@ -194,7 +207,7 @@
 		case UIUserInterfaceStyleLight:
 		case UIUserInterfaceStyleUnspecified:
 		{
-			_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.5f alpha:1.f] CGColor];
+			_backgroundLayer.shadowColor = [[UIColor colorWithWhite:1.0f alpha:1.f] CGColor];
 			backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
 		}
 			break;

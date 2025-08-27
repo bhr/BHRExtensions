@@ -167,11 +167,19 @@
 
 + (UIColor *)darkKeyboardBackgroundColor
 {
-	return [UIColor colorWithHue:0.6666 saturation:0.02 brightness:0.22 alpha:0.97f];
+    if (@available(iOS 26, *)) {
+        return [[UIColor colorWithHexString:@"1D1D1F"] colorWithAlphaComponent:0.97f];
+    }
+    
+    return [UIColor colorWithHue:0.6666 saturation:0.02 brightness:0.22 alpha:0.97f];
 }
 
 + (UIColor *)keyboardBackgroundColor
 {
+    if (@available(iOS 26, *)) {
+        return [[UIColor colorWithHexString:@"F0F0F0"] colorWithAlphaComponent:0.97f];
+    }
+    
 	return [UIColor colorWithHue:0.600 saturation:0.029 brightness:0.887 alpha:1.000];
 }
 

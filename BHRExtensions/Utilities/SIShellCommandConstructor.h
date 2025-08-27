@@ -37,6 +37,8 @@ typedef enum SIShellAccessoryButton : NSUInteger {
 	SIShellAccessoryButtonF10,
 	SIShellAccessoryButtonF11,
 	SIShellAccessoryButtonF12,
+    
+    SIShellAccessoryButtonNone = 9999,
 	
 } SIShellAccessoryButton;
 
