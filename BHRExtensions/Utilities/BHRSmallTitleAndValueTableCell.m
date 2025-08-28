@@ -81,6 +81,7 @@ NSString * const BHRSmallTitleAndValueTableCellReuseID = @"BHRSmallTitleAndValue
 
 		_valueTextField.autocorrectionType = UITextAutocorrectionTypeNo;
 		_valueTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _valueTextField.spellCheckingType = UITextSpellCheckingTypeNo;
 		_valueTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
 		_valueTextField.textAlignment = NSTextAlignmentLeft;
 		_valueTextField.textColor = UIColor.labelColor;

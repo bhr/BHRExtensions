@@ -54,6 +54,7 @@ NSString * const BHRTextFieldTableCellReuseID = @"BHRTextFieldTableCell";
 
 		_textField.autocorrectionType = UITextAutocorrectionTypeNo;
 		_textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _textField.spellCheckingType = UITextSpellCheckingTypeNo;
 		_textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 
 		[self.contentView addSubview:_textField];

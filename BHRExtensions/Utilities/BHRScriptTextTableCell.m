@@ -156,6 +156,7 @@ NSString * const BHRScriptTextTableCellReuseID = @"BHRScriptTextTableCell";
 		_textView.editable = YES;
 		_textView.selectable = YES;
 		_textView.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _textView.spellCheckingType = UITextSpellCheckingTypeNo;
 		_textView.autocorrectionType = UITextAutocorrectionTypeNo;
 	}
 	return _textView;

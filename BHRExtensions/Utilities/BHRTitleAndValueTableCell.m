@@ -113,6 +113,7 @@ NSString * const BHRTitleAndValueTableCellReuseID = @"BHRTitleAndValueTableCell"
 
 		_valueTextField.autocorrectionType = UITextAutocorrectionTypeNo;
 		_valueTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _valueTextField.spellCheckingType = UITextSpellCheckingTypeNo;
 		_valueTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
 		_valueTextField.textAlignment = NSTextAlignmentRight;
 		
