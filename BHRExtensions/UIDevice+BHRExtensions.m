@@ -153,6 +153,20 @@
     return (self.userInterfaceIdiom == UIUserInterfaceIdiomPad);
 }
 
+- (BOOL)isMac
+{
+    if (@available(iOS 14.0, *)) {
+        return (self.userInterfaceIdiom == UIUserInterfaceIdiomMac);
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)isLargeScreenDevice
+{
+    return [self isiPad] || [self isMac];
+}
+
 - (UIDeviceScreenSize)screenSizeType
 {
     switch ([self platformType])
