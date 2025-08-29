@@ -20,15 +20,17 @@
 	NSString *titleKey = SIShellButtonInfoTitle;
 	NSString *typeKey = SIShellButtonInfoType;
 	
+    // Return grouped buttons - first group is empty (flexible space), second group contains the hide button
     return @[
-        @{
-            titleKey: [self separatorID],
-            typeKey: @(SIShellAccessoryButtonNone),
-        },
-        @{
-            titleKey: NSLocalizedStringFromTable(@"hide", @"BHRExtensionsLocalizable", @"KeyboardAccessoryViewButtonTitleHide"),
-            typeKey: @(SIShellAccessoryButtonHideKeyboard),
-        },
+        // Group 1: Empty group for flexible space (binds hide button to the right)
+        @[],
+        // Group 2: Hide button
+        @[
+            @{
+                titleKey: NSLocalizedStringFromTable(@"hide", @"BHRExtensionsLocalizable", @"KeyboardAccessoryViewButtonTitleHide"),
+                typeKey: @(SIShellAccessoryButtonHideKeyboard),
+            },
+        ],
     ];
     
 }

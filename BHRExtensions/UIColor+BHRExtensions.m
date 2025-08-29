@@ -177,7 +177,7 @@
 + (UIColor *)keyboardBackgroundColor
 {
     if (@available(iOS 26, *)) {
-        return [[UIColor colorWithHexString:@"F0F0F0"] colorWithAlphaComponent:0.97f];
+        return [[UIColor colorWithHexString:@"DFE0E5"] colorWithAlphaComponent:1.0f];
     }
     
 	return [UIColor colorWithHue:0.600 saturation:0.029 brightness:0.887 alpha:1.000];

@@ -10,7 +10,7 @@
 #import "UIColor+BHRExtensions.h"
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_260000
-#define MIN_WIDTH 24.0f
+#define MIN_WIDTH 26.0f
 #else
 #define MIN_WIDTH 20.0f
 #endif
@@ -201,7 +201,7 @@
 		case UIUserInterfaceStyleDark:
 		{
 			_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.15f alpha:1.f] CGColor];
-			backgroundColor = [UIColor colorWithWhite:0.35f alpha:1.0f];
+			backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
 		}
 			break;
 		case UIUserInterfaceStyleLight:
@@ -214,11 +214,13 @@
 	}
 	
 	if (self.selected) {
-		backgroundColor = [backgroundColor colorByAddingBrightness:-0.25f];
+        CGFloat direction = self.interfaceStyle == UIUserInterfaceStyleDark ? 1.0f : -1.0f;
+		backgroundColor = [backgroundColor colorByAddingBrightness:direction * 0.25f];
 	}
 	
 	if (self.highlighted) {
-		backgroundColor = [backgroundColor colorByAddingAlpha:-0.4f];
+        CGFloat direction = self.interfaceStyle == UIUserInterfaceStyleDark ? 1.0f : -1.0f;
+		backgroundColor = [backgroundColor colorByAddingAlpha:direction * 0.4f];
 	}
 	
 	self.backgroundLayer.backgroundColor = [backgroundColor CGColor];
@@ -253,6 +255,12 @@
 		self.titleLabel.text = title;
 		[self setNeedsUpdateConstraints];
 	}
+}
+
+
+ - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
 }
 
 @end

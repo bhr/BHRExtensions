@@ -13,12 +13,14 @@ NSString * const SIShellButtonInfoTitle = @"title";
 NSString * const SIShellButtonInfoType = @"type";
 NSString * const SIShellButtonInfoID = @"identifier";
 
-double KEYBOARD_HEIGHT = 52.0f;
+double KEYBOARD_HEIGHT = 48.0f;
 double VERTICAL_PADDING = 4.0f;
 
 @interface SIKeyboardAccessoryView ()
 
 @property (nonatomic, strong) NSArray *buttons;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIStackView *stackView;
 
 @end
 
@@ -26,7 +28,7 @@ double VERTICAL_PADDING = 4.0f;
 
 - (instancetype)initWithInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle
 {
-	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, KEYBOARD_HEIGHT)];
+	self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, KEYBOARD_HEIGHT + 2 * VERTICAL_PADDING)];
 
 	if (self)
 {
@@ -41,106 +43,144 @@ double VERTICAL_PADDING = 4.0f;
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
-	NSMutableArray *buttons = [@[] mutableCopy];
-    UIView *buttonsContainer = [[UIView alloc] initWithFrame:CGRectZero];
-    buttonsContainer.translatesAutoresizingMaskIntoConstraints = NO;
+    // Create scroll view for horizontal scrolling
+    self.scrollView = [[UIScrollView alloc] init];
+    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.alwaysBounceHorizontal = YES;
+    [self addSubview:self.scrollView];
     
-	NSMutableDictionary *viewsDict = [@{} mutableCopy];
-	UIView *referenceView = nil;
-	NSArray *buttonsInfo = [self buttonsInfo];
-	CGFloat itemSpace = [self itemSpace];
-    CGFloat outerItemSpace = 8.0f;
-
+    // Create horizontal stack view for groups
+    self.stackView = [[UIStackView alloc] init];
+    self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.stackView.axis = UILayoutConstraintAxisHorizontal;
+//    self.stackView.alignment = UIStackViewAlignmentFill;
+    self.stackView.distribution = UIStackViewDistributionFill;
+    self.stackView.spacing = 0.0; // Space between groups
+    [self.scrollView addSubview:self.stackView];
     
-    BOOL firstIsSeparator = [[[buttonsInfo firstObject] objectForKey:SIShellButtonInfoTitle] isEqualToString:[self separatorID]];
-    
-    NSMutableString *horizontalFormatString = [NSMutableString stringWithFormat:@"H:|-%@%f-", firstIsSeparator? @">=" : @"", outerItemSpace];
-    BOOL lastIsSeparator = NO;
-    
-    for (NSUInteger index = 0; index < buttonsInfo.count; index++) {
-        NSDictionary *buttonDictionary = buttonsInfo[index];
-    
-	    NSString *buttonTitle = [buttonDictionary objectForKey:SIShellButtonInfoTitle];
-		NSString *buttonID = [buttonDictionary objectForKey:SIShellButtonInfoID];
-        SIShellAccessoryButton buttonType = [[buttonDictionary objectForKey:SIShellButtonInfoType] unsignedIntegerValue];
-        
-        // skip "none" button
-        if (buttonType == SIShellAccessoryButtonNone) {
-            continue;
-        }
-
-		//if no id was given use title as ID
-		if (buttonID == nil)
-		{
-			buttonID = buttonTitle;
-		}
-
-		//view creation
-		SIKeyboardButtonView *button = [[SIKeyboardButtonView alloc] initWithInterfaceStyle:self.interfaceStyle];
-		button.title = buttonTitle;
-		button.delegate = self;
-		button.restorationIdentifier = buttonID;
-
-		[buttons addObject:button];
-		[buttonsContainer addSubview:button];
-
-		//constraints
-		if (referenceView == nil)
-		{
-			referenceView = button;
-		}
-
-		[viewsDict setObject:button
-					  forKey:button.restorationIdentifier];
-
-        BOOL isSeparator = [buttonID isEqualToString:[self separatorID]];
-        
-        if (index < buttonsInfo.count - 1)
-		{
-            if (isSeparator)
-            {
-                [horizontalFormatString appendFormat:@"[%@]-(>=%f)-", button.restorationIdentifier, itemSpace];
-            }
-            else
-            {
-                [horizontalFormatString appendFormat:@"[%@]-%f-", button.restorationIdentifier, itemSpace];
-            }
-        }
-        else {
-            lastIsSeparator = isSeparator;
-            [horizontalFormatString appendFormat:@"[%@]", button.restorationIdentifier];
-        }
-	}
-
-    [horizontalFormatString appendFormat:@"-%@%f-|", lastIsSeparator ? @">=" : @"",outerItemSpace];
-
-	[buttonsContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:horizontalFormatString
-																 options:NSLayoutFormatAlignAllBottom | NSLayoutFormatAlignAllTop
-																 metrics:nil
-																   views:viewsDict]];
-	
-	[[referenceView.topAnchor constraintEqualToAnchor:buttonsContainer.topAnchor constant:VERTICAL_PADDING] setActive:YES];
-    [[buttonsContainer.bottomAnchor constraintEqualToAnchor:referenceView.bottomAnchor constant:VERTICAL_PADDING] setActive:YES];
-    NSLayoutConstraint *heightAnchor = [referenceView.heightAnchor constraintEqualToConstant:KEYBOARD_HEIGHT - 2 * VERTICAL_PADDING];
-    [heightAnchor setActive:YES];
-    heightAnchor.priority = UILayoutPriorityDefaultHigh;
-    
-    [[referenceView.heightAnchor constraintGreaterThanOrEqualToConstant:32.0f] setActive:YES];
-	
-	self.buttons = buttons;
-	[self _updateColors];
-	
-    [self addSubview:buttonsContainer];
+    // Setup scroll view constraints
     [NSLayoutConstraint activateConstraints:@[
-        [buttonsContainer.topAnchor constraintEqualToAnchor:self.topAnchor],
-        [buttonsContainer.leftAnchor constraintEqualToAnchor: self.leftAnchor],
-        [buttonsContainer.bottomAnchor constraintEqualToAnchor: self.safeAreaLayoutGuide.bottomAnchor],
-        [buttonsContainer.rightAnchor constraintEqualToAnchor:self.rightAnchor]
+        [self.scrollView.topAnchor constraintEqualToAnchor:self.topAnchor constant:VERTICAL_PADDING],
+        [self.scrollView.leftAnchor constraintEqualToAnchor:self.leftAnchor],
+        [self.scrollView.bottomAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.bottomAnchor constant:-VERTICAL_PADDING],
+        [self.scrollView.rightAnchor constraintEqualToAnchor:self.rightAnchor],
+        
+        [self.scrollView.heightAnchor constraintEqualToConstant:KEYBOARD_HEIGHT],
+        [self.stackView.topAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.topAnchor],
+        [self.stackView.leftAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.leftAnchor constant:8.0],
+        [self.stackView.bottomAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.bottomAnchor],
+        [self.stackView.rightAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.rightAnchor constant:-8.0],
+        [self.stackView.heightAnchor constraintEqualToAnchor:self.scrollView.frameLayoutGuide.heightAnchor],
     ]];
+    
+    NSLayoutConstraint *widthConstraint = [self.stackView.widthAnchor constraintEqualToAnchor:self.scrollView.frameLayoutGuide.widthAnchor];
+    widthConstraint.priority = UILayoutPriorityDefaultLow;
+    [widthConstraint setActive:YES];
+    
+    [self _createButtons];
+}
+
+- (void)_createButtons
+{
+    NSMutableArray *buttons = [@[] mutableCopy];
+    NSArray *buttonsInfo = [self buttonsInfo];
+    
+    // Check if buttonsInfo returns groups (array of arrays) or flat array
+    BOOL isGrouped = buttonsInfo.count > 0 && [buttonsInfo.firstObject isKindOfClass:[NSArray class]];
+    
+    if (isGrouped) {
+        // Handle grouped buttons
+        [self _createGroupedButtons:buttonsInfo buttonsArray:buttons];
+    } else {
+        // Handle flat array (backward compatibility)
+        [self _createFlatButtons:buttonsInfo buttonsArray:buttons];
+    }
+    
+    self.buttons = buttons;
+    [self _updateColors];
+}
+
+- (void)_createGroupedButtons:(NSArray *)buttonGroups buttonsArray:(NSMutableArray *)allButtons
+{
+    for (NSArray *group in buttonGroups) {
+        // Create a stack view for each group
+        UIStackView *groupStackView = [[UIStackView alloc] init];
+        groupStackView.axis = UILayoutConstraintAxisHorizontal;
+        groupStackView.alignment = UIStackViewAlignmentFill;
+        groupStackView.distribution = UIStackViewDistributionFill;
+        groupStackView.spacing = [self itemSpace];
+        
+        for (NSDictionary *buttonDictionary in group) {
+            SIKeyboardButtonView *button = [self _createButtonFromDictionary:buttonDictionary];
+            if (button) {
+                [allButtons addObject:button];
+                [groupStackView addArrangedSubview:button];
+            }
+        }
+        
+        // Add flexible space after each middle group
+        if (group != [buttonGroups firstObject]) {
+            UIView *flexibleSpace = [[UIView alloc] init];
+            flexibleSpace.translatesAutoresizingMaskIntoConstraints = NO;
+            [[flexibleSpace.widthAnchor constraintGreaterThanOrEqualToConstant:8.0] setActive:YES];
+            [flexibleSpace setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
+            [flexibleSpace setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
+            [self.stackView addArrangedSubview:flexibleSpace];
+        }
+        
+        [self.stackView addArrangedSubview:groupStackView];
+    }
+}
+
+- (void)_createFlatButtons:(NSArray *)buttonsInfo buttonsArray:(NSMutableArray *)allButtons
+{
+    // Create a single group for flat array (backward compatibility)
+    UIStackView *groupStackView = [[UIStackView alloc] init];
+    groupStackView.axis = UILayoutConstraintAxisHorizontal;
+    groupStackView.alignment = UIStackViewAlignmentFill;
+    groupStackView.distribution = UIStackViewDistributionFill;
+    groupStackView.spacing = [self itemSpace];
+    
+    for (NSDictionary *buttonDictionary in buttonsInfo) {
+        SIKeyboardButtonView *button = [self _createButtonFromDictionary:buttonDictionary];
+        if (button) {
+            [allButtons addObject:button];
+            [groupStackView addArrangedSubview:button];
+        }
+    }
+    
+    [self.stackView addArrangedSubview:groupStackView];
+}
+
+- (SIKeyboardButtonView *)_createButtonFromDictionary:(NSDictionary *)buttonDictionary
+{
+    NSString *buttonTitle = [buttonDictionary objectForKey:SIShellButtonInfoTitle];
+    NSString *buttonID = [buttonDictionary objectForKey:SIShellButtonInfoID];
+    SIShellAccessoryButton buttonType = [[buttonDictionary objectForKey:SIShellButtonInfoType] unsignedIntegerValue];
+    
+    // skip "none" button
+    if (buttonType == SIShellAccessoryButtonNone) {
+        return nil;
+    }
+    
+    //if no id was given use title as ID
+    if (buttonID == nil) {
+        buttonID = buttonTitle;
+    }
+    
+    //view creation
+    SIKeyboardButtonView *button = [[SIKeyboardButtonView alloc] initWithInterfaceStyle:self.interfaceStyle];
+    button.title = buttonTitle;
+    button.delegate = self;
+    button.restorationIdentifier = buttonID;
+    
+    return button;
 }
 
 -(CGSize)intrinsicContentSize {
-    return CGSizeMake(320.0f, KEYBOARD_HEIGHT);
+    return CGSizeMake(320.0f, KEYBOARD_HEIGHT + 2.0 * VERTICAL_PADDING);
 }
 
 + (BOOL)requiresConstraintBasedLayout
