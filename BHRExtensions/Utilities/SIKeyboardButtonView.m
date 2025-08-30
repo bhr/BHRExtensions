@@ -118,6 +118,19 @@
 	if (sender.state == UIGestureRecognizerStateBegan)
 	{
 		self.highlighted = YES;
+		
+		// Set anchor point to bottom center for upward scaling
+		CGPoint oldAnchorPoint = self.layer.anchorPoint;
+		CGPoint oldPosition = self.layer.position;
+		
+		self.layer.anchorPoint = CGPointMake(0.5f, 1.0f);
+		self.layer.position = CGPointMake(oldPosition.x + (self.layer.anchorPoint.x - oldAnchorPoint.x) * self.bounds.size.width,
+										  oldPosition.y + (self.layer.anchorPoint.y - oldAnchorPoint.y) * self.bounds.size.height);
+		
+		// Add pressed keyboard button effect
+		[UIView animateWithDuration:0.05f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
+			self.transform = CGAffineTransformMakeScale(1.95f, 1.95f);
+		} completion:nil];
 	}
 	
 	if (sender.state == UIGestureRecognizerStateEnded ||
@@ -125,6 +138,23 @@
 		sender.state == UIGestureRecognizerStateFailed)
     {
 		self.highlighted = NO;
+		
+		// Restore original size with bounce effect
+		[UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
+			self.transform = CGAffineTransformMakeScale(0.95f, 0.95f);
+		} completion:^(BOOL finished) {
+			[UIView animateWithDuration:0.05f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+				self.transform = CGAffineTransformIdentity;
+			} completion:^(BOOL finished) {
+				// Restore original anchor point and position
+				CGPoint oldAnchorPoint = self.layer.anchorPoint;
+				CGPoint oldPosition = self.layer.position;
+				
+				self.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
+				self.layer.position = CGPointMake(oldPosition.x + (self.layer.anchorPoint.x - oldAnchorPoint.x) * self.bounds.size.width,
+												  oldPosition.y + (self.layer.anchorPoint.y - oldAnchorPoint.y) * self.bounds.size.height);
+			}];
+		}];
     }
 	
 	if (sender.state == UIGestureRecognizerStateEnded)
