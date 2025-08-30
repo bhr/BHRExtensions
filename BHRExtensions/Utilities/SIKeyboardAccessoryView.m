@@ -243,7 +243,29 @@ double VERTICAL_PADDING = 4.0f;
 - (void)tappedShellButtonView:(SIKeyboardButtonView *)buttonView;
 {
 	NSInteger tappedButtonIndex = [self.buttons indexOfObject:buttonView];
-	NSDictionary *buttonInfo = [[self buttonsInfo] objectAtIndex:tappedButtonIndex];
+	NSArray *buttonsInfo = [self buttonsInfo];
+	
+	// Check if buttonsInfo returns groups (array of arrays) or flat array
+	BOOL isGrouped = buttonsInfo.count > 0 && [buttonsInfo.firstObject isKindOfClass:[NSArray class]];
+	
+	NSDictionary *buttonInfo = nil;
+	
+	if (isGrouped) {
+		// Handle grouped buttons - find the correct group and position
+		NSInteger currentIndex = 0;
+		for (NSArray *group in buttonsInfo) {
+			if (tappedButtonIndex < currentIndex + group.count) {
+				// Found the group containing this button
+				NSInteger localIndex = tappedButtonIndex - currentIndex;
+				buttonInfo = [group objectAtIndex:localIndex];
+				break;
+			}
+			currentIndex += group.count;
+		}
+	} else {
+		// Handle flat array (backward compatibility)
+		buttonInfo = [buttonsInfo objectAtIndex:tappedButtonIndex];
+	}
 
 	SIShellAccessoryButton buttonType = [[buttonInfo objectForKey:SIShellButtonInfoType] integerValue];
 
