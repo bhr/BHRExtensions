@@ -18,8 +18,8 @@ double VERTICAL_PADDING = 4.0f;
 
 @interface SIKeyboardAccessoryView ()
 
-@property (nonatomic, strong) NSArray *buttons;
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) NSArray<SIKeyboardButtonView *> *buttons;
+@property (nonatomic, strong) NSArray<UIView *> *spacers;
 @property (nonatomic, strong) UIStackView *stackView;
 @property (nonatomic, strong) UIVisualEffectView *visualEffectView;
 
@@ -55,22 +55,14 @@ double VERTICAL_PADDING = 4.0f;
     self.visualEffectView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.visualEffectView];
     
-    // Create scroll view for horizontal scrolling
-    self.scrollView = [[UIScrollView alloc] init];
-    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.showsVerticalScrollIndicator = NO;
-    self.scrollView.alwaysBounceHorizontal = YES;
-    [self.visualEffectView.contentView addSubview:self.scrollView];
-    
     // Create horizontal stack view for groups
     self.stackView = [[UIStackView alloc] init];
     self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
     self.stackView.axis = UILayoutConstraintAxisHorizontal;
-//    self.stackView.alignment = UIStackViewAlignmentFill;
+    self.stackView.alignment = UIStackViewAlignmentFill;
     self.stackView.distribution = UIStackViewDistributionFill;
-    self.stackView.spacing = 0.0; // Space between groups
-    [self.scrollView addSubview:self.stackView];
+    self.stackView.spacing = [self itemSpace];
+    [self.visualEffectView.contentView addSubview:self.stackView];
     
     // Setup visual effect view constraints
     [NSLayoutConstraint activateConstraints:@[
@@ -80,24 +72,14 @@ double VERTICAL_PADDING = 4.0f;
         [self.visualEffectView.rightAnchor constraintEqualToAnchor:self.rightAnchor],
     ]];
     
-    // Setup scroll view constraints
+    // Setup stack view constraints
     [NSLayoutConstraint activateConstraints:@[
-        [self.scrollView.topAnchor constraintEqualToAnchor:self.visualEffectView.contentView.topAnchor constant:VERTICAL_PADDING],
-        [self.scrollView.leftAnchor constraintEqualToAnchor:self.visualEffectView.contentView.leftAnchor],
-        [self.scrollView.bottomAnchor constraintEqualToAnchor:self.visualEffectView.contentView.safeAreaLayoutGuide.bottomAnchor constant:-VERTICAL_PADDING],
-        [self.scrollView.rightAnchor constraintEqualToAnchor:self.visualEffectView.contentView.rightAnchor],
-        
-        [self.scrollView.heightAnchor constraintEqualToConstant:KEYBOARD_HEIGHT],
-        [self.stackView.topAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.topAnchor],
-        [self.stackView.leftAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.leftAnchor constant:8.0],
-        [self.stackView.bottomAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.bottomAnchor],
-        [self.stackView.rightAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.rightAnchor constant:-8.0],
-        [self.stackView.heightAnchor constraintEqualToAnchor:self.scrollView.frameLayoutGuide.heightAnchor],
+        [self.stackView.topAnchor constraintEqualToAnchor:self.visualEffectView.contentView.topAnchor constant:VERTICAL_PADDING],
+        [self.stackView.leftAnchor constraintEqualToAnchor:self.visualEffectView.contentView.leftAnchor constant:8.0],
+        [self.stackView.bottomAnchor constraintEqualToAnchor:self.visualEffectView.contentView.bottomAnchor constant:-VERTICAL_PADDING],
+        [self.stackView.rightAnchor constraintEqualToAnchor:self.visualEffectView.contentView.rightAnchor constant:-8.0],
+        [self.stackView.heightAnchor constraintEqualToConstant:KEYBOARD_HEIGHT],
     ]];
-    
-    NSLayoutConstraint *widthConstraint = [self.stackView.widthAnchor constraintEqualToAnchor:self.scrollView.frameLayoutGuide.widthAnchor];
-    widthConstraint.priority = UILayoutPriorityDefaultLow;
-    [widthConstraint setActive:YES];
     
     [self _createButtons];
 }
@@ -124,6 +106,8 @@ double VERTICAL_PADDING = 4.0f;
 
 - (void)_createGroupedButtons:(NSArray *)buttonGroups buttonsArray:(NSMutableArray *)allButtons
 {
+    NSMutableArray<UIView *> *spacers = [NSMutableArray array];
+    
     for (NSArray *group in buttonGroups) {
         // Create a stack view for each group
         UIStackView *groupStackView = [[UIStackView alloc] init];
@@ -144,14 +128,28 @@ double VERTICAL_PADDING = 4.0f;
         if (group != [buttonGroups firstObject]) {
             UIView *flexibleSpace = [[UIView alloc] init];
             flexibleSpace.translatesAutoresizingMaskIntoConstraints = NO;
-            [[flexibleSpace.widthAnchor constraintGreaterThanOrEqualToConstant:8.0] setActive:YES];
             [flexibleSpace setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
             [flexibleSpace setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
             [self.stackView addArrangedSubview:flexibleSpace];
+            [spacers addObject:flexibleSpace];
         }
         
         [self.stackView addArrangedSubview:groupStackView];
     }
+    
+    
+    // Set equal width constraints for all spacers with high priority
+    if (spacers.count > 1) {
+        UIView *firstSpacer = spacers.firstObject;
+        for (NSInteger i = 1; i < spacers.count; i++) {
+            UIView *spacer = spacers[i];
+            NSLayoutConstraint *equalWidthConstraint = [spacer.widthAnchor constraintEqualToAnchor:firstSpacer.widthAnchor];
+            equalWidthConstraint.priority = UILayoutPriorityRequired;
+            [equalWidthConstraint setActive:YES];
+        }
+    }
+    
+    self.spacers = spacers;
 }
 
 - (void)_createFlatButtons:(NSArray *)buttonsInfo buttonsArray:(NSMutableArray *)allButtons
