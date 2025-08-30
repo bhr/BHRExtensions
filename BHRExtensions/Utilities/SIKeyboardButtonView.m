@@ -91,24 +91,26 @@
 	_titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
 	[self.visualEffectView.contentView addSubview:_titleLabel];
-	
-	_backgroundLayer = [CALayer layer];
-	_backgroundLayer.contentsScale = [UIScreen mainScreen].scale;
-	_backgroundLayer.zPosition = -1;
-	_backgroundLayer.cornerRadius = 8.0f;
 
     if (@available(iOS 26.0, *)) {
         // do nothing
     } else {
+        
+        _backgroundLayer = [CALayer layer];
+        _backgroundLayer.contentsScale = [UIScreen mainScreen].scale;
+        _backgroundLayer.zPosition = -1;
+        _backgroundLayer.cornerRadius = 8.0f;
+        
         _backgroundLayer.shadowRadius = 0.7f;
         _backgroundLayer.shadowOpacity = 1.0f;
         
         _backgroundLayer.shadowOffset = CGSizeMake(0.f, 1.0f);
+        
+        [self.layer addSublayer:_backgroundLayer];
     }
     
 	[self _updateBackgroundLayerColors];
 	
-	[self.layer addSublayer:_backgroundLayer];
 }
 
 #pragma mark - Actions
@@ -266,19 +268,24 @@
 		// No shadow needed for glass effect
 	} else {
 		UIColor *shadowColor;
+        UIColor *backgroundColor;
+        
 		switch (self.interfaceStyle) {
 			case UIUserInterfaceStyleDark:
 			{
 				shadowColor = [UIColor colorWithWhite:0.15f alpha:1.f];
+                backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
 			}
 				break;
 			case UIUserInterfaceStyleLight:
 			case UIUserInterfaceStyleUnspecified:
 			{
 				shadowColor = [UIColor colorWithWhite:1.0f alpha:1.f];
+                backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
 			}
 				break;
 		}
+        _backgroundLayer.backgroundColor = [backgroundColor CGColor];
 		_backgroundLayer.shadowColor = [shadowColor CGColor];
 	}
 }
