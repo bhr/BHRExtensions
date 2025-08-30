@@ -21,6 +21,7 @@ double VERTICAL_PADDING = 4.0f;
 @property (nonatomic, strong) NSArray *buttons;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIStackView *stackView;
+@property (nonatomic, strong) UIVisualEffectView *visualEffectView;
 
 @end
 
@@ -43,13 +44,24 @@ double VERTICAL_PADDING = 4.0f;
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
+    UIVisualEffect *effect = nil;
+    if (@available(iOS 26, *)) {
+        effect = [[UIGlassContainerEffect alloc] init];
+    } else {
+        effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemUltraThinMaterial];
+    }
+    
+    self.visualEffectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    self.visualEffectView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:self.visualEffectView];
+    
     // Create scroll view for horizontal scrolling
     self.scrollView = [[UIScrollView alloc] init];
     self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.alwaysBounceHorizontal = YES;
-    [self addSubview:self.scrollView];
+    [self.visualEffectView.contentView addSubview:self.scrollView];
     
     // Create horizontal stack view for groups
     self.stackView = [[UIStackView alloc] init];
@@ -60,12 +72,20 @@ double VERTICAL_PADDING = 4.0f;
     self.stackView.spacing = 0.0; // Space between groups
     [self.scrollView addSubview:self.stackView];
     
+    // Setup visual effect view constraints
+    [NSLayoutConstraint activateConstraints:@[
+        [self.visualEffectView.topAnchor constraintEqualToAnchor:self.topAnchor],
+        [self.visualEffectView.leftAnchor constraintEqualToAnchor:self.leftAnchor],
+        [self.visualEffectView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
+        [self.visualEffectView.rightAnchor constraintEqualToAnchor:self.rightAnchor],
+    ]];
+    
     // Setup scroll view constraints
     [NSLayoutConstraint activateConstraints:@[
-        [self.scrollView.topAnchor constraintEqualToAnchor:self.topAnchor constant:VERTICAL_PADDING],
-        [self.scrollView.leftAnchor constraintEqualToAnchor:self.leftAnchor],
-        [self.scrollView.bottomAnchor constraintEqualToAnchor:self.safeAreaLayoutGuide.bottomAnchor constant:-VERTICAL_PADDING],
-        [self.scrollView.rightAnchor constraintEqualToAnchor:self.rightAnchor],
+        [self.scrollView.topAnchor constraintEqualToAnchor:self.visualEffectView.contentView.topAnchor constant:VERTICAL_PADDING],
+        [self.scrollView.leftAnchor constraintEqualToAnchor:self.visualEffectView.contentView.leftAnchor],
+        [self.scrollView.bottomAnchor constraintEqualToAnchor:self.visualEffectView.contentView.safeAreaLayoutGuide.bottomAnchor constant:-VERTICAL_PADDING],
+        [self.scrollView.rightAnchor constraintEqualToAnchor:self.visualEffectView.contentView.rightAnchor],
         
         [self.scrollView.heightAnchor constraintEqualToConstant:KEYBOARD_HEIGHT],
         [self.stackView.topAnchor constraintEqualToAnchor:self.scrollView.contentLayoutGuide.topAnchor],
@@ -195,19 +215,7 @@ double VERTICAL_PADDING = 4.0f;
 		button.interfaceStyle = self.interfaceStyle;
 	}
 	
-	switch (self.interfaceStyle) {
-		case UIUserInterfaceStyleDark:
-		{
-			self.backgroundColor = [UIColor darkKeyboardBackgroundColor];
-		}
-			break;
-		case UIUserInterfaceStyleLight:
-		case UIUserInterfaceStyleUnspecified:
-		{
-			self.backgroundColor = [UIColor keyboardBackgroundColor];
-		}
-			break;
-	}
+	// Background color is now handled by the visual effect view
 }
 
 - (void)setInterfaceStyle:(UIUserInterfaceStyle)interfaceStyle

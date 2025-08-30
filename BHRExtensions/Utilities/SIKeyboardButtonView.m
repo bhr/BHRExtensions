@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) CALayer *backgroundLayer;
+@property (nonatomic, strong) UIVisualEffectView *visualEffectView;
 
 @property (nonatomic, strong) UILongPressGestureRecognizer *buttonGestureRecognizer;
 @property (nonatomic, assign) BOOL highlighted;
@@ -66,6 +67,20 @@
 	_buttonGestureRecognizer.minimumPressDuration = 0.0f;
 	[self addGestureRecognizer:_buttonGestureRecognizer];
 	
+	// Create visual effect view
+	UIVisualEffect *effect = nil;
+	if (@available(iOS 26, *)) {
+		effect = [[UIGlassEffect alloc] init];
+	} else {
+		effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemUltraThinMaterial];
+	}
+	
+	self.visualEffectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+	self.visualEffectView.translatesAutoresizingMaskIntoConstraints = NO;
+	self.visualEffectView.layer.cornerRadius = 8.0f;
+	self.visualEffectView.clipsToBounds = YES;
+	[self addSubview:self.visualEffectView];
+	
 	_titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
 	_titleLabel.textAlignment = NSTextAlignmentCenter;
     
@@ -75,7 +90,7 @@
     
 	_titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
-	[self addSubview:_titleLabel];
+	[self.visualEffectView.contentView addSubview:_titleLabel];
 	
 	_backgroundLayer = [CALayer layer];
 	_backgroundLayer.contentsScale = [UIScreen mainScreen].scale;
@@ -135,6 +150,14 @@
 		[self removeConstraints:self.titleLabelConstraints];
 	}
 	
+	// Setup visual effect view constraints
+	[NSLayoutConstraint activateConstraints:@[
+		[self.visualEffectView.topAnchor constraintEqualToAnchor:self.topAnchor],
+		[self.visualEffectView.leftAnchor constraintEqualToAnchor:self.leftAnchor],
+		[self.visualEffectView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
+		[self.visualEffectView.rightAnchor constraintEqualToAnchor:self.rightAnchor],
+	]];
+	
 	NSMutableArray *titleConstraints = [@[] mutableCopy];
 	
 	NSDictionary *viewsDict = @{@"label": self.titleLabel};
@@ -153,7 +176,7 @@
 																					views:viewsDict]];
 	
 	self.titleLabelConstraints = titleConstraints;
-	[self addConstraints:self.titleLabelConstraints];
+	[self.visualEffectView.contentView addConstraints:self.titleLabelConstraints];
 	
 	[super updateConstraints];
 }
@@ -195,35 +218,39 @@
 
 - (void)_updateBackgroundLayerColors
 {
-	UIColor *backgroundColor;
-	
-	switch (self.interfaceStyle) {
-		case UIUserInterfaceStyleDark:
-		{
-			_backgroundLayer.shadowColor = [[UIColor colorWithWhite:0.15f alpha:1.f] CGColor];
-			backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-		}
-			break;
-		case UIUserInterfaceStyleLight:
-		case UIUserInterfaceStyleUnspecified:
-		{
-			_backgroundLayer.shadowColor = [[UIColor colorWithWhite:1.0f alpha:1.f] CGColor];
-			backgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
-		}
-			break;
-	}
+	// Update visual effect view alpha based on state
+	CGFloat alpha = 1.0f;
 	
 	if (self.selected) {
-        CGFloat direction = self.interfaceStyle == UIUserInterfaceStyleDark ? 1.0f : -1.0f;
-		backgroundColor = [backgroundColor colorByAddingBrightness:direction * 0.25f];
+		alpha = 0.8f;
 	}
 	
 	if (self.highlighted) {
-        CGFloat direction = self.interfaceStyle == UIUserInterfaceStyleDark ? 1.0f : -1.0f;
-		backgroundColor = [backgroundColor colorByAddingAlpha:direction * 0.4f];
+		alpha = 0.6f;
 	}
 	
-	self.backgroundLayer.backgroundColor = [backgroundColor CGColor];
+	self.visualEffectView.alpha = alpha;
+	
+	// Keep shadow for older iOS versions
+	if (@available(iOS 26.0, *)) {
+		// No shadow needed for glass effect
+	} else {
+		UIColor *shadowColor;
+		switch (self.interfaceStyle) {
+			case UIUserInterfaceStyleDark:
+			{
+				shadowColor = [UIColor colorWithWhite:0.15f alpha:1.f];
+			}
+				break;
+			case UIUserInterfaceStyleLight:
+			case UIUserInterfaceStyleUnspecified:
+			{
+				shadowColor = [UIColor colorWithWhite:1.0f alpha:1.f];
+			}
+				break;
+		}
+		_backgroundLayer.shadowColor = [shadowColor CGColor];
+	}
 }
 
 #pragma mark -
